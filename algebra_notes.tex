@@ -1,0 +1,96 @@
+\documentclass{ctexart}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{tikz-cd}
+\usepackage{amsthm}
+
+\newtheorem*{prop}{命题}
+
+\begin{document}
+
+除非特别说明，以下考虑的环都为带乘法幺元的结合环。
+
+1. 交换环 $R$ 上的代数(称为 $R$-代数)，就是一个环 $A$ 和一个包含映射 $\iota : R \to Z(A)$，其中 $Z(A)$ 为 $A$ 的中心，$\iota$ 为一个单的环同态。我们研究较多的是当 $R$ 为一个域 $k$ 时的 $k$-代数。$\iota$ 诱导出以下映射 $r \cdot a = \iota(r)a$ :
+\begin{align*}
+\cdot : R \times A &\to A\\
+(r,a) &\mapsto \iota(r)a
+\end{align*}
+当 $R$ 为 $k$ 时，$A$ 就成为一个 $k$-向量空间，此时就可以考虑 $A$ 的维数。
+
+2. 模的张量积。
+
+考虑一个环 $R$，做张量积的时候，要求一个是右$R$-模，一个是左$R$-模，得到的是一个$Abel$群，和一个 $R$-balanced 映射。当 $R$ 是交换环时，可对得到的$Abel$群赋予一个模结构。以下用更严格的语言描述。
+
+首先定义什么是 $R$-balanced 映射。
+对任意的环 $R$，$M$ 为一个右$R$-模，$N$ 为一个左 $R$-模，$G$ 为一个$Abel$ 群，一个映射 $\varphi : M \times N \to G$被称为 $R$-balanced，如果对任意的 $m,m'\in M, n,n'\in N, r\in R$，有以下等式成立：
+\begin{align*}
+&\varphi(m, n+n') = \varphi(m,n) + \varphi(m,n')&&\text{$(Dl_\varphi)$}\\
+&\varphi(m+m', n) = \varphi(m,n) + \varphi(m',n)&&\text{$(Dr_\varphi)$}\\
+&\varphi(m\cdot r, n) = \varphi(m, r\cdot n)&&\text{$(A_\varphi)$}
+\end{align*}
+注意：$\varphi$ 并不要求是群同态。若是群同态，则要满足
+\begin{align*}
+\varphi((m,n)+(m',n')) &= \varphi(m+m',n+n')\\
+                       &= \varphi(m,n) + \varphi(m',n')
+\end{align*}
+下面定义模的张量积。
+对任意的环 $R$，右 $R$-模 $M$，左 $R$-模 $N$，$M$ 和 $N$ 在 $R$ 上的张量积 $M \otimes_R N$ 是一个$Abel$群和一个 $R$-balanced 映射
+\[
+\otimes : M \times N \to M \otimes_R N
+\]
+并满足如下意义上的万有性质：\\
+对任意的$Abel$群 $G$ 和任意的 $R$-balanced 映射
+\[
+f : M \times N \to G
+\]
+都存在唯一的一个\textcolor{red}{群同态}
+\[
+\tilde{f} : M \otimes_R N \to G
+\]
+使得
+\[
+\tilde{f} \circ \otimes = f
+\]
+\begin{center}
+\begin{tikzcd}[row sep=huge]
+M \!\!\times\!\! N \arrow[r,"\otimes"] \arrow[rd,"f"] & M \!\!\otimes_R\!\! N \arrow[d,dashed,"\tilde{f}" pos=0.37]\\
+& G
+\end{tikzcd}
+\end{center}
+
+就像所有的万有性质一样，以上定义的张量积在同构的意义下是唯一的。
+
+我们把映射 $\otimes$ 叫做标准(canonical)映射。
+
+注意，这个定义并没有保证张量积$M \otimes_R N$一定存在，但后面会看到，我们可以把张量积明确构造出来。
+
+$\forall x \in M, y \in N$，我们把$(x,y)$在标准映射$\otimes : M \times N \to M \otimes_R N$下的像记为$x \otimes y$。通常称为纯张量(pure tensor)。严格来说，正确的记法应为$x \otimes_R y$，不过按惯例我们通常省略$R$。由定义，我们就可以得到如下关系：
+\begin{align*}
+&x \otimes (y+y') = x \otimes y + x \otimes y'&&\text{$(Dl_\otimes)$}\\
+&(x+x') \otimes y = x \otimes y + x' \otimes y&&\text{$(Dr_\otimes)$}\\
+&(x \cdot r) \otimes y = x \otimes (r \cdot y)&&\text{$(A_\otimes)$}
+\end{align*}
+
+张量积的万有性质有如下重要的结论：
+
+\begin{prop}
+$M \otimes_R N$中的每个元素都可以写成
+\[
+\sum_i x_i \otimes y_i, x_i \in M, y_i \in N
+\]
+的形式（并不要求唯一）。也就是说，$\otimes$的像生成了$M \otimes_R N$。 更进一步，如果$f$对每一个元素$x \otimes y$都给出了$Abel$群$G$中的一个值，那么$f$可以扩展为定义在整个$M \otimes N$上的群同态当且仅当$f(x \otimes y)$对$x$和$y$都是$\mathsf{Z}$- 双线性的。
+\end{prop}
+\begin{proof}
+对第一条陈述，令$L$为形式为$x \otimes y$的元素所生成的$M \otimes_R N$的子群，$Q = (M \otimes_R N)/L,  q : M \otimes_R N \to (M \otimes_R N) / L$。\\
+我们有：$0 = q \circ \otimes$和$0 = 0 \circ \otimes$。
+\begin{center}
+\begin{tikzcd}[row sep=huge]
+M \!\!\times\!\! N \arrow[r,"\otimes"] \arrow[rd,"0"] & M \!\!\otimes_R\!\! N \arrow[d,dashed,"q" pos=0.37]\\
+& (M \!\!\otimes_R\!\! N) / L
+\end{tikzcd}
+\end{center}
+由万有性质，$q = 0$。又$q$为满射，所以$Q = (M \otimes_R N)/L = 0$，所以$M \otimes_R N = L$。
+\end{proof}
+\end{document}

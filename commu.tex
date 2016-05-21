@@ -1,0 +1,202 @@
+\documentclass{article}
+
+\usepackage{amsmath,amssymb,tikz-cd,mathtools,amsfonts}
+
+\begin{document}
+
+\begin{tikzcd}
+  A \arrow[rd] \arrow[r, "\phi"] & B \\
+  & C
+\end{tikzcd}
+
+\begin{tikzcd}[column sep=small]
+& D^n  \arrow[dr,dashrightarrow,"f"] & \\
+S^{n-1} \arrow[rr,"1"] \arrow[ur,"i"] & & S^{n-1}
+\end{tikzcd}
+
+\begin{tikzcd}[column sep=small]
+& Y  \arrow[dr,dashrightarrow,"f"] & \\
+X \arrow[rr,"g"] \arrow[ur,"i"] & & Z
+\end{tikzcd}
+
+\begin{tikzcd}[cells={nodes={minimum width=1.5cm}}]% to make it more symmetric
+    L_{m+1}(\mathbb{Z}) \arrow[bend left]{rr} \arrow{rd}
+    &
+    & \Theta_m \arrow[bend left]{rr}{0} \arrow{rd}
+    &
+    & \pi_m(BO) \arrow[bend left]{rr} \arrow{rd}
+    &
+    & \Omega^{fr}_{m-1}
+    \\
+%
+    & \Theta^{fr}_{m} \arrow{ru} \arrow{rd}
+    &
+    & A_m \arrow{ru} \arrow{rd}
+    &
+    & \Theta^{fr}_{m-1} \arrow{ru} \arrow{rd}
+    &
+    \\
+%
+    \pi_m(O) \arrow[bend right]{rr}{J} \arrow{ru}
+    &
+    & \Omega^{fr}_m \arrow[bend right]{rr}{\sigma^*} \arrow{ru}
+    &
+    & L_m(\mathbb{Z}) \arrow[bend right]{rr} \arrow{ru}
+    &
+    & \Theta_{m-1}
+\end{tikzcd}
+
+\begin{tikzcd}[row sep=1em,column sep=1em]
+ & & 0 \arrow[dr] & & 0 & & 0 \arrow[dr] & & 0 & & 0 \arrow[dr] & & 0\\
+ & & & C_2 \arrow[ur] \arrow[dr] & & & & C_4 \arrow[ur] \arrow[dr] & & & & C_6 \arrow[ur] \arrow[dr] \\
+ & & A_1 \arrow[rr] \arrow[ur] & & A_2 \arrow[rr] \arrow[dr] & & A_3 \arrow[rr] \arrow[ur]
+ & & A_4 \arrow[rr] \arrow[dr] & & A_5 \arrow[rr] \arrow[ur] & & A_6 \arrow[dr] \\
+ & C_1 \arrow[ur] & & & & C_3 \arrow[dr] \arrow[ur] & & & &
+   C_5 \arrow[dr] \arrow[ur] & & & & C_7 \arrow[dr] \\
+0 \arrow[ur] & & & & 0 \arrow[ur] & & 0 & & 0 \arrow[ur] & & 0 & & & & 0
+\end{tikzcd}
+
+
+\begin{tikzcd}
+A \ar{r} & B \ar{r} & C \ar{d} \\
+D \ar{u} & E \ar{l} & F \ar{l}
+\end{tikzcd}
+
+
+\begin{tikzcd}[arrows=to]
+        \cdots \rar & H_n(A \cap B) \rar & H_n(A) \oplus H_n(B) \rar & H_n(X) \rar & \hphantom{0}\\
+        \hphantom{\cdots} \rar
+        & H_{n-1}(A \cap B) \rar
+        & \makebox[\widthof{$H_n(A) \oplus H_n(B)$}][c]{$\cdots\hfill \cdots$} \rar
+        &  H_0(X) \rar & 0
+\end{tikzcd}
+
+\begin{tikzcd}
+                &                                 & 0                 \arrow{d}                 & 0                 \arrow{d}          &   \\
+    0 \arrow{r} & L(-D) \arrow{r}\arrow[equal]{d} & L                 \arrow{r}\arrow{d}        & L/L(-D)           \arrow{r}\arrow{d} & 0 \\
+    0 \arrow{r} & L(-D) \arrow{r}                 & L(D)              \arrow{r}\arrow{d}        & L(D)/L(-D)        \arrow{r}\arrow{d} & 0 \\
+                &                                 & E(\mathfrak{a})/E \arrow[equal]{r}\arrow{d} & E(\mathfrak{a})/E \arrow{d}          &   \\
+                &                                 & 0                                           & 0                                    &
+\end{tikzcd}
+
+\begin{tikzcd}
+    0\arrow{r} & \mathbb{R}\arrow{r}{t}\arrow{d}{\mathcal{P}} & X\arrow{r}{\pi}\arrow{d}{s} & G\arrow{r}\arrow[equal]{d} & 0 \\
+    0\arrow{r} & \mathbb{T}\arrow{r}{r} & \text{PO}\arrow{r}\arrow[bend left=33]{l}{\varphi} & G\arrow{r} & 0
+\end{tikzcd}
+
+\begin{tikzcd}
+  A^0 \rar & B^0 \rar & C^0 \ar[out=-30, in=150]{dll} \\
+  A^1 \rar & B^1 \rar & C^1 \ar[out=0, in=180]{dll} \\
+  A^2 \rar & B^2 \rar & C^2 \ar[out=0, in=180, looseness=2]{dll}\\
+  A^3 \rar & B^3 \rar & C^3 \ar[out=0, in=180, looseness=3]{dll}\\
+  A^4 \rar & \cdots   &
+\end{tikzcd}
+
+\begin{tikzcd}
+A \arrow[hook]{r}\arrow[two heads]{rd}
+&B \arrow[dotted]{d}\arrow[hookleftarrow]{r}
+&C \arrow[two heads]{ld}\\
+&D
+\end{tikzcd}
+
+\begin{tikzcd}[row sep=huge]
+  & S\ar[dl,"f_{x}",swap,sloped] \ar[dr,"f_{y}",sloped] \ar[d,dashed,"{(f_{x},f_{y})}" description] & \\
+X & X\times Y\ar[l,"\pi_{X}"] \ar[r,"\pi_{Y}",swap] & Y
+\end{tikzcd}
+
+\begin{tikzcd}
+{}&        A \arrow{ld} \arrow{rd}    & \\
+B  \arrow{rd}   & &     C  \arrow{ld}   \\
+   &        D &
+\end{tikzcd}
+
+\begin{tikzcd}
+             & P \arrow{ld} \arrow{d}  &   \\
+M \arrow{r}  & N \arrow{r}             & 0
+\end{tikzcd}
+
+
+\begin{tikzcd}
+ A \arrow[rd] \arrow[r,"\phi"] & B \\
+                               & C
+\end{tikzcd}
+
+\begin{tikzcd}
+A \arrow[r, "\phi"] \arrow[d,red] & B \arrow[d, "\psi" red] \\
+C \arrow[r, red, "\eta" blue]     & D
+\end{tikzcd}
+
+\begin{tikzcd}
+A \arrow[r,"\phi" near start, "\psi", "\eta" near end] & B
+\end{tikzcd}
+
+\begin{tikzcd}
+A \arrow[r,"\phi" near start, "\psi"', "\eta" near end] & B
+\end{tikzcd}
+
+\begin{tikzcd}
+T
+\arrow[drr, bend left, "x"]
+\arrow[ddr, bend right, "y"]
+\arrow[dr, dotted, "{(x,y)}" description] & & \\
+& X \times_Z Y \arrow [r, "p"] \arrow[d, "q"]
+& X \arrow[d, "f"] \\
+& Y \arrow[r, "g"] & Z
+\end{tikzcd}
+
+
+\begin{tikzcd}
+                                                  & \pi_1(U_1) \ar[dr] \ar[drr, "j_1", bend left=20] & &[1.5em] \\
+\pi_1(U_1\cap U_2) \ar[ur, "i_1"] \ar[dr, "i_2"'] &                                                  & \pi_1(U_1) \ast_{\pi_1(U_1\cap U_2)} \pi_1(U_2) \ar[r, dashed, "\simeq"] & \pi_1(X) \\
+                                                  & \pi_1(U_2) \ar[ur]\ar[urr, "j_2"', bend right=20]& &
+\end{tikzcd}
+
+\begin{tikzcd}
+X \arrow[r, hook] \arrow[dr, dashrightarrow] & \bar{X} \arrow[d] \\
+                                             & Y
+\end{tikzcd}
+
+\begin{tikzcd}
+A \arrow[r, tail, two heads, dashed] & B
+\end{tikzcd}
+
+$\{m^\prime_{i}\}$
+
+\begin{tikzcd}[row sep=1em,column sep=1em]
+ & & 0 \arrow[dr] & & 0 & & 0 \arrow[dr] & & 0 & & 0 \arrow[dr] & & 0\\
+ & & & C_2 \arrow[ur] \arrow[dr] & & & & C_4 \arrow[ur] \arrow[dr] & & & & C_6 \arrow[ur] \arrow[dr] \\
+ & & A_1 \arrow[rr] \arrow[ur] & & A_2 \arrow[rr] \arrow[dr] & & A_3 \arrow[rr] \arrow[ur]
+ & & A_4 \arrow[rr] \arrow[dr] & & A_5 \arrow[rr] \arrow[ur] & & A_6 \arrow[dr] \\
+ & C_1 \arrow[ur] & & & & C_3 \arrow[dr] \arrow[ur] & & & &
+   C_5 \arrow[dr] \arrow[ur] & & & & C_7 \arrow[dr] \\
+0 \arrow[ur] & & & & 0 \arrow[ur] & & 0 & & 0 \arrow[ur] & & 0 & & & & 0
+\end{tikzcd}
+
+\begin{tikzcd}[row sep=1em,column sep=1em]
+ & & 0 \arrow[dr] & & 0 & & 0 \arrow[dr] & & 0 & & & & 0\\
+ & & & C_2 \arrow[ur] \arrow[dr] & & & & C_4 \arrow[ur] \arrow[dr] & & & & C_6 \arrow[ur] \\
+ & & A_1 \arrow[rr] \arrow[ur] & & A_2 \arrow[rr] \arrow[dr] & & A_3 \arrow[rr] \arrow[ur]
+ & & A_4 \arrow[rr] \arrow[dr] & & A_5 \arrow[ur] \\
+ & C_1 \arrow[ur] & & & & C_3 \arrow[dr] \arrow[ur] & & & &
+   C_5 \arrow[dr] \arrow[ur] \\
+0 \arrow[ur] & & & & 0 \arrow[ur] & & 0 & & 0 \arrow[ur] & & 0
+\end{tikzcd}
+
+
+\begin{tikzcd}[row sep=1em,column sep=1em]
+ & & 0 \arrow[dr] & & 0 & & 0 \arrow[dr] & & 0 & & 0 \arrow[dr] & & 0\\
+ & & & C_2 \arrow[ur] \arrow[dr] & & & & C_4 \arrow[ur] \arrow[dr] & & & & C_6 \arrow[ur] \arrow[dr] \\
+0 \arrow[dr] & & A_1 \arrow[rr] \arrow[ur] & & A_2 \arrow[rr] \arrow[dr] & & A_3 \arrow[rr] \arrow[ur]
+ & & A_4 \arrow[rr] \arrow[dr] & & A_5 \arrow[rr] \arrow[ur] & & A_6 \arrow[dr] \\
+ & C_1 \arrow[ur] \arrow[dr] & & & & C_3 \arrow[dr] \arrow[ur] & & & &
+   C_5 \arrow[dr] \arrow[ur] & & & & C_7 \arrow[dr] \\
+0 \arrow[ur] & & 0 \arrow[dr] & & 0 \arrow[ur] & & 0 \arrow[dr] & & 0 \arrow[ur] & & 0 \arrow[dr] & & 0 \arrow[ur] & & 0 \\
+ & & & C_2 \arrow[ur] \arrow[dr] & & & & C_4 \arrow[ur] \arrow[dr] & & & & C_6 \arrow[ur] \arrow[dr] \\
+ & & A_1 \arrow[rr] \arrow[ur] & & A_2 \arrow[rr] \arrow[dr] & & A_3 \arrow[rr] \arrow[ur]
+ & & A_4 \arrow[rr] \arrow[dr] & & A_5 \arrow[rr] \arrow[ur] & & A_6 \arrow[dr] \\
+ & C_1 \arrow[ur] & & & & C_3 \arrow[dr] \arrow[ur] & & & &
+   C_5 \arrow[dr] \arrow[ur] & & & & C_7 \arrow[dr] \\
+0 \arrow[ur] & & & & 0 \arrow[ur] & & 0 & & 0 \arrow[ur] & & 0 & & & & 0 \\
+\end{tikzcd}
+
+\end{document}
