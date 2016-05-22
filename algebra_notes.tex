@@ -35,6 +35,9 @@
 \varphi((m,n)+(m',n')) &= \varphi(m+m',n+n')\\
                        &= \varphi(m,n) + \varphi(m',n')
 \end{align*}
+从$M \times N$到$G$的所有$R$-balanced映射的集合记为$L_R(M,N;G)$。\\
+如果$\varphi,\psi$为$R$-balanced映射，那么逐点(pointwise)定义的$\varphi + \psi$和$-\varphi$也是$R$-balanced映射。这样集合$L_R(M,N;G)$就成为一个$Abel$群。\\
+
 下面定义模的张量积。
 对任意的环 $R$，右 $R$-模 $M$，左 $R$-模 $N$，$M$ 和 $N$ 在 $R$ 上的张量积 $M \otimes_R N$ 是一个$Abel$群和一个 $R$-balanced 映射
 \[
@@ -53,12 +56,50 @@ f : M \times N \to G
 \[
 \tilde{f} \circ \otimes = f
 \]
+
 \begin{center}
 \begin{tikzcd}[row sep=huge]
 M \!\!\times\!\! N \arrow[r,"\otimes"] \arrow[rd,"f"] & M \!\!\otimes_R\!\! N \arrow[d,dashed,"\tilde{f}" pos=0.37]\\
 & G
 \end{tikzcd}
 \end{center}
+
+\[
+Hom_\mathbb{Z}(M \otimes_R N,G) \simeq L_R(M,N;G),g \mapsto g \circ \otimes
+\]
+
+以下证明$L_R(M,N;G) \simeq Hom_R(M,Hom_\mathbb{Z}(N,G))$
+\begin{proof}
+$Hom_\mathbb{Z}(N,G)$可被赋予一个右$R$-模结构：$(g \cdot r)(y) = g(ry)$.\\
+\begin{align*}
+\alpha : L_R(M,N;G) &\to Hom_R(M,Hom_\mathbb{Z}(N,G))\\
+f &\mapsto f' = (m \mapsto (n \mapsto f(m,n)))
+\end{align*}
+下证$f'$为$R$-模同态
+\begin{align*}
+f'(xr) &= f'(x) \cdot r\\
+f'(xr) &= (y \mapsto f'(x)(ry)\\
+(y \mapsto f(xr,y) &= (y \mapsto f(x,ry))
+\end{align*}
+又$f$为$R$-balanced映射，$f(xr,y) = f(x,ry)$。所以，$f'(xr) = f'(x) \cdot r$。
+
+\begin{align*}
+\beta : Hom_R(M,Hom_\mathbb{Z}(N,G)) \to L_R(M,N;G)&\\
+f \mapsto f' = (m \times n \mapsto f(m)(n))&
+\end{align*}
+下证$f'$为$R$-balanced映射。
+\begin{align*}
+f'(xr,y) &= f'(x,ry)\\
+f(xr)(y) &= f(x)(ry)\\
+(f(x) \cdot r)(y) &= f(x)(ry)\\
+f(x)(ry) &= f(x)(ry)
+\end{align*}
+
+有$\alpha \circ \beta = 1_{Hom_R(M,Hom_\mathbb{Z}(N,G))},
+   \beta \circ \alpha = 1_{L_R(M,N;G)}$
+\end{proof}
+
+$\mathbb{Z}$-模就是$Abel$群。
 
 就像所有的万有性质一样，以上定义的张量积在同构的意义下是唯一的。
 
@@ -80,7 +121,7 @@ $M \otimes_R N$中的每个元素都可以写成
 \[
 \sum_i x_i \otimes y_i, x_i \in M, y_i \in N
 \]
-的形式（并不要求唯一）。也就是说，$\otimes$的像生成了$M \otimes_R N$。 更进一步，如果$f$对每一个元素$x \otimes y$都给出了$Abel$群$G$中的一个值，那么$f$可以扩展为定义在整个$M \otimes N$上的群同态当且仅当$f(x \otimes y)$对$x$和$y$都是$\mathsf{Z}$- 双线性的。
+的形式（并不要求唯一）。也就是说，$\otimes$的像生成了$M \otimes_R N$。 更进一步，如果$f$对每一个元素$x \otimes y$都给出了$Abel$群$G$中的一个值，那么$f$可以扩展为定义在整个$M \otimes N$上的群同态当且仅当$f(x \otimes y)$对$x$和$y$都是$\mathbb{Z}$-双线性的。
 \end{prop}
 \begin{proof}
 对第一条陈述，令$L$为形式为$x \otimes y$的元素所生成的$M \otimes_R N$的子群，$Q = (M \otimes_R N)/L,  q : M \otimes_R N \to (M \otimes_R N) / L$。\\
