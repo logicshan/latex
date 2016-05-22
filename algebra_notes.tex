@@ -134,4 +134,39 @@ M \!\!\times\!\! N \arrow[r,"\otimes"] \arrow[rd,"0"] & M \!\!\otimes_R\!\! N \a
 \end{center}
 由万有性质，$q = 0$。又$q$为满射，所以$Q = (M \otimes_R N)/L = 0$，所以$M \otimes_R N = L$。
 \end{proof}
+这个命题说的是，我们可以使用张量积的明确形式，而不是使用万有性质。这在实际中是很方便的。
+
+$f : M \to M'$是右$R$-模线性映射，$g : N \to N'$是左$R$-模线性映射，则有一个唯一的群同态
+\[
+f \otimes g : M \otimes_R N \to M' \otimes_R N'
+\]
+满足，$(f \otimes g)(x \otimes y) = f(x) \otimes g(y)$
+\begin{center}
+\begin{tikzcd}[row sep=huge]
+M \!\!\times\!\! N \arrow[r,"\otimes"] \arrow[rd,"\otimes"] & M \!\!\otimes_R\!\! N \arrow[d,dashed,"f \otimes g" pos=0.37]\\
+& M' \!\!\otimes_R\!\! N'
+\end{tikzcd}
+\end{center}
+
+张量可成为一个函子
+\[
+M \otimes_R - : R\!\!-\!\!\mathbf{Mod} \to \mathbf{Ab}
+\]
+从左$R$-模范畴到$Abel$群范畴
+\begin{align*}
+N &\mapsto M \otimes N \\
+f &\mapsto 1 \otimes f
+\end{align*}
+
+若有一个环同态$f : R \to S$，并且$M$是一个右$S$-模，$N$是一个左$S$-模，则有一个标准的满同态
+\[
+M \otimes_R N \to M \otimes_S N
+\]
+由 $M \times N \overset{\otimes_S}{\to} M \otimes_S N$ 诱导。
+\begin{center}
+\begin{tikzcd}[row sep=huge]
+M \!\!\times\!\! N \arrow[r,"\otimes_R"] \arrow[rd,"\otimes_S"] & M \!\!\otimes_R\!\! N \arrow[d,dashed]\\
+& M \!\!\otimes_S\!\! N
+\end{tikzcd}
+\end{center}
 \end{document}
