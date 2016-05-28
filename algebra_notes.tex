@@ -1,12 +1,14 @@
 \documentclass{ctexart}
 
-\usepackage{amsmath}
-\usepackage{amssymb}
+\usepackage{amsmath,amssymb, amsthm}
+\usepackage{mathrsfs}
 \usepackage{color}
 \usepackage{tikz-cd}
-\usepackage{amsthm}
 
 \newtheorem*{prop}{命题}
+\newtheorem*{thm}{定理}
+
+\DeclareMathOperator{\Ima}{Im}
 
 \begin{document}
 
@@ -169,4 +171,94 @@ M \!\!\times\!\! N \arrow[r,"\otimes_R"] \arrow[rd,"\otimes_S"] & M \!\!\otimes_
 & M \!\!\otimes_S\!\! N
 \end{tikzcd}
 \end{center}
+
+3. 模
+
+令$M$为一个$Abel$群，$R$为一个环，$\mu : R \times M \to M$为一个给定的映射。则三元组$(M, R, \mu)$被叫做一个左$R$-模，如果对$\forall r,s \in R, x,y \in M$满足下面的公理：
+\begin{align*}
+&(1) \mu(r, x + y) = \mu(r, x) + \mu(r, y)\\
+&(2) \mu(r + s, x) = \mu(r, x) + \mu(s, x)\\
+&(3) \mu(rs, x) = \mu(r, \mu(s, x))
+\end{align*}
+
+4. $R$-代数既有模结构又有环结构
+
+5. 自由模
+
+令$S$为一个集合，$R$为一个幺环。则有序对$(M, i)$是一个$S$上的自由
+左$R$-模，如果$M$是一个左$R$-模，$i : S \to M$是一个集合映射，并且满足
+以下万有性质：对$\forall$左$R$-模$N$和集合映射$f : S \to N$，存在唯一
+的$R$模映射$g : M \to N$满足下面的交换图
+\begin{center}
+\begin{tikzcd}
+S \arrow[r,"i"] \arrow[rd,"f"] & M \arrow[d, "g"]\\
+& N
+\end{tikzcd}
+\end{center}
+
+我们说一个$R$-模$F$是自由的，如果存在一个$S$上的自由模$(M,i)$使得$F \cong M$。
+
+\begin{thm}
+令$(F,i)$为一个$S$上的自由左$R$-模，则 $i$ 是单射且$\Ima i$生成 $F$。
+\end{thm}
+
+\begin{thm}
+令$(F,i)$和$(K,j)$是$S$上的两个自由模，则$F \cong K$。
+\end{thm}
+
+\begin{thm}
+任意集合上的自由模一定存在。
+\end{thm}
+
+我们现在定义一个模的基的概念，并证明一个模存在基等价于这个模是自由的。
+我们把左$R$-模$M$的一个有限集合$\{m_1,\cdots ,m_n\}$叫做线性无关，如果由
+$\sum_ir_im_i = 0$可推出$r_1 = \cdots = r_n = 0$。我们把一个子集
+$\{m_\alpha\}_{\alpha \in \mathcal{A}}$叫做线性无关，如果此集合的任意有
+限子集都线性无关。$M$的一个基就是$M$的一个子集$\mathscr{B}$，这个子集即生成$M$又线
+性无关。
+
+\begin{thm}
+$M$为左$R$-模，则$\mathscr{B}$为$M$的一个基当且仅当$M$中的每一个元素都
+可以唯一写成$\mathscr{B}$中元素的$R$线性组合。
+\end{thm}
+
+\begin{thm}
+若$(F, i)$是$S$上的一个自由模，则$\Ima i$是$F$的一个基。
+\end{thm}
+
+\begin{thm}
+令$R$是一个幺环，$F$是一个左$R$-模，则$F$是自由的当且仅当$F$
+有一个基。
+\end{thm}
+
+6. 代数的张量积
+
+下面我们讨论怎样做代数的张量积并得到一个代数。值得注意的一点是，做代数
+的张量积并不真正不同于做模的张量积，但是张量积在
+$R\text{-}\mathbf{Alg}$中的“地位”和它在$R\text{-}\mathbf{Mod}$中的
+“地位”是完全不同的。这可以很清楚地从对$R\text{-}\mathbf{Alg}$中张量
+积的万有性质的刻画中看出。
+
+假设我们有一个交换幺环$R$，$A,B$为$R\text{-}$代数，则$A$可看作右
+$R\text{-}$模，$B$可看作左$R\text{-}$模，我们可以做他们通常的张量积$A
+\otimes_R B$，而且由于$R$是交换的，得到的张量积有一个自然的$R\text{-}$模结构，
+$r(a\otimes b) = (ra)\otimes b$。问题是，我们能否在$A \otimes_R B$上定义
+一个环结构，和$R\text{-}$模结构兼容，以得到一个$R\text{-}$代数。
+
+\begin{thm}
+令$A, B$为$R\text{-}$代数，则$A \otimes_R B$具有通常的$R\text{-}$模结构，
+并且可定义乘法$(a\otimes b)(a' \otimes b') = (aa) \otimes (bb')$，使得
+它成为一个$R\text{-}$代数。
+\end{thm}
+
+\begin{thm}
+\begin{align*}
+A \to A \otimes_R B\\
+a \mapsto a \otimes 1_B\\
+B \to A \otimes_R B\\
+b \mapsto 1_A \otimes b
+\end{align*}
+这两个映射使得张量积在交换$R\text{-}$代数范畴中成为$coproduct$。但是张
+量积在所有$R\text{-}$代数范畴中并不是$coproduct$。
+\end{thm}
 \end{document}
