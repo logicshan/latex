@@ -1,20 +1,25 @@
 \documentclass{ctexart}
 
-\usepackage{amsmath,amssymb, amsthm}
+\usepackage{amsmath,amssymb,amsthm}
 \usepackage{mathrsfs}
 \usepackage{color}
 \usepackage{tikz-cd}
+\usepackage{url}
+
+\usepackage{biblatex}
+\addbibresource{algebra_notes.bib}
 
 \newtheorem*{prop}{命题}
 \newtheorem*{thm}{定理}
 
 \DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\im}{im}
 
 \begin{document}
 
 除非特别说明，以下考虑的环都为带乘法幺元的结合环。
 
-1. 交换环 $R$ 上的代数(称为 $R$-代数)，就是一个环 $A$ 和一个包含映射 $\iota : R \to Z(A)$，其中 $Z(A)$ 为 $A$ 的中心，$\iota$ 为一个单的环同态。我们研究较多的是当 $R$ 为一个域 $k$ 时的 $k$-代数。$\iota$ 诱导出以下映射 $r \cdot a = \iota(r)a$ :
+1. \cite[p.33]{barot2014introduction}交换环 $R$ 上的代数(称为 $R$-代数)，就是一个环 $A$ 和一个包含映射 $\iota : R \to Z(A)$，其中 $Z(A)$ 为 $A$ 的中心，$\iota$ 为一个单的环同态。我们研究较多的是当 $R$ 为一个域 $k$ 时的 $k$-代数。$\iota$ 诱导出以下映射 $r \cdot a = \iota(r)a$ :
 \begin{align*}
 \cdot : R \times A &\to A\\
 (r,a) &\mapsto \iota(r)a
@@ -261,4 +266,15 @@ b \mapsto 1_A \otimes b
 这两个映射使得张量积在交换$R\text{-}$代数范畴中成为$coproduct$。但是张
 量积在所有$R\text{-}$代数范畴中并不是$coproduct$。
 \end{thm}
+
+7. 有限生成代数\cite{finitely_generated_algebra}
+在数学中，一个有限生成代数（又叫做有限型代数），是一个域$K$上的结合代
+数$A$，存在$A$中元素的一个有限集$\{a_1,\cdots,a_n\}$，使得$A$中每一个
+元素都可以表示为$a_1,\cdots,a_n$的系数在$K$中的多项式，即$A$中每一个元
+素都可以表示成：
+\[
+\sum\nolimits_ik_ia_1^{\alpha i1}\cdots a_n^{\alpha in}
+\]
+
+\printbibliography
 \end{document}
