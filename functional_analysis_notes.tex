@@ -1,0 +1,77 @@
+\documentclass{ctexrep}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+
+\newtheorem{defi}{定义}[section]
+\newtheorem{prop}[defi]{命题}
+\newtheorem{thm}[defi]{定理}
+
+\newcommand{\X}{\mathscr{X}}
+\newcommand{\Xp}{(\mathscr{X},\rho)}
+\newcommand{\Yt}{(\mathscr{Y},\tau)}
+
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\im}{im}
+
+\begin{document}
+\chapter{度量空间}
+
+\section{压缩映像原理}
+\begin{defi}
+设$\X$是一个非空集,若存在$\X$上一个双变量的实值函数$\rho(x,y)$,满足
+下列三个条件:
+\renewcommand{\labelenumi}{(\theenumi)}
+\begin{enumerate}
+\item 正定性: $\rho(x,y)\geq 0$,而且$\rho(x,y) = 0$当且仅当$x = y$;
+\item 对称性: $\rho(x,y) = \rho(y,x)$;
+\item 三角不等式: $\rho(x,z)\leq \rho(x,y) + \rho(y,z)(\forall x,y,z \in
+  \X)$,
+\end{enumerate}
+则称$\rho$为$\X$上一个\textbf{距离},$\X$称为\textbf{距离空间}.一个以$\rho$为距离的距离空间$\X$记作$\textcolor{red}{\Xp}$.
+\end{defi}
+
+\begin{defi}
+距离空间$\Xp$中的点列$\{x_n\}$称为\textbf{收敛列},是指存在$\X$中
+的点$x$,当$n \rightarrow \infty$时,$\rho(x_n,x) \rightarrow 0$.此时称$x$是点列
+$\{x_n\}$的\textbf{极限},记作$x_n \rightarrow x (n \rightarrow \infty)$,也记作
+$\lim\limits_{n\rightarrow \infty}{x_n} = x$.
+\end{defi}
+
+\begin{defi}
+距离空间$\Xp$上的点列$\{x_n\}$叫做\textbf{基本列},是指当$n,m \rightarrow
+\infty$时,$\rho(x_n,x_m)\rightarrow 0$.
+\end{defi}
+
+\begin{defi}
+距离空间$\Xp$叫做\textbf{完备的},是指每个基本列是收敛列.
+\end{defi}
+
+\begin{defi}
+设$T : \Xp \to \Yt$是一个映射,给定$x_0 \in \X$,称$T$在点$x_0$处连续,是
+指$\forall \{x_0\} \subset \X$,
+\[
+\lim_{n\rightarrow \infty}{\rho(x_n,x_0) = 0} \Rightarrow
+\lim_{n\rightarrow \infty}{\tau(Tx_n,Tx_0) = 0}
+\].
+\end{defi}
+
+\begin{prop}
+给定$x_0 \in \X$,映射$T : \Xp \to \Yt$在点$x_0$处连续的充分必要条件
+是:$\forall \epsilon > 0, \exists \delta = \delta(x_0,\epsilon)
+> 0$,使得对于$x \in \X$,
+\[
+\rho(x,x_0) < \delta \Rightarrow \tau(Tx,Tx_0) < \epsilon
+\].
+\end{prop}
+
+\begin{defi}
+称$T : \Xp \to \Xp$是一个\textbf{压缩映射},如果存在$0 < \alpha < 1$,使
+得$\rho(Tx,Ty)\leq\alpha\rho(x,y)(\forall x,y \in \X)$.
+\end{defi}
+
+\begin{thm}[\textbf{Banach不动点定理--压缩映像原理}]
+设$\X$是一个完备的距离空间,$T$是$\X$到其自身的一个压缩映射，那么在$\X$中存在唯一的$T$的不动点.
+\end{thm}
+\end{document}

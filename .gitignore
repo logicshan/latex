@@ -7,3 +7,5 @@
 *.tex~
 *.bbl
 *.bib~
+*.gz(busy)
+*.xml
