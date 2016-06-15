@@ -10,10 +10,24 @@
 
 \newcommand{\X}{\mathscr{X}}
 \newcommand{\Xp}{(\mathscr{X},\rho)}
+\newcommand{\Y}{\mathscr{Y}}
 \newcommand{\Yt}{(\mathscr{Y},\tau)}
+\newcommand{\SCRL}{\mathscr{L}}
+\newcommand{\D}{\mathscr{D}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\LXY}{\mathscr{L}(\mathscr{X},\mathscr{Y})}
+\newcommand{\LXX}{\mathscr{L}(\mathscr{X},\mathscr{X})}
+\newcommand{\LXK}{\mathscr{L}(\mathscr{X},\mathbb{K})}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\DO}{\mathscr{D}(\Omega)}
+\newcommand{\CRM}{\mathrm{C}}
 
 \DeclareMathOperator{\Ima}{Im}
 \DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\supp}{supp}
 
 \begin{document}
 \chapter{度量空间}
@@ -74,4 +88,318 @@ $\lim\limits_{n\rightarrow \infty}{x_n} = x$.
 \begin{thm}[\textbf{Banach不动点定理--压缩映像原理}]
 设$\X$是一个完备的距离空间,$T$是$\X$到其自身的一个压缩映射，那么在$\X$中存在唯一的$T$的不动点.
 \end{thm}
+
+\section{完备化}
+\begin{thm}
+每个度量空间$\Xp$有一个完备化空间,且其完备化空间在等距同构的意义下唯一.
+\end{thm}
+
+\section{列紧集}
+\begin{defi}
+给定距离空间$\Xp$,$A$是$\X$的子集,如果$A$中的任意点列在$A$中有一个收
+敛子列，则称$A$是\textbf{列紧的}.如果这个收敛子列还收敛到$A$中的点，则
+称$A$是\textbf{自列紧的}.如果空间$\X$是列紧的，那么称$\X$是\textbf{列紧空间}.
+\end{defi}
+
+\begin{prop}
+$\mathbb{R}^n$中有界集是列紧集，任意有界闭集是自列紧集。
+\end{prop}
+
+\begin{prop}
+列紧空间内任意子集是列紧集；任意闭子空间是自列紧集.
+\end{prop}
+
+\begin{prop}
+列紧空间必是完备空间.
+\end{prop}
+
+\begin{defi}
+给定距离空间$\Xp$,$M \subset \X$.
+\renewcommand{\labelenumi}{(\theenumi)}
+\begin{enumerate}
+\item 设存在$N \subset M$,$\epsilon > 0$,若对任意$x \in M$,总存在$y
+  \in N$,使得$x \in B(y,\epsilon)$,那么称$N$是$M$的一个$\epsilon$\textbf{网}.如果$N$还是一个有限集，那么称$N$是$M$的一个\textbf{有限$\epsilon$网}.
+\item 如果对任意$\epsilon>0$,都存在$M$的一个有限$\epsilon$网，则称集合
+  $M$是\textbf{完全有界的}.
+\end{enumerate}
+\end{defi}
+
+\begin{thm}[\textbf{Hausdorff定理}]
+设$\Xp$是距离空间，$M \subset \X$.
+\end{thm}
+
+\renewcommand{\labelenumi}{(\theenumi)}
+\begin{enumerate}
+\item 若$M$在$\X$中列紧，则$M$完全有界;
+\item 若$\X$是完备空间，$M$完全有界，则$M$列紧.
+\end{enumerate}
+
+\begin{defi}
+一个距离空间若有可数稠密子集，就称为是\textbf{可分的}.
+\end{defi}
+
+\begin{thm}
+完全有界的距离空间是可分的.
+\end{thm}
+
+\begin{defi}
+紧集
+\end{defi}
+
+\begin{thm}
+设$\Xp$是距离空间,为了$M \subset \X$是紧致集，必须且仅须它是自列紧集.
+\end{thm}
+
+\begin{defi}
+一致有界
+\end{defi}
+
+\begin{defi}
+等度连续
+\end{defi}
+
+\begin{thm}[\textbf{Arzela-Ascoli定理}]
+结合$F \subset C(M)$是一个列紧集的充分必要条件是：
+\renewcommand{\labelenumi}{(\theenumi)}
+\begin{enumerate}
+\item $F$一致有界，即存在常数$M_1$，对任何$f \in F$，都有$|f(x)|
+  \leq M_1$;
+\item $F$是等度连续的，即任给$\epsilon > 0$,存在$\delta =
+  \delta(\epsilon) > 0$,使得对任意$f \in F$以及$x_1,x_2 \in M$,只要
+  $\rho(x_1,x_2) < \delta$,就有$|f(x_1) - f(x_2)| < \epsilon$.
+\end{enumerate}
+\end{thm}
+
+\begin{prop}
+$M$是一个紧距离空间，则$(C(M), d)$是完备距离空间.
+\end{prop}
+
+\section{线性赋范空间}
+$B^*$ - 复的线性赋范空间
+
+完备的线性赋范空间叫做\textbf{Banach空间},简称为$B$空间.
+
+\begin{thm}
+有穷维线性空间上任意两个范数等价.
+\end{thm}
+
+
+\chapter{线性算子与线性泛函}
+
+\section{线性算子与线性泛函的定义}
+\begin{defi}
+设$\X,\Y$是两个线性空间，$D$是$\X$的一个线性子空间.$T :　D \to \Y$是一
+种映射，$D$称为$T$的\textbf{定义域},有时记作$D(T)$.$R(T) = \{Tx \mid
+  \forall x \in D\}$称为$T$的\textbf{值域}.如果
+\[
+T(\alpha x + \beta y) = \alpha Tx + \beta Ty (\forall x,y \in D,
+\forall \alpha,\beta \in \K),
+\]
+那么称$T$是一个\textbf{线性算子}.
+\end{defi}
+
+\begin{defi}
+当$\Y$是数域$\K$时，$T$称为$\K$域上的线性泛函.特别地，
+取值于实数(或复数)的线性算子称为\textbf{实}(或\textbf{复})\textbf{线性
+  泛函}.
+\end{defi}
+
+\begin{defi}
+设$\X,\Y$是$B^*$空间，线性算子$T : D(T) \to \Y, D(T) \subset \X$. 称
+$T$在$x_0 \in D(T)$\textbf{连续}是指
+\[
+\left.
+\begin{array}{l}
+x_n \in D(T)\\
+x_n \rightarrow x_0
+\end{array}
+\right\}
+\Rightarrow Tx_n \to Tx_0.
+\]
+\end{defi}
+
+\begin{prop}
+$T$在定义域上处处连续的充分必要条件是$T$在$x=\theta$处连续.
+\end{prop}
+
+\begin{defi}
+设$\X$和$\Y$是线性赋范空间，$T$是$\X$到$\Y$的线性算子，如果有常数$M >
+0$，使得
+\[
+\norm{Tx}_\Y \leq M \norm{x}_\X (\forall x \in \X),
+\]
+则称$T$是\textbf{有界线性算子}.
+\end{defi}
+
+\begin{prop}
+设$\X$和$\Y$都是线性赋范空间，为了线性算子$T$连续，必须且仅须$T$是有界
+的，即$T$连续$\Leftrightarrow T$有界.
+\end{prop}
+
+\begin{defi}
+用$\LXY$表示一切由$\X$到$\Y$的有界线性算子的全体，并规定
+\[
+\norm{T} = \sup_{x\neq \theta}\frac{\norm{Tx}}{\norm{x}} =
+\sup_{\norm{x} = 1}\norm{Tx}, \text{其中}T \in \LXY.
+\]
+\end{defi}
+
+特别用$\SCRL(\X)$表示$\LXX$以及用$\X^*$表示$\LXK$,即$\X^*$表示$\X$上的有
+界线性泛函的全体.
+
+若在$\LXY$上规定线性运算
+\[
+(a_1T_1 + a_2T_2)x = a_1T_1x + a_2T_2x, \forall x \in \X,
+\]
+其中$a_1,a_2 \in \K, T_1,T_2 \in \LXY$,则$\LXY$是一个线性空间.
+
+\begin{thm}
+当$\X$是$B^*$空间,$\Y$是$B$空间时，$\LXY$按
+$\left\lVert\cdot\right\rVert$构成一个Banach空间.
+\end{thm}
+
+\section{Riesz定理及其应用}
+
+\begin{thm}[\textbf{Riesz表示定理}]
+设$f$是Hilbert空间$\X$上的连续线性泛函，则存在唯一的元$y_f \in \X$,使
+得
+\[
+f(x) = (x,y_f) (\forall x \in \X),
+\]
+而且$\norm{f} = \norm{y_f}$.于是由$f$到$y_f$给出了$\X^*$到$\X$的一个同
+构.
+\end{thm}
+
+\section{纲与开映像定理}
+
+\section{Hahn-Banach定理}
+
+\section{共轭空间 $\cdot$ 弱收敛 $\cdot$ 自反空间}
+
+\begin{defi}
+设$\X$是$B^*$空间，$\X$上所有连续线性泛函全体，按范数
+\[
+\norm{f} = \sup_{\norm{x}=1}\abs{f(x)}
+\]
+构成一个$B$空间，称为$\X$的\textbf{共轭空间}，记为$\X^*$.
+\end{defi}
+
+\begin{defi}
+设$\X$是一个$B^*$空间，$\{x_n\} \subset \X, x \in \X$, 称$\{x_n\}$弱收
+敛到$x$,记作$x_n \rightharpoonup x$,是指：对$\forall f \in \X^*$都有
+$\lim\limits_{n\to \infty}f(x_n) = f(x)$,$x$称做点列$\{x_n\}$的弱极限.
+\end{defi}
+
+\section{线性算子的谱}
+\begin{defi}
+设 $A$ 是闭线性算子, $D(A)\subset \X, A : \X \to \X, \lambda \in \C$
+称为 $A$ 的\textbf{本征值}是指: $\exists x_0 \in D(A) \setminus \{\theta\}$, 适合
+$Ax_0 = \lambda x_0$, 并称相应的 $x_0$ 为对应于 $A$ 的\textbf{本征元}.
+\end{defi}
+
+\begin{defi}
+设 $\X$ 是复 $B$ 空间, $A : D(A) \to \X$ 是闭线性算子, 称
+\[
+\rho(A) \overset{\text{def}}{=} \{\lambda \in \C \mid (\lambda I -
+A)^{-1} \in \SCRL(\X)\}
+\]
+为 $A$ 的\textbf{预解集}. $\lambda \in \rho(A)$ 称为 $A$ 的\textbf{正则
+  值}.
+\end{defi}
+
+\begin{defi}
+称集合 $\sigma(A) \overset{\text{def}}{=} \C \setminus \rho(A)$ 为 $A$
+的\textbf{谱集}. $\lambda \in \sigma(A)$ 称为 $A$ 的\textbf{谱点}.
+\end{defi}
+
+注: 闭线性算子-定义2.3.9.
+
+\chapter{广义函数与Sobolev空间}
+
+\section{广义函数的概念}
+
+广义函数是定义在一类"性质很好"的函数空间上的连续线性泛函.
+
+设 $\Omega \subset \R^n$ 是一个开集, $u \in \CRM(\overline{\Omega})$,
+称集合
+\[
+F = \{x \in \Omega \mid u(x) \neq 0\}
+\]
+的闭包(关于$\Omega$)为 $u$ 的关于 $\Omega$ 的\textbf{支集}, 记作
+$\supp{u}$. 换句话说, 连续函数 $u$ 的支集是在此集外 $u$ 恒为 $0$ 的相对于
+$\Omega$ 的最小闭集.
+
+对于整数 $k \le 0$ (可以是 $\infty$), $\CRM^k_0(\Omega)$ 表记支集
+在 $\Omega$ 内紧的全体 $\CRM^k(\overline{\Omega})$ 函数所组成的集合,
+于是
+\[
+\CRM^\infty_0(\Omega) \subset \cdots \subset \CRM^{k+1}_0(\Omega)
+\subset \CRM^k_0(\Omega) \subset \cdots \subset \CRM^0_0(\Omega).
+\]
+
+\begin{defi}
+在集合 $\CRM^\infty_0(\Omega)$ 上定义收敛性如下: 我们说序列
+$\{\varphi_j\}$ 收敛于 $\varphi_0$, 如果
+\renewcommand{\labelenumi}{(\theenumi)}
+\begin{enumerate}
+\item 存在一个相对于 $\Omega$ 的紧集 $\mathrm{K} \subset \Omega$, 使得
+  $\supp{(\varphi_j)} \subset \mathrm{K} (j = 0, 1, 3, \cdots);$
+\item 对于任意指标 $\alpha = (\alpha_1, \cdots, \alpha_n)$ 都有
+\[
+\max_{x\in \mathrm{K}}{\abs{\partial^\alpha\varphi_j(x)
+    - \partial^\alpha\varphi_0(x)}} \rightarrow 0 (j \rightarrow \infty).
+\]
+\end{enumerate}
+带上述收敛性的线性空间 $\CRM^\infty_0(\Omega)$, 称为\textbf{基本空间} $\D(\Omega)$.
+\end{defi}
+
+\begin{defi}
+$\DO$ 上的一切线性连续泛函都称为\textbf{广义函数}, 即广义函数是这样的
+泛函 $f : \DO \to \R^1$, 满足
+\renewcommand{\labelenumi}{(\theenumi)}
+\begin{enumerate}
+\item 线性:
+\[
+\langle f, \lambda_1\varphi_1 + \lambda_2\varphi_2\rangle =
+\lambda_1\langle f,\varphi_1\rangle + \lambda_2\langle
+f,\varphi_2\rangle
+\]
+\[
+(\forall \varphi_1, \varphi_2 \in \DO, \forall \lambda_1, \lambda_2
+\in \R^1);
+\]
+\item 对于任意的 $\{\varphi_j\} \subset \DO$, 只要 $\varphi_j \to
+  \varphi_0 (\DO)$, 都有
+\[
+\langle f,\varphi_j\rangle \to \langle f,\varphi_0\rangle (j \to \infty).
+\]
+\end{enumerate}
+一切广义函数所组成的集合记作 $\D'(\Omega)$.
+\end{defi}
+
+\section{$B_0$空间}
+
+\section{广义函数的运算}
+
+$\D(\Omega)$ 中的运算(指若干 $\D(\Omega)$ 到自身的连续线性算子的运算).
+
+线性算子 $A : \D(\Omega) \to \D(\Omega)$ 称为连续的, 是指:
+\[
+\varphi_j \rightarrow \varphi (\DO) \Rightarrow A\varphi_j \rightarrow
+A\varphi (\DO).
+\]
+$A$ 是连续线性算子 $\Leftrightarrow \varphi_j \rightarrow 0 (\DO)
+\Rightarrow A\varphi_j \rightarrow 0 (\DO)$, 记作 $A \in \SCRL(\DO).$
+
+$\D'(\Omega)$ 中的运算(指若干 $\D'(\Omega)$ 到自身的连续线性算子的运算).
+
+在 $\D'(\Omega)$ 上定义算子 $A^*$ 如下:
+
+设 $A : \DO \to \DO$ 为线性算子, $\forall f \in \D'(\Omega), A^*f \in
+\D'(\Omega)$ 由下式确定:
+\[
+\langle A^*f, \varphi \rangle = \langle f, A\varphi\rangle (\forall \varphi \in \DO),
+\]
+则 $A^* : \D'(\Omega) \to \D'(\Omega)$ 并且是连续的.
+
 \end{document}
