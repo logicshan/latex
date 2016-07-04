@@ -4,9 +4,9 @@
 \usepackage{mathrsfs}
 \usepackage{color}
 
-\newtheorem{defi}{定义}[section]
-\newtheorem{prop}[defi]{命题}
-\newtheorem{thm}[defi]{定理}
+\newtheorem{defn}{定义}[section]
+\newtheorem{prop}[defn]{命题}
+\newtheorem{thm}[defn]{定理}
 
 \newcommand{\X}{\mathscr{X}}
 \newcommand{\Xp}{(\mathscr{X},\rho)}
@@ -33,7 +33,7 @@
 \chapter{度量空间}
 
 \section{压缩映像原理}
-\begin{defi}
+\begin{defn}
 设$\X$是一个非空集,若存在$\X$上一个双变量的实值函数$\rho(x,y)$,满足
 下列三个条件:
 \renewcommand{\labelenumi}{(\theenumi)}
@@ -44,32 +44,32 @@
   \X)$,
 \end{enumerate}
 则称$\rho$为$\X$上一个\textbf{距离},$\X$称为\textbf{距离空间}.一个以$\rho$为距离的距离空间$\X$记作$\textcolor{red}{\Xp}$.
-\end{defi}
+\end{defn}
 
-\begin{defi}
+\begin{defn}
 距离空间$\Xp$中的点列$\{x_n\}$称为\textbf{收敛列},是指存在$\X$中
 的点$x$,当$n \rightarrow \infty$时,$\rho(x_n,x) \rightarrow 0$.此时称$x$是点列
 $\{x_n\}$的\textbf{极限},记作$x_n \rightarrow x (n \rightarrow \infty)$,也记作
 $\lim\limits_{n\rightarrow \infty}{x_n} = x$.
-\end{defi}
+\end{defn}
 
-\begin{defi}
+\begin{defn}
 距离空间$\Xp$上的点列$\{x_n\}$叫做\textbf{基本列},是指当$n,m \rightarrow
 \infty$时,$\rho(x_n,x_m)\rightarrow 0$.
-\end{defi}
+\end{defn}
 
-\begin{defi}
+\begin{defn}
 距离空间$\Xp$叫做\textbf{完备的},是指每个基本列是收敛列.
-\end{defi}
+\end{defn}
 
-\begin{defi}
+\begin{defn}
 设$T : \Xp \to \Yt$是一个映射,给定$x_0 \in \X$,称$T$在点$x_0$处连续,是
 指$\forall \{x_0\} \subset \X$,
 \[
 \lim_{n\rightarrow \infty}{\rho(x_n,x_0) = 0} \Rightarrow
 \lim_{n\rightarrow \infty}{\tau(Tx_n,Tx_0) = 0}
 \].
-\end{defi}
+\end{defn}
 
 \begin{prop}
 给定$x_0 \in \X$,映射$T : \Xp \to \Yt$在点$x_0$处连续的充分必要条件
@@ -80,10 +80,10 @@ $\lim\limits_{n\rightarrow \infty}{x_n} = x$.
 \].
 \end{prop}
 
-\begin{defi}
+\begin{defn}
 称$T : \Xp \to \Xp$是一个\textbf{压缩映射},如果存在$0 < \alpha < 1$,使
 得$\rho(Tx,Ty)\leq\alpha\rho(x,y)(\forall x,y \in \X)$.
-\end{defi}
+\end{defn}
 
 \begin{thm}[\textbf{Banach不动点定理--压缩映像原理}]
 设$\X$是一个完备的距离空间,$T$是$\X$到其自身的一个压缩映射，那么在$\X$中存在唯一的$T$的不动点.
@@ -95,11 +95,11 @@ $\lim\limits_{n\rightarrow \infty}{x_n} = x$.
 \end{thm}
 
 \section{列紧集}
-\begin{defi}
+\begin{defn}
 给定距离空间$\Xp$,$A$是$\X$的子集,如果$A$中的任意点列在$A$中有一个收
 敛子列，则称$A$是\textbf{列紧的}.如果这个收敛子列还收敛到$A$中的点，则
 称$A$是\textbf{自列紧的}.如果空间$\X$是列紧的，那么称$\X$是\textbf{列紧空间}.
-\end{defi}
+\end{defn}
 
 \begin{prop}
 $\mathbb{R}^n$中有界集是列紧集，任意有界闭集是自列紧集。
@@ -113,7 +113,7 @@ $\mathbb{R}^n$中有界集是列紧集，任意有界闭集是自列紧集。
 列紧空间必是完备空间.
 \end{prop}
 
-\begin{defi}
+\begin{defn}
 给定距离空间$\Xp$,$M \subset \X$.
 \renewcommand{\labelenumi}{(\theenumi)}
 \begin{enumerate}
@@ -122,7 +122,7 @@ $\mathbb{R}^n$中有界集是列紧集，任意有界闭集是自列紧集。
 \item 如果对任意$\epsilon>0$,都存在$M$的一个有限$\epsilon$网，则称集合
   $M$是\textbf{完全有界的}.
 \end{enumerate}
-\end{defi}
+\end{defn}
 
 \begin{thm}[\textbf{Hausdorff定理}]
 设$\Xp$是距离空间，$M \subset \X$.
@@ -134,29 +134,29 @@ $\mathbb{R}^n$中有界集是列紧集，任意有界闭集是自列紧集。
 \item 若$\X$是完备空间，$M$完全有界，则$M$列紧.
 \end{enumerate}
 
-\begin{defi}
+\begin{defn}
 一个距离空间若有可数稠密子集，就称为是\textbf{可分的}.
-\end{defi}
+\end{defn}
 
 \begin{thm}
 完全有界的距离空间是可分的.
 \end{thm}
 
-\begin{defi}
+\begin{defn}
 紧集
-\end{defi}
+\end{defn}
 
 \begin{thm}
 设$\Xp$是距离空间,为了$M \subset \X$是紧致集，必须且仅须它是自列紧集.
 \end{thm}
 
-\begin{defi}
+\begin{defn}
 一致有界
-\end{defi}
+\end{defn}
 
-\begin{defi}
+\begin{defn}
 等度连续
-\end{defi}
+\end{defn}
 
 \begin{thm}[\textbf{Arzela-Ascoli定理}]
 结合$F \subset C(M)$是一个列紧集的充分必要条件是：
@@ -187,7 +187,7 @@ $B^*$ - 复的线性赋范空间
 \chapter{线性算子与线性泛函}
 
 \section{线性算子与线性泛函的定义}
-\begin{defi}
+\begin{defn}
 设$\X,\Y$是两个线性空间，$D$是$\X$的一个线性子空间.$T :　D \to \Y$是一
 种映射，$D$称为$T$的\textbf{定义域},有时记作$D(T)$.$R(T) = \{Tx \mid
   \forall x \in D\}$称为$T$的\textbf{值域}.如果
@@ -196,15 +196,15 @@ T(\alpha x + \beta y) = \alpha Tx + \beta Ty (\forall x,y \in D,
 \forall \alpha,\beta \in \K),
 \]
 那么称$T$是一个\textbf{线性算子}.
-\end{defi}
+\end{defn}
 
-\begin{defi}
+\begin{defn}
 当$\Y$是数域$\K$时，$T$称为$\K$域上的线性泛函.特别地，
 取值于实数(或复数)的线性算子称为\textbf{实}(或\textbf{复})\textbf{线性
   泛函}.
-\end{defi}
+\end{defn}
 
-\begin{defi}
+\begin{defn}
 设$\X,\Y$是$B^*$空间，线性算子$T : D(T) \to \Y, D(T) \subset \X$. 称
 $T$在$x_0 \in D(T)$\textbf{连续}是指
 \[
@@ -216,33 +216,33 @@ x_n \rightarrow x_0
 \right\}
 \Rightarrow Tx_n \to Tx_0.
 \]
-\end{defi}
+\end{defn}
 
 \begin{prop}
 $T$在定义域上处处连续的充分必要条件是$T$在$x=\theta$处连续.
 \end{prop}
 
-\begin{defi}
+\begin{defn}
 设$\X$和$\Y$是线性赋范空间，$T$是$\X$到$\Y$的线性算子，如果有常数$M >
 0$，使得
 \[
 \norm{Tx}_\Y \leq M \norm{x}_\X (\forall x \in \X),
 \]
 则称$T$是\textbf{有界线性算子}.
-\end{defi}
+\end{defn}
 
 \begin{prop}
 设$\X$和$\Y$都是线性赋范空间，为了线性算子$T$连续，必须且仅须$T$是有界
 的，即$T$连续$\Leftrightarrow T$有界.
 \end{prop}
 
-\begin{defi}
+\begin{defn}
 用$\LXY$表示一切由$\X$到$\Y$的有界线性算子的全体，并规定
 \[
 \norm{T} = \sup_{x\neq \theta}\frac{\norm{Tx}}{\norm{x}} =
 \sup_{\norm{x} = 1}\norm{Tx}, \text{其中}T \in \LXY.
 \]
-\end{defi}
+\end{defn}
 
 特别用$\SCRL(\X)$表示$\LXX$以及用$\X^*$表示$\LXK$,即$\X^*$表示$\X$上的有
 界线性泛函的全体.
@@ -276,28 +276,28 @@ f(x) = (x,y_f) (\forall x \in \X),
 
 \section{共轭空间 $\cdot$ 弱收敛 $\cdot$ 自反空间}
 
-\begin{defi}
+\begin{defn}
 设$\X$是$B^*$空间，$\X$上所有连续线性泛函全体，按范数
 \[
 \norm{f} = \sup_{\norm{x}=1}\abs{f(x)}
 \]
 构成一个$B$空间，称为$\X$的\textbf{共轭空间}，记为$\X^*$.
-\end{defi}
+\end{defn}
 
-\begin{defi}
+\begin{defn}
 设$\X$是一个$B^*$空间，$\{x_n\} \subset \X, x \in \X$, 称$\{x_n\}$弱收
 敛到$x$,记作$x_n \rightharpoonup x$,是指：对$\forall f \in \X^*$都有
 $\lim\limits_{n\to \infty}f(x_n) = f(x)$,$x$称做点列$\{x_n\}$的弱极限.
-\end{defi}
+\end{defn}
 
 \section{线性算子的谱}
-\begin{defi}
+\begin{defn}
 设 $A$ 是闭线性算子, $D(A)\subset \X, A : \X \to \X, \lambda \in \C$
 称为 $A$ 的\textbf{本征值}是指: $\exists x_0 \in D(A) \setminus \{\theta\}$, 适合
 $Ax_0 = \lambda x_0$, 并称相应的 $x_0$ 为对应于 $A$ 的\textbf{本征元}.
-\end{defi}
+\end{defn}
 
-\begin{defi}
+\begin{defn}
 设 $\X$ 是复 $B$ 空间, $A : D(A) \to \X$ 是闭线性算子, 称
 \[
 \rho(A) \overset{\text{def}}{=} \{\lambda \in \C \mid (\lambda I -
@@ -305,12 +305,12 @@ A)^{-1} \in \SCRL(\X)\}
 \]
 为 $A$ 的\textbf{预解集}. $\lambda \in \rho(A)$ 称为 $A$ 的\textbf{正则
   值}.
-\end{defi}
+\end{defn}
 
-\begin{defi}
+\begin{defn}
 称集合 $\sigma(A) \overset{\text{def}}{=} \C \setminus \rho(A)$ 为 $A$
 的\textbf{谱集}. $\lambda \in \sigma(A)$ 称为 $A$ 的\textbf{谱点}.
-\end{defi}
+\end{defn}
 
 注: 闭线性算子-定义2.3.9.
 
@@ -337,7 +337,7 @@ $\Omega$ 的最小闭集.
 \subset \CRM^k_0(\Omega) \subset \cdots \subset \CRM^0_0(\Omega).
 \]
 
-\begin{defi}
+\begin{defn}
 在集合 $\CRM^\infty_0(\Omega)$ 上定义收敛性如下: 我们说序列
 $\{\varphi_j\}$ 收敛于 $\varphi_0$, 如果
 \renewcommand{\labelenumi}{(\theenumi)}
@@ -351,9 +351,9 @@ $\{\varphi_j\}$ 收敛于 $\varphi_0$, 如果
 \]
 \end{enumerate}
 带上述收敛性的线性空间 $\CRM^\infty_0(\Omega)$, 称为\textbf{基本空间} $\D(\Omega)$.
-\end{defi}
+\end{defn}
 
-\begin{defi}
+\begin{defn}
 $\DO$ 上的一切线性连续泛函都称为\textbf{广义函数}, 即广义函数是这样的
 泛函 $f : \DO \to \R^1$, 满足
 \renewcommand{\labelenumi}{(\theenumi)}
@@ -375,7 +375,7 @@ f,\varphi_2\rangle
 \]
 \end{enumerate}
 一切广义函数所组成的集合记作 $\D'(\Omega)$.
-\end{defi}
+\end{defn}
 
 \section{$B_0$空间}
 

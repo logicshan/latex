@@ -1,0 +1,167 @@
+\documentclass{ctexart}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage{tikz-cd}
+
+\newtheorem*{prop}{命题}
+\newtheorem*{thm}{定理}
+\newtheorem*{defn}{定义}
+
+\DeclareMathOperator{\rel}{rel}
+
+\begin{document}
+\begin{defn}
+设 $X,Y$ 是两个拓扑空间. 记
+\[
+C(X,Y) = \{f : X \to Y \mid f \text{是连续映射}\}.
+\]
+任取 $f,g \in C(X,Y)$, 若有连续映射 $H : X \times [0,1] \to Y$ 满足
+\[
+H(x,0) \equiv f(x),\hspace{1em} H(x,1) \equiv g(x),
+\]
+则称 $f$ 和 $g$ \textbf{同伦}(homotopic), 记为 $f \overset{H}{\simeq}
+g$; 并称 $H$ 为从 $f$ 到 $g$ 的 \textbf{伦移}(homotopy), 称每个映射
+$h_t : X \to Y, x \mapsto H(x,t)$ 为 $H$ 在 $t$ 时刻的 \textbf{切
+  片}(section), 称每条道路 $\eta_x : [0,1] \to Y, t \mapsto H(x,t)$ 为
+$H$ 在 $x$ 点处的 \textbf{踪}(trace).
+\end{defn}
+\begin{defn}
+按同伦关系将 $C(X,Y)$ 中的映射划分等价类, 每一个等价类称为一个
+\textbf{映射类}(mapping class). $f$ 所在的映射类记为 $\langle f
+\rangle$. 所有从 $X$ 到 $Y$ 的映射类构成的集合记为 $[X,Y]$.
+\end{defn}
+
+$[X,Y]$ 总是非空的, 因为它至少要含有一个常值映射所在的映射类. 如果 $f$
+同伦于常值映射, 则称 $f$ \textbf{零伦}(null homotopic).
+
+\begin{defn}
+设 $A \subset X, f,g \in C(X,Y)$. 如果存在伦移 $H : f \simeq g$ 满足任
+取 $a \in A, H(a,t) \equiv f(a) = g(a)$, 则称 $f$ 和 $g$ \textbf{相对
+  于} $A$ \textbf{同伦}(homotopic relative to A), 记为 $H : f \simeq g
+\rel A$, 并称 $H$ 为一个 \textbf{相对于} $A$ \textbf{的伦移}(homotopy
+relative to A).
+\end{defn}
+
+\begin{defn}
+设 $X$ 与 $Y$ 为拓扑空间, 如果存在连续映射 $f : X \to Y$ 和 $g : Y \to
+Y$, 使得
+\[
+g \circ f \simeq id_X, \hspace{1em} f \circ g \simeq id_Y,
+\]
+则称 $X$ 和 $Y$ \textbf{同伦等价}(homotopy equivalent), 记为 $X \simeq
+Y$. 我们也称映射 $f$ 和 $g$ 为 \textbf{同伦等价}(homotopy
+equivalence), 并称它们互为 \textbf{同伦逆}(homotopy inverse).
+\end{defn}
+注意, 一个同伦等价的同伦逆并不唯一.
+
+\begin{defn}
+设 $A \subset X, i : A \hookrightarrow X$ 是包含映射. 如果映射 $r : X
+\to A$ 满足 $r \circ i = r|_A = id_A$, 则称之为 \textbf{收缩映
+  射}(retraction), 称 $A$ 为 $X$ 的 \textbf{收缩核}(retract). 如果一个
+收缩映射 $r$ 还满足 $i \circ r \simeq id_X$, 则称之为 \textbf{形变收
+  缩}(deformation retraction), 称 $A$ 为 $X$ 的 \textbf{形变收缩
+  核}(deformation retract). 如果形变收缩 $r$ 还满足 $i \circ r \simeq
+id_X \rel A$, 则称之为 \textbf{强形变收缩}(strong deformation
+retraction), 称 $A$ 为 $X$ 的\textbf{强形变收缩核}(strong deformation retract).
+\end{defn}
+
+\begin{defn}
+如果一个空间可以形变收缩到一点, 则称它 \textbf{可缩}(contractible).
+\end{defn}
+
+显然可缩空间一定是道路连通的, 因为这个空间中的每个点都可以沿一条道路移
+动到作为收缩核的那个点上去. 注意, 在收缩过程中那个点完全可以先暂时跑到
+别的地方再跑回来. 换言之, 这个概念不要求它是强形变收缩核.
+
+\begin{defn}
+设 $a,b : [0,1] \to X$ 都是从 $x$ 到 $y$ 的道路, $H : [0,1] \times
+[0,1] \to X$ 是从 $a$ 到 $b$ 的伦移, 并且每个时刻 $t$ 的切片 $h_t :
+[0,1] \to X, s \mapsto H(s,t)$ 也都是从 $x$ 到 $y$ 的道路, 即
+\[
+h_0 = a, \hspace{1ex}h_1 = b,\hspace{1ex} h_t(0) \equiv x,\hspace{1ex} h_t(1) \equiv y,
+\]
+则称 $a$ 和 $b$ \textbf{定端同伦}(path homotopic, 也称 \textbf{道路同
+  伦}), 记为 $a \simeq b$, 称 $H$ 为 \textbf{定端伦移}(path homotopy,
+也称 \textbf{道路伦移}), 并称所有与 $a$ 定端同伦的道路构成的集合为 $a$
+的 \textbf{道路类}(class of paths), 记为 $\langle a \rangle$.
+\end{defn}
+
+\begin{defn}
+称从 $x_0$ 到 $x_0$ 的道路为以 $x_0$ 为 \textbf{基点}(base point) 的
+\textbf{闭道路}(loop). 闭道路所在的道路类称为 \textbf{闭道路类}(class
+of loops). $X$ 上所有以 $x_0$ 为基点的闭道路类构成的集合记为 $\pi_1(X,x_0)$.
+\end{defn}
+
+\begin{defn}
+设 $a$ 是从 $x$ 到 $y$ 的道路, $b$ 是从 $y$ 到 $z$ 的道路, 则称以两倍
+速度依次走完 $a$ 和 $b$ 的道路
+\[
+c(t) =
+\begin{cases}
+a(2t),     & \text{若} 0 \leq t \leq \frac{1}{2};\\
+b(2t - 1), & \text{若} \frac{1}{2} \leq t \leq 1
+\end{cases}
+\]
+为 $a$ 和 $b$ 的 \textbf{乘积道路}(product path), 记为 $ab$.
+\end{defn}
+
+\begin{defn}
+基本群平凡的道路连通空间称为 \textbf{单连通}(simply connected)空间.
+\end{defn}
+
+\begin{thm}
+连续映射 $f : X \to Y$ 诱导基本群的同态
+\[
+f_\pi : \pi_1(X,x_0) \to \pi_1(Y,f(x_0)), \hspace{1em}\langle a
+\rangle \mapsto \langle f \circ a \rangle,
+\]
+称为 $f$ 的 \textbf{诱导同态}(induced homomorphism).
+\end{thm}
+
+\begin{defn}
+设 $p : E \to B$ 连续. 如果连续映射 $f : X \to B$ 和 $f^\uparrow : X
+\to E$ 满足如下交换图表, 即 $f = p \circ f^\uparrow$, 则称
+$f^\uparrow$ 为 $f$ 关于 $p$ 的 \textbf{提升}(lift 或 lifting).
+\begin{center}
+\begin{tikzcd}
+& E \arrow[d, "p"] \\
+X \arrow[r, "f"] \arrow[ur, dashrightarrow, "f^\uparrow"] & B
+\end{tikzcd}
+\end{center}
+\end{defn}
+
+\begin{defn}
+设 $p : E \to B$ 连续. 称一个空间 $X$ 关于 $p$ 满足 \textbf{同伦提升性
+  质}(homotopy lifting property), 如果它满足下述条件: 任取连续映射 $f
+: X \to B$, 只要 $f$ 有提升 $f^\uparrow$, 则从 $f$ 开始的任意伦移 $F$
+一定存在从 $f^\uparrow$ 开始的伦移作为其提升.
+\end{defn}
+\begin{center}
+\begin{tikzcd}
+&& E \arrow[d, "p"] \\
+X \arrow[rru, "f^\uparrow"] \arrow[r, "id \times 0"'] & X \times [0,1]
+\arrow[ru, dashrightarrow, "F^\uparrow"'] \arrow[r, "F"'] & B
+\end{tikzcd}
+\end{center}
+
+\begin{defn}
+设 $p : E \to B$ 连续. 如果任何空间 $X$ 关于 $p$ 均满足同伦提升性质,
+则称 $p$ 为一个 \textbf{纤维化}(fibration). 称 $E$ 为 \textbf{全空
+  间}(total space), 称 $B$ 为 \textbf{底空间}(base space), 称每个
+$p^{-1}(b)$ 为 $b$ 上的一根 \textbf{纤维}(fiber).
+\end{defn}
+
+\begin{defn}
+设 $p : E \to B$ 是一个连续满射, 并且对于每个 $b \in B$ 存在其开邻域
+$U_b$, 使得 $p^{-1}(U_b)$ 是一族互不相交的开集
+$\{V_{b,\lambda}\}_{\lambda \in \Lambda}$ 的并, 并且每个
+$p|_{V_{b,\lambda}} : V_{b,\lambda} \to U_b$ 都是同胚, 则称 $(E,p)$ 为
+$B$ 上的 \textbf{复迭空间}(covering space), 并称 $p$ 为一个 \textbf{复
+  迭映射}(covering map). 称 $E$ 为其 \textbf{全空间}(total space), 称
+$B$ 为其 \textbf{底空间}(base space), 称这些 $U_b$ 为 \textbf{均匀复迭
+  邻域}(evenly-covered neighborhood), 称每个 $p^{-1}(b)$ 为 $b$ 上的
+\textbf{纤维}(fiber).
+\end{defn}
+\end{document}
