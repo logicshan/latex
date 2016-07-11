@@ -1,0 +1,250 @@
+\documentclass{article}
+
+\usepackage{amsmath,amssymb,mathrsfs,tikz-cd}
+
+% \setlength{\parindent}{0pt}
+\pagestyle{plain}
+
+\newcommand{\sk}[2]{\text{sk}_{#1}#2}
+\newcommand{\Rn}{\mathbb{R}^n}
+
+\begin{document}
+\begin{enumerate}
+\item A \textit{basis} of a topology $\tau = \{ V_\alpha \}$ is a subset
+$\{ W_\lambda \} \subset \tau$ such that each open set can be represented
+as the union of a (probably infinite) family of sets from $W_\lambda$.
+
+\item A map $f : X \to Y$ of a topological space $X$ to a topological space
+$Y$ is called \textit{continuous} with respect to the given topologies
+if the preimage of any open set in $Y$ is open in $X$.
+
+\item \textbf{Induced topology.} Let $Y$ be a topological space, and
+  let $X \subset Y$ be a subset. Then one can introduce a topology on
+  $X$ by considering the intersections of $X$ with open subsets in Y
+  as open subsets in $X$. This topology is said to be the induced
+  topology.
+
+In a more general setting, the induced topology is defined as
+follows. Let $Y$ be a topological space, and let $f : X \to Y$ be a
+map. The \textit{induced topology} in $X$ consists of all preimages of
+open sets in $Y$. (The map $f$ is then continuous with respect to the
+induced topology.). For the inclusion map $f$ of a subset $X \subset
+Y$ we recover the previous definition.
+
+\item \textbf{Separability.} A topological space X is said to be
+  \textit{Hausforff space} if any two distinct points $x,y \in X$
+  possess nonintersecting neighborhoods. (A \textit{neighborhood} of a
+  point $x$ is an arbitrary open set containing $x$.)
+
+\item Topological spaces $X$ and $X'$ are called \textit{homotopy
+    equivalent} if there exist continuous maps $f : X \to X'$ and $g :
+  X' \to X$ such that the composite maps $fg$ and $gf$ are homotopic
+  to the identity maps $id_{X'}$ and $id_X$, respectively. Such maps $f$
+  and $g$ are called \textit{homotopy equivalences}.
+
+\item If two topological spaces $X$ and $X'$ are homotopy equivalent,
+  then all their homotopy groups are isomorphic, and for each $A$,
+  there is a natural one-to-one correspondence between the sets
+  $\Pi(A,X)$ and $\Pi(A,X')$, as well as between the sets $\Pi(X,A)$
+  and $\Pi(X',A)$.
+
+\item A map $p : X \to Y$, where the space $Y$ is path-connected, is
+  called a \textit{covering} if for any point $y \in Y$ there is a
+  neighborhood $U$ of $y$ such that the preimage $p^{-1}(U)$ is
+  homeomorphic to a number of copies of $U$ (i.e., $p^{-1}(U) \approx
+  U \times \Delta$, where $\Delta$ is a discrete topological space),
+  and this homeomorphism is compatible with the map $p$, i.e., the
+  natural projection $U \times \Delta \to U$ coincides with $p$. If $\Delta$
+  consists of $k$ points, then the covering is called a
+  \textit{k-fold} or \textit{k-sheeted} covering.
+
+\item Usually, the objects of topology are "sufficiently good"
+  topological spaces, mostly, cell spaces. Other kinds of spaces are
+  used mainly to construct various counterexamples.
+
+\item Let $X$ be a Hausdorff topological space. A \textit{cell space
+    structure} on $X$ is a decomposition of $X$ into a disjoint union
+  of subsets $B_\alpha^k$ homeomorphic to open disks (possibly, of
+  different dimension). For each $B_\alpha^k \subset X$ a
+  \textit{characteristic homeomorphism} $\chi_\alpha^k : D^k \to
+  B_\alpha^k$, where $D^k$ is an open $k$-disk, must be fixed. We
+  assume that this homeomorphism admits an extension to a continuous
+  map (the characteristic map) of the closed disk $\overline{D^k} \to X$
+  satisfying the following conditions (\textit{cell space axioms}):
+
+\textbf{(C)} The image of the boundary of the disk $\overline{D^k}$ is
+contained in a finite set of cells $B_\beta^j$ of smaller dimensions
+$j < k$.
+
+\textbf{(W)} A subset $A \subset X$ is closed if its intersection with
+the closure of any cell is closed.
+
+\item The most import properties of cell spaces are concentrated in
+  the Borsuk lemma, the cellular approximation theorem, and the local
+  contractibility property of cell spaces.
+
+\item \textbf{The Borsuk property.} Let $X$ be a topological space and
+  let $A \subset X$ be a subspace. Denote by $f_A : A \to Y$ the
+  restriction of a map $f : X \to Y$ to $A$. Suppose a homotopy $F_A :
+  A \times I \to Y$ of the map $f_A$ is given, i.e., $F_A(a,0) =
+  f_A(a)$ for $a \in A$. If for any topological space $Y$ and any map
+  $f : X \to Y$ each homotopy $F_A$ extends to a homotopy $F : X
+  \times I \to Y$ of $f$, then the pair of spaces $(X,A)$ is called a
+  \textit{Borsuk pair}.
+
+\item \textbf{Borsuk lemma.} If $X$ is a cell space and $A \subset X$
+  is a cell subspace of $X$ (i.e., a cell space formed by a union of
+  some cells of the space $X$), then $(X,A)$ is a Borsuk pair.
+
+\item A cell space $X$ admits a natural filtration
+\[
+X^0 \subset X^1 \subset X^2 \subset \cdots \subset X,
+\]
+where $X^0$ is the union of all zero-dimensional cells, $X^1$ is the
+union of all one-dimensional and zero-dimensional cells, $X^k$ is the
+union of all cells of dimension not greater than $k$. Obviously, the
+set $X^k \subset X$ also is a cell space; it is called the
+\textit{k-skeleton} of the cell space $X$ and sometimes also denoted
+by $\sk{k}{X}$.
+
+\item Let $X$ and $Y$ be cell spaces. A continuous map $f : X \to Y$
+  is called \textit{cellular} if $f(\sk{n}{X}) \subset \sk{n}{Y}$ for $n
+  = 0,1,2,...$.
+
+\item \textbf{Cellular approximation theorem.} Any map of a cell space
+  to a cell space is homotopic to a cellular map.
+
+\item \textbf{Corollary.} For any cell space $X$ the group $\pi_i(X)$
+  is isomorphic to the group $\pi_i(\sk{i+1}{X})$.
+
+\item \textbf{Definition.} A topological space $X$ is called
+  \textit{k-connected} if it is path-connected and the groups
+  $\pi_1(X), \pi_2(X),\dots, \pi_k(X)$ are trivial. $1$-connected
+  spaces are also called \textit{simply connected}.
+
+\item \textbf{Definition.} A \textit{cellular pair} $(X,Y)$ is a pair
+  consisting of a cellular space $X$ and its cellular subspace $Y
+  \subset X$.
+
+\item \textbf{Theorem.} Suppose $(X,Y)$ is a cellular pair and the
+  space $Y$ is contractible. Then the space $X/Y$ is homotopy
+  equivalent to $X$.
+
+\item \textbf{Theorem.} If a cell space $X$ is k-connected (in
+  particular, path connected), then $X$ is homotopy equivalent to a
+  cell space $X'$ with precisely one zero-dimensional cell and no
+  cells of dimensions $1,2,\dots,k$.
+
+\item \textbf{Definition.} Two coverings $p : X \to Y$ and $p' : X'
+  \to Y'$ are said \textit{equivalent} if there are homeomorphisms $f
+  : X \to X'$ and $g : Y \to Y'$ such that $gp = p'f$. Coverings $p :
+  X \to Y$ and $p' : X' \to Y$ over the same base $Y$ are said to be
+  \textit{equivalent} if there is a homeomorphism $f : X \to X'$ such
+  that $p = p'f$.
+
+\item \textbf{Covering homotopy theorem.} Consider a covering $p : E
+  \to X$. Suppose we are given a map $f : Y \to E$ and a homotopy of
+  the map $p \circ f : Y \to X$, i.e., a map $F : Y \times I \to X$,
+  coinciding with $p \circ f$ on $Y \times \{0\}$. If the space $Y$ is
+  not too bad (namely, if $Y$ is locally path-connected), then the
+  homotopy $F$ lifts uniquely to a homotopy of f, i.e., there is a map
+  $\Phi : Y \times I \to E$ such that
+
+(1) $\Phi$ coincides with $f$ on $Y \times \{0\}$;
+
+(2) the equation $p\Phi = F$ holds.
+
+\begin{tikzcd}
+Y \arrow[r,"f"] \arrow[d,"Y\times \{0\}"'] & E \arrow [d,"p"]\\
+Y \times I \arrow[ru,dashrightarrow,"\Phi"] \arrow[r,"F"'] & X
+\end{tikzcd}
+
+\item \textbf{Theorem.} Let $X$ be a locally $1$-connected (in
+  particular, locally path connected) topological space. Then the
+  following hold:
+
+(1) For any covering $p : E \to X$ the map $p_* : \pi_1(E) \to
+\pi_1(X)$ is a monomorphism.
+
+(2) There is a one-to-one correspondence between the set
+$\pi^{-1}(x_0)$ and the set of cosets $\pi_1(X)/p_*\pi_1(E)$.
+
+(3) For any subgroup $G$ in $\pi_1(X)$ there is a covering $p : E \to
+X$ such that $p_*\pi_1(E) = G$.
+
+\item The notion of a covering can be generalized to the case in which
+  the preimage of a point is not discrete.
+
+\textbf{Definition.} A \textit{locally trivial fiber bundle} is a
+quadruple $(E,B,F,p)$, where $E,B$ and $F$ are topological spaces, and
+$p : E \to B$ is a map possessing the following properties:
+
+1) any point $x \in B$ admits a neighborhood $U$ with the preimage
+$p^{-1}(U)$ homeomorphic to $U \times F$;
+
+2) the homeomorphism $U \times F \to p^{-1}(U)$ is consistent with the
+map $p$, i.e., the diagram
+
+\begin{tikzcd}
+U \times F \arrow[rr] \arrow[dr] & & p^{-1}(U) \arrow[ld,"p"] \\
+& U
+\end{tikzcd}
+
+is commutative.
+
+Condition 2 implies, in particular, that the preimage of each point is
+homeomorphic to $F$.
+
+The map $p$ is called the \textit{projection}, the space $E$ is called
+the \textit{total space} of the bundle, the space $B$ is the \textit{base} of
+the bundle, the space $F$ is the \textit{fiber}, or the
+\textit{typical fiber}.
+
+By abuse of language, we shall often write simply "fiber bundle"
+instead of "locally trivial fiber bundle".
+
+\item \textbf{Definition.} Two fiber bundles $p_1 : E_1 \to B$ and
+  $p_2 : E_2 \to B$ are \textit{equivalent} if there is a
+  homeomorphism $\varphi : E_1 \to E_2$ such that $p_1 = p_2\varphi$.
+
+\item \textit{Definition.} A \textit{trivialization} of a fiber bundle
+  $p : E \to B$ is a homeomorphism $E \to B \times F$ of the form
+\[
+e \mapsto (p(e),p_1(e)),
+\]
+where $p_1(e) \in F$ (whenever such a homeomorphism exists).
+
+\item A significant part of present research in topology is devoted to
+  the sutdy of topological spaces that locally look like the vector
+  space $\Rn$ of appropriate dimension. In this chapter we
+  come step-by-step to the definition of such spaces, which are called
+  smooth manifolds.
+
+Recall some notions from calculus. A function $f : \Rn to
+\mathbb{R}$ belongs to the class $C^r$ if for $i \leq r$ all partial
+derivatives $\partial^if/\partial x_{l_1}\dots\partial x_{l_i}$ exist
+and are continuous. In this case the derivative is independent of the
+order of differentiation.
+
+A map $F : \Rn \to \Rn$ can be represented as an
+$n$-tuple of functions $y_1 = f_1(x_1,\dots,x_n),\dots,y_n =
+f_n(x_1,\dots,x_n)$. Suppose all these functions are $r$ times
+continuously differentiable, where $r \geq 1$. The \textit{Jacobi
+  matrix} of the map $F$ at a point $x = (x_1,\dots,x_n) \in
+\Rn$ is the $n \times n$-matrix with entries $a_{ij}
+= \partial f_i/\partial x_j$. The \textit{Jacobian} $J$ of $F$ is the
+determinant of the Jacobi matrix.
+
+\textbf{Inverse function theorem.} Let $F : \Rn \to \Rn$ be a map of
+class $C^r, r \geq 1$, such that the Jacobian of $F$ differs from zero
+for some point $x \in \Rn$. Then there are a neighborhood $O(x)$ of
+the point $x$, a neighborhood $O(F(x))$ of the point $F(x)$, and a map
+$\Phi : O(F(x)) \to O(x)$, which is inverse to $F$. The map $\Phi$
+belongs to the class $C^r$.
+
+In other words, the restriction of $F$ to $O(x)$ is a
+$C^r$-diffeomorphism of the neighborhood $O(x)$ onto the neighborhood
+$O(F(x))$; a $C^r$-\textit{diffeomorphism} is a map of class $C^r$
+having an inverse map also belonging to the class $C^r$.
+\end{enumerate}
+\end{document}

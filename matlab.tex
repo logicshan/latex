@@ -1,0 +1,81 @@
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{bigfoot} % to allow verbatim in footnote
+\usepackage[numbered,framed]{matlab-prettifier}
+
+\usepackage{filecontents}
+\begin{filecontents*}{person.m}
+classdef person
+   properties %(here, properties is a keyword)
+       mass=80;
+       height=1.80;
+   end
+   methods
+       function BMI = getBMI(height,weight)
+           BMI = person.mass/person.mass^2;
+       end
+   end
+end
+\end{filecontents*}
+
+\begin{filecontents*}{sample.m}
+%% Code sections are highlighted.
+% System command are supported...
+!gzip sample.m
+% ... as is line continuation.
+A = [1, 2, 3,... % (mimicking the ouput is good)
+     4, 5, 6]
+fid = fopen('testFile.text', 'w')
+for i=1:10
+  fprintf(fid,'%6.2f \n', i);
+end
+x=1; %% this is just a comment, though
+% Context-sensitive keywords get highlighted correctly...
+p = properties(mydate); %(here, properties is a function)
+x = linspace(0,1,101);
+y = x(end:-1:1)
+% ... even in nonsensical code.
+]end()()(((end end)end ))))end (function end
+%{
+    block comments are supported
+%} even
+runaway block comments
+are
+\end{filecontents*}
+
+\let\ph\mlplaceholder % shorter macro
+\lstMakeShortInline"
+
+\lstset{
+  style              = Matlab-editor,
+  basicstyle         = \mlttfamily,
+  escapechar         = ",
+  mlshowsectionrules = true,
+}
+
+\begin{document}
+
+\lstlistoflistings
+
+\lstinputlisting[caption = {Some class definition}]{person.m}
+
+Before you use any "for"~loop, refresh your memory on Matlab blocks.%
+\footnote{Any occurence of "for" must have a matching "end".}
+
+\lstinputlisting[caption = {Sample code from Matlab}]{sample.m}
+\pagebreak
+
+\begin{lstlisting}[caption = {For educational purposes}]
+% example of while loop using placeholders
+while "\ph{condition}"
+  if "\ph{something-bad-happens}"
+    break
+  else
+    % do something useful
+  end
+  % do more things
+end
+\end{lstlisting}
+
+\end{document}

@@ -1,0 +1,84 @@
+% !TEX program = xelatex
+\documentclass{ctexart} % chinese support
+\usepackage[backend = biber, style = caspervector, citestyle = caspervector, utf8]{biblatex}
+% use biber programme to process bib and citation; style is caspervector
+\usepackage{filecontents,hyperref}
+
+\begin{filecontents}{mybib.bib}
+@online{biblatex,
+author = {Lehman, Philipp},
+title = {The biblatex Package: Programmable Bibliographies and Citations (Version 2.8a)},
+type = {M/OL},
+date = {2013-11-25},
+url = {http://mirror.ctan.org/macros/latex/exptl/biblatex/},
+urldate = {2014-05-24},
+language = {english},
+}
+
+@incollection{2-2,
+        author = {陈晋镶 and 张惠民 and 朱士兴 and 其他作者},
+        title = {蓟县震旦亚界研究},
+        type = {M},
+        bookauthor = {中国地质科学院天津地质矿产研究所},
+        booktitle = {中国震旦亚界},
+        location = {天津},
+        publisher = {天津科学技术出版社},
+        year = {1980},
+        pages = {56-114},
+        language = {chinese},
+}
+
+@article{4-4,
+        author = {莫少强},
+        title = {数字式中文全文文献格式的设计与研究},
+        type = {J/OL},
+        journal = {情报学报},
+        year = {1999},
+        volume = {18},
+        number = {4},
+        pages = {1-6},
+        url = {http://periodical.wanfangdata.com.cn/periodical/qbxb/qbxb99/qbxb9904/990407.htm},
+        urldate = {2001-07-08},
+        language = {chinese},
+}
+
+@article{4-5,
+        author = {Kanamori, H.},
+        title = {Shaking without quaking},
+        type = {J},
+        journal = {Science},
+        year = {1998},
+        volume = {279},
+        number = {5359},
+        pages = {2063-2064},
+        language = {english},
+}
+\end{filecontents}
+
+\makeatletter % modify the inernal command inside biblatex-caspervector
+
+\renewcommand*\bbx@cnperiod{．} % use "fullwidth full stop" punctuation (U+FF0E) instead of "。"
+
+\DeclareFieldFormat*{booktitle}{#1} % remove \mkbibemph and use normal font
+\DeclareFieldFormat*{journaltitle}{#1} % remove \mkbibemph
+\DeclareFieldFormat*{title}{#1} % remove \mkbibemph
+\DeclareFieldFormat*{volume}{#1} % remove \mkbibemph
+\DeclareFieldFormat[inbook, inproceedings, incollection, article]%
+        {title}{\bbx@mybibquote{#1}} % remove \mkbibemph
+\DeclareFieldFormat*{year}{#1} % remove bold sytle for "year", and
+
+\renewbibmacro*{urldate}{%
+        \iffieldundef{urlyear}{}{%
+                \printtext{\bbx@cegen{[\bbx@cnretr}{[retrieved on}\addspace}%
+                \printurldate%
+        ]% brackets closed
+        }%
+} % add square brackets around access date (GB/T 7714-2015)
+
+\makeatother % the end of re-definition of internal command
+
+\addbibresource{mybib.bib} % add .bib file that can be put into the same folder of .tex file
+\begin{document}
+\nocite{*}
+\printbibliography
+\end{document}

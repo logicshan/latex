@@ -1,0 +1,238 @@
+\documentclass[12pt]{ctexart}
+\usepackage{amssymb,amsmath}
+\usepackage[backend = biber, style = caspervector, citestyle = caspervector, utf8]{biblatex}
+\addbibresource{YifengQiu.bib}
+
+\usepackage[T1]{fontenc}
+\usepackage[numbered,framed]{matlab-prettifier}
+
+\lstset{
+  style              = Matlab-editor,
+  basicstyle         = \mlttfamily\small,
+  escapechar         = ",
+  mlshowsectionrules = true,
+}
+
+\textheight=8.0in \topmargin=0in \textwidth=6.05in
+\oddsidemargin=0.28in \baselineskip=30pt %\linespread{1.5}
+\date{}
+\title{《The method of conjugate gradients used in inverse iteration》读书报告}
+\author{邱一峰}
+\pagestyle{plain}
+\begin{document}
+\maketitle
+\begin{center}
+\textbf{前言}
+\end{center}
+
+QL方法是求中小型实对称三角矩阵全部特征值的有效算法。通常，为了提高算法的收敛速度，它都要带特定的位移。常用的位移有（1）Rayleigh商位移；（2）Wilkinson位移；但是，Rayleigh商位移无法保证对任意的对称三对角阵都收敛。而Wilkinson位移，虽然Wilkinson猜测其具有三次的收敛率，但至今尚无人证明这一结果。所以本文就结合了Rayleigh商位移和Wilkinson位移的一些特点，提出了一种称之为RW的位移，它是一种收敛且有三阶敛速的位移。
+\begin{center}
+\textbf{预备知识}
+\end{center}
+\textbf{定义1：}记\[
+T^{(k)} =
+\renewcommand\arraystretch{1.5}
+\begin{bmatrix}
+\alpha_1^{(k)} & \beta_1^{(k)} & & & & & \\
+\beta_1^{(k)}  & \alpha_2^{(k)} & \beta_2^{(k)} & & & & \\
+              & \mathord{\cdot} & \mathord{\cdot} & \mathord{\cdot} & && & \\
+              &                 & \mathord{\cdot} & \mathord{\cdot} & &\mathord{\cdot} & & \\
+              &                 &                 & \mathord{\cdot} & &\mathord{\cdot} & \mathord{\cdot} & \\
+              &                 &                 &                 & &\mathord{\cdot} & \mathord{\cdot} &
+              \beta_{n-1}^{(k)} \\
+              &                 &                 &                 & &               & \beta_{n-1}^{(k)} & \alpha_n^{(k)}
+\end{bmatrix}, \hspace{1em} k = 0,1,2,...,
+\]
+
+令$T\equiv T^{(0)},\{\sigma_k\}$是一列称为位移的实数，且$\{\sigma_{k}\}\cap\sigma(T)=\varnothing$,这里$\sigma(T)$表示$T$ 的谱，作
+\[
+\begin{cases}
+T^{(k)}-\sigma_k = Q_k  L_k \\
+T^{(k+1)}=L_k Q_k+\sigma_k,k =0,1,2,...,
+\end{cases}
+\]
+这里$Q_{k}$是正交阵，$L_{k}$是对角元大于零的下三角阵，则以上过程为QL算法。
+
+
+\textbf{定义2：}若在带位移的QL 算法中有
+$\beta_1^{(k)}\rightarrow0(k\rightarrow\infty)$,
+则称算法是收敛的。此时若对充分大的k，成立
+
+\begin{center}
+$\beta_1^{(k+1)}=O([\beta_1^{(k)}]^{p}),(p\geq1)$
+\end{center}
+则称算法具有p阶渐近收敛速度，简称p阶收敛。
+
+显然，若$\beta_1^{(k)}\rightarrow0(k\rightarrow\infty)$，则$\alpha_1^{(k)}$将趋于$T^{(k)}$的特征值，然而，QL迭代的实质是通过正交变换来生成新矩阵，所以迭代不改变特征值，从而，$\alpha_1^{(k)}$将趋于$T^{(0)}$的特征值.
+
+为了简单起见，我们往往省略指标k，用$\beta_1$,$\hat{\beta_1}$,$T$,$\hat{T}$
+分别表示 $\beta_1^{(k)}$,$\beta_1^{(k+1)}$,$T^{(k)},T^{(k+1)}$.
+\begin{center}
+\textbf{主要结果}
+\end{center}
+
+本文正是要构造出一种新的位移，使得该位移有以下性质：
+
+(1) $\beta_1^{(k)}\rightarrow0(k\rightarrow\infty)$
+（或者是，如果$|\beta_1^{(k)}|<\varepsilon$  ，其中$\varepsilon$ 是给定的很小的常数，则$\alpha_1^{(k)}$ 是$T^{(0)}$ 的特征值的一个好的近似。）
+
+(2) $\beta_1$收敛于0的速度至少是三次,即至少为$\hat{\beta_1}=O(\beta_1^3)$
+
+那么，我们如何来构造这个位移呢？
+
+首先，我们考虑方程：
+\begin{equation}
+(\alpha_1-\lambda)(\alpha_2-\lambda)=k\beta_1^{2}
+\end{equation}
+其中，$k\in[0,1]$.
+
+如果$\sigma$是(1)式的一个根，而且更接近于$\alpha_1$，则由论文中的引理4，知：
+\[
+l_{1,1}^2 \leq \frac{(1+k)\beta_2^2 + (1-k)^2\beta_1^2}{(1+k)\beta_1^2
+  + \beta_2^2} \cdot \beta_1^2
+\]
+
+
+分析这个不等式，易知：
+
+若$k=0$，则 $l_{1,1}^2\leq\beta_1^2$.
+
+若$k=1$，则\[ l_{1,1}^2\leq\frac{2\beta_2^2\beta_1^2 }{2\beta_1^2
+  + \beta_2^2}\].
+
+而由(1)式可知：
+
+若$k=0$时，$\alpha_1$为方程的根，此时，$\sigma=\alpha_1$为Rayleigh商位移；
+
+若$k=1$时，方程变为$(\alpha_1-\lambda)(\alpha_2-\lambda)=\beta_1^{2}$，易得
+\[\sigma=\alpha_1-sign(\delta)\cdot\frac{\beta_1^2 }{|\delta|+\sqrt{\delta^2+\beta_1^2}}
+\].
+这里$\delta=(\alpha_2-\alpha_1)/2$.
+即为Wilkinson位移。
+
+又若(1)\[\beta_1^{2}\leq\frac{2\beta_2^2\beta_1^2 }{2\beta_1^2 + \beta_2^2}\] 即可得$2\beta_1^{2}\leq\beta_2^{2}$.由以上可知此时$k=0$.
+
+若(2)\[\beta_1^{2}>\frac{2\beta_2^2\beta_1^2 }{2\beta_1^2 + \beta_2^2}\] 即可得$2\beta_1^{2}>\beta_2^{2}$.由以上可知此时$k=1$.
+
+综上所述，
+
+\[
+\sigma =
+\begin{cases}
+\alpha_1 & , \beta_2^2 \geq 2\beta_1^2 \\
+\alpha_1 - \mathrm{sign}(\delta) \cdot
+\frac{\beta_1^2}{\left\lvert\delta\right\rvert + \sqrt{\delta^2 +
+    \beta_1^2}} & , \beta_2^2 < 2\beta_1^2
+\end{cases}
+\]
+
+
+
+由以上又可以进一步推出：对于以上定义的$\sigma$，有：$l_{1,1}^2\leq\min(\beta_1^2,\frac{1}{\sqrt{2}}|\beta_1\beta_2|)$,
+也即是论文中的引理5.
+
+再由论文中的引理1可以得到：$|\hat{\beta_1}|\leq|l_{1,1}^2|$,由引理6可得：$|\hat{\beta_1\beta_2}|\leq|l_{1,1}^2\beta_1|$.
+
+我们再结合引理5：
+\[
+|\hat{\beta_1}^2\hat{\beta_2}|=|\hat{\beta_1}|\cdot|\hat{\beta_1}\hat{\beta_2}|\leq|l_{1,1}|\cdot|l_{1,1}\beta_1|
+=l_{1,1}^2|\beta_1|\leq\frac{1}{\sqrt{2}}|\beta_1\beta_2|=\frac{1}{\sqrt{2}}|\beta_1^2\beta_2|
+\]
+
+所以，$\beta_1^2\beta_2\rightarrow0$.再由引理1和引理5最终可以推出：
+\begin{center}
+$|\hat{\beta_1}^3|\leq|l_{1,1}^3|\leq|\beta_1|\cdot\frac{1}{\sqrt{2}}|\beta_1\beta_2|=\frac{1}{\sqrt{2}}|\beta_1^2\beta_2|$
+\end{center}
+
+因此,$\beta_1^3\rightarrow0$与$\beta_1\rightarrow0$同时成立.
+
+再又论文中的定理2，可得到：$\beta_1$收敛于0的速度至少是三次,即至少为$\hat{\beta_1}=O(\beta_1^3)$
+
+所以，我们想要选取的新位移即为：
+\[
+\sigma =
+\begin{cases}
+\alpha_1 & , \beta_2^2 \geq 2\beta_1^2 \\
+\alpha_1 - \mathrm{sign}(\delta) \cdot
+\frac{\beta_1^2}{\left\lvert\delta\right\rvert + \sqrt{\delta^2 +
+    \beta_1^2}} & , \beta_2^2 < 2\beta_1^2
+\end{cases}
+\]
+
+\begin{center}
+\textbf{数值实验与程序}
+\end{center}
+
+下面给出一个数值例子.
+给定一个11阶的对称三对角阵$T$：
+\begin{center}
+$\alpha_j=2j-1,j=1,2,...,11,$
+\end{center}
+\begin{center}
+$\beta_1=\beta_3=\beta_4=...=\beta_{10}=1$
+\end{center}
+对一些不同的$\beta_2$用三种不同的位移做QL迭代，从而找得到$T$的9个不同的特征值，直到
+\begin{center}
+$|\beta_i^{(k)}|<10^{-10},i=1,2,...,9$
+\end{center}
+
+另外，我们通过Matlab来执行这个数值实验，但Matlab中只有现成的QR分解的函数，而没有QL 分解的函数，所以在此需要做一下处理：
+
+设$T$为给定的对称三对角阵，对$(T')^{-1}$进行QR分解：
+\[(T')^{-1}=QR
+\Rightarrow T'=R^{(-1)}Q^{(-1)}
+\Rightarrow T=(Q^{(-1)})'(R^{(-1)})'
+\]
+因为$R$为上三角矩阵，则$(R^{(-1)})$为下三角矩阵；而$Q$为正交阵，$(Q^{(-1)})'$仍然为正交阵。令$Q_1=(Q^{(-1)})',L=(R^{(-1)})'$，即：$T=Q_1L$
+
+$T$的QL分解完成。
+
+
+程序如下：
+
+
+(1)按要求生成矩阵$T$。
+
+\lstinputlisting{create.m}
+
+
+(2)新位移——RW位移的QL迭代
+\lstinputlisting{RW_S.m}
+
+(3)Rayleigh商位移的QL迭代
+\lstinputlisting{Rayleigh_S.m}
+
+(4)Wilkinson位移的QL迭代
+\lstinputlisting{wilkinson_S.m}
+
+\begin{center}
+\textbf{结果推广和一些想法}
+\end{center}
+
+其实，我们还可以对论文的结果做一些推广，同样去构造一个新的位移：
+
+\[
+\sigma =
+\begin{cases}
+\alpha_1 & , \beta_2^2 \geq \varepsilon\beta_1^2 \\
+\alpha_1 - \mathrm{sign}(\delta) \cdot
+\frac{\beta_1^2}{\left\lvert\delta\right\rvert + \sqrt{\delta^2 +
+    \beta_1^2}} & , \beta_2^2 < \varepsilon\beta_1^2
+\end{cases}
+\]
+
+其中，$\delta=(\alpha_2-\alpha_1)/2$,$\varepsilon\in(1,2]$.
+同样可以证明，该算法也是收敛的，并且至少是三次收敛的。证明见[4]。
+
+实际上，QL算法跟QR算法有很多类似的地方，我觉得有些方法是可以共用的。所以，可以做一下考虑：
+
+\parencite{nla}仿照QR算法，引入隐式的QL算法。
+
+\parencite{ych1989}在QR算法中，也通过将Rayleigh商位移和Wilkinson位移联合起来，从而构造新的位移。
+
+\clearpage
+
+\nocite{ych1991,xjs1992}
+\printbibliography
+
+\end{document}

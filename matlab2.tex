@@ -1,0 +1,54 @@
+\documentclass{book}
+
+\usepackage[svgnames]{xcolor}
+\definecolor{ocre}{RGB}{243,102,25}
+
+\usepackage{avant}
+\usepackage{mathptmx}
+\usepackage{microtype}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{fontspec}
+
+\usepackage{filecontents}
+\begin{filecontents*}{sample.m}
+% create a file for output
+!touch testFile.txt
+fid = fopen('testFile.text', 'w')
+for i=1:10
+  fprintf(fid,'%6.2f \n', i);
+end
+\end{filecontents*}
+
+\usepackage[numbered,framed]{matlab-prettifier}
+\usepackage[font={color=ocre,bf},figurename=Fig.,labelfont={it}]{caption}
+
+\newfontfamily{\lstconsolas}{Consolas}
+
+\newcommand\ph\mlplaceholder
+
+\begin{document}
+
+\lstlistoflistings
+
+\lstinputlisting[style=Matlab-editor,caption=Sample code from Matlab]{sample.m}
+
+\begin{lstlisting}[
+  style=Matlab-editor,
+  basicstyle=\lstconsolas\tiny,
+  escapechar=`,
+  caption={For educational purposes},
+]
+% example of while loop using placeholders
+while x2 = 1 + 100`\ph{condition}`
+  if `\ph{something-bad-happens}`
+    break
+  else
+    % do something useful
+  end
+  % do more things
+end
+\end{lstlisting}
+
+\end{document}

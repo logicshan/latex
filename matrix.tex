@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\begin{document}
+The \emph{characteristic polynomial} $\chi(\lambda)$ of the
+$3 \times 3$~matrix
+\[ \left( \begin{array}{ccc}
+a & b & c \\
+d & e & f \\
+g & h & i \end{array} \right)\] 
+is given by the formula
+\[ \chi(\lambda) = \left| \begin{array}{ccc}
+\lambda - a & -b & -c \\
+-d & \lambda - e & -f \\
+-g & -h & \lambda - i \end{array} \right|. \hspace{1em}k = 0,1, ...\]
+
+\[
+T^{(k)} = 
+\renewcommand\arraystretch{1.5}
+\begin{bmatrix}
+\alpha_1^{(k)} & \beta_1^{(k)} & & & & & \\
+\beta_1^{(k)}  & \alpha_2^{(k)} & \beta_2^{(k)} & & & & \\
+              & \mathord{\cdot} & \mathord{\cdot} & \mathord{\cdot} & && & \\
+              &                 & \mathord{\cdot} & \mathord{\cdot} & &\mathord{\cdot} & & \\
+              &                 &                 & \mathord{\cdot} & &\mathord{\cdot} & \mathord{\cdot} & \\
+              &                 &                 &                 & &\mathord{\cdot} & \mathord{\cdot} &
+              \beta_{n-1}^{(k)} \\
+              &                 &                 &                 & &               & \beta_{n-1}^{(k)} & \alpha_n^{(k)}
+\end{bmatrix}, \hspace{1em} k = 0,1,2,...,
+\]
+
+\[
+l_{1,1}^2 \leq \frac{(1+k)\beta_2^2 + (1-k)^2\beta_1^2}{(1+k)\beta_1^2
+  + \beta_2^2} \cdot \beta_1^2
+\]
+\[
+\sigma =
+\begin{cases}
+\alpha_1 & , \beta_2^2 \geq 2\beta_1^2 \\
+\alpha_1 - \mathrm{sign}(\delta) \cdot
+\frac{\beta_1^2}{\left\lvert\delta\right\rvert + \sqrt{\delta^2 +
+    \beta_1^2}} & , \beta_2^2 < 2\beta_1^2
+\end{cases}
+\]
+
+$\lim \limits_{n=1}^{100}$
+
+\end{document}
