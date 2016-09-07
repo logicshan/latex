@@ -19,6 +19,8 @@
 
 除非特别说明，以下考虑的环都为带乘法幺元的结合环。
 
+环 $R$ 看做自身上的左模, 这时 $R$ 的左理想就是一个左 $R$-模.
+
 1. \cite[p.33]{barot2014introduction}交换环 $R$ 上的代数(称为 $R$-代数)，就是一个环 $A$ 和一个包含映射 $\iota : R \to Z(A)$，其中 $Z(A)$ 为 $A$ 的中心，$\iota$ 为一个单的环同态。我们研究较多的是当 $R$ 为一个域 $k$ 时的 $k$-代数。$\iota$ 诱导出以下映射 $r \cdot a = \iota(r)a$ :
 \begin{align*}
 \cdot : R \times A &\to A\\
@@ -276,5 +278,41 @@ b \mapsto 1_A \otimes b
 \sum\nolimits_ik_ia_1^{\alpha i1}\cdots a_n^{\alpha in}
 \]
 
+8. 半单模(Semisimple module)\cite{semisimple_module}
+
+一个环(不一定可交换,但有幺元)上的模被叫做半单(或者完全可约), 如果它是单(不可约)子模的直和.
+
+对一个模 $M$, 以下陈述等价:
+\begin{enumerate}
+  \item $M$ 是半单的; 也就是说, 是一些不可约模的直和.
+  \item $M$ 是它的不可约子模的直和.
+  \item $M$ 的每一个子模都是直和因子: 对每一个 $M$ 的子模 $N$, 都有一个补直和因子 $P$, 使得 $M = N \oplus P$.
+\end{enumerate}
+
+半单模最基本的例子就是域上的模; 也就是向量空间. 另一方面, 整数环 $\mathbb{Z}$ 不是它自身上的半单模(因为,例如,它不是一个 Artin 环.)(\textcolor{red}{半单环一定是 Artin 环}. 半单环定义见下面.)
+
+半单要强于完全可分解(completely decomposable), 完全可分解模是不可分解子模的直和.
+
+如果 $M$ 是半单模, $N$ 是它的一个子模, 那么 $N$ 和 $M/N$ 也是半单的.
+
+如果每一个 $M_i$ 是半单的, 那么 $\underset{i}{\bigoplus}M_i$ 也是半单的.
+
+模 $M$ 是有限生成的并且是半单的, 当且仅当它是 Artin 的,并且根基(radical)为 $0$.
+
+一个环是(左)半单的,如果它自身作为左模是半单的. 出人意料的是,一个左半单环同时也是右半单的,反过来也是一样(一个右半单环也是左半单的). 左和右的区别是不必要的,我们可以毫不含糊的说一个环是半单的.
+
+半单环也可以用同调代数的语言来刻画:也就是说,一个环 $R$ 是半单的,当且仅当任意的左(或右)$R$-模短正合列是分裂的. 特别有, 半单环上的任意一个模, 既是入射的(injective),又是投射的(projective).
+
+如果环 $R$ 是半单的,则所有的 $R$-模是半单的. 更进一步, 每一个单 $R$-模同构于 $R$ 的一个极小左理想(minimal left ideal).
+
+半单环既是 Artin 的,又是 Noether 的. 从以上的性质可以得到, 一个环是半单的, 当且仅当它是 Artin 的,并且它的 Jacobson 根基为 $0$.
+
+如果一个 Artin 半单环包含一个域作为它的中心子环(central subring)(也就是这个域包含于环的中心), 那么这个环就被叫做一个半单代数(semisimple algebra).
+
+没有非平凡双边理想的环叫做单环. \textcolor{red}{不是所有的单环都是半单的}. The problem is that the ring may be "too big", that is, not (left/right) Artinian. In fact, if R is a simple ring with a minimal left/right(只要求左或右,不要求双边) ideal, then R is semisimple.
+
+\textbf{Jacobson半单} 或 semiprimitive. 一个环叫做 semiprimitive 或 Jacobson半单, 如果它的 Jacobson根基为 $0$.
+
+每一个半单环的 Jacobson根基都为 $0$, 但并不是每一个 Jacobson根基为 $0$ 的环都是半单的. 一个 Jacobson半单的环是半单的, 当且仅当它是 Artin 环. 所以, 为了防止混淆, 半单环经常被叫做 Artin 半单环.
 \printbibliography
 \end{document}
