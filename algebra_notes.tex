@@ -314,5 +314,72 @@ b \mapsto 1_A \otimes b
 \textbf{Jacobson半单} 或 semiprimitive. 一个环叫做 semiprimitive 或 Jacobson半单, 如果它的 Jacobson根基为 $0$.
 
 每一个半单环的 Jacobson根基都为 $0$, 但并不是每一个 Jacobson根基为 $0$ 的环都是半单的. 一个 Jacobson半单的环是半单的, 当且仅当它是 Artin 环. 所以, 为了防止混淆, 半单环经常被叫做 Artin 半单环.
+
+9. Jacobson radical\cite{jacobson_radical}
+
+环 $R$ 的 Jacobson 根基是一个理想, 这个理想由消灭(annihilate)所有单右 $R$-模的元素组成. 凑巧的是, 把定义中的"右"换成"左", 得到相同的理想. 所以,这个概念是左右对称的.
+
+$J(R)$ equals the intersection of all maximal right ideals of the ring. It is also true that $J(R)$ equals the intersection of all maximal left ideals within the ring. These characterizations are internal to the ring, since one only needs to find the maximal right ideals of the ring. For example, if a ring is local, and has a unique maximal right ideal, then this unique maximal right ideal is an ideal because it is exactly $J(R)$. The left-right symmetry of these two definitions is remarkable and has various interesting consequences. This symmetry stands in contrast to the lack of symmetry in the socles of $R$, for it may happen that $soc(R_R)$ is not equal to $soc(_RR)$. If $R$ is a non-commutative ring, $J(R)$ is not necessarily equal to the intersection of all maximal two-sided ideals of $R$.
+
+$J(R)$ equals the sum of all superfluous right ideals (or symmetrically, the sum of all superfluous left ideals) of $R$. Comparing this with the previous definition, the sum of superfluous right ideals equals the intersection of maximal right ideals. This phenomenon is reflected dually for the right socle of $R$: $soc(R_R)$ is both the sum of minimal right ideals and the intersection of essential right ideals. In fact, these two relationships hold for the radicals and socles of modules in general.
+
+As defined in the introduction, $J(R)$ equals the intersection of all annihilators of simple right $R$-modules, however it is also true that it is the intersection of annihilators of simple left modules. An ideal that is the annihilator of a simple module is known as a primitive ideal, and so a reformulation of this states that the Jacobson radical is the intersection of all primitive ideals. This characterization is useful when studying modules over rings. For instance, if $U$ is right $R$-module, and $V$ is a maximal submodule of $U$, $U\cdot J(R)$ is contained in $V$, where $U\cdot J(R)$ denotes all products of elements of $J(R)$ (the "scalars") with elements in $U$, on the right. This follows from the fact that the quotient module, $U/V$ is simple and hence annihilated by $J(R)$.
+
+$J(R)$ is the unique right ideal of $R$ maximal with the property that every element is right quasiregular. Alternatively, one could replace "right" with "left" in the previous sentence. This characterization of the Jacobson radical is useful both computationally and in aiding intuition. Furthermore, this characterization is useful in studying modules over a ring. Nakayama's lemma is perhaps the most well-known instance of this. Although every element of the $J(R)$ is necessarily quasiregular, not every quasiregular element is necessarily a member of $J(R)$.
+
+While not every quasiregular element is in $J(R)$, it can be shown that $y$ is in $J(R)$ if and only if $xy$ is left quasiregular for all $x$ in $R$.
+
+$J(R)$ is the set of all such elements $x \in R$ that every element of $1 + RxR$ is a unit: $J(R) = \{ x \in R \mid 1 + RxR \subset R^\times \}$.
+
+10. 模的根基(Radical of a module)\cite{radical_of_a_module}
+
+令 $R$ 为一个环, $M$ 是一个 $R$-模. $M$ 的一个子模 $N$ 被称为极大的或 cosimple, 如果商模 $M/N$ 是一个单模. 模 $M$ 的根基就是 $M$ 所有极大子模的交
+\[
+rad(M) = \bigcap\{N\mid N \mbox{ is a maximal submodule of } M\}
+\]
+等价地,
+\[
+rad(M) = \sum\{ S \mid S \mbox{ is a superfluous submodule of } M\}
+\]
+$soc(M)$ 可以类似以上定义对偶的定义.
+
+11. Socle of a module\cite{socle_of_a_module}
+
+\[
+soc(M) = \sum\{ N \mid N \mbox{ is a simple submodule of } M \}
+\]
+
+\[
+soc(M) = \bigcap\{ E \mid E \mbox{ is an essential submodule of } M \}
+\]
+
+The \textbf{socle of a ring} $R$ can refer to one of two sets in the ring. Considering $R$ as a right $R$ module, $soc(R_R)$ is defined, and considering $R$ as a left $R$ module, $soc(_RR)$ is defined. Both of these socles are \textcolor{red}{ring ideals}, and it is known they are not necessarily equal.
+
+如果 $M$ 是一个 Artin 模, 那么 $soc(M)$ 本身是 $M$ 的 essential submodule.
+
+一个模是半单的, 当且仅当 $soc(M) = M$. 如果对一个环上的所有模 $M$, 都有 $soc(M) = M$, 则这个环就是半单的.
+
+$soc(soc(M)) = soc(M)$
+
+Since the sum of semisimple modules is semisimple, the socle of a module could also be defined as the unique maximal semi-simple submodule.
+
+From the definition of $rad(R)$, it is easy to see that $rad(R)$ annihilates $soc(R)$. If $R$ is a finite-dimensional unital algebra and $M$ a finitely generated $R$-module then the socle consists precisely of the elements annihilated by the Jacobson radical of $R$.
+
+12. Quasiregular element\cite{quasiregular_element}
+
+Let $R$ be a ring (with unity) and let $r$ be an element of $R$. Then $r$ is said to be quasiregular, if $1 - r$ is a unit in $R$; that is, invertible under multiplication. The notions of right or left quasiregularity correspond to the situations where $1 - r$ has a right or left inverse, respectively.
+
+13. Essential extension\cite{essential_extension}
+
+In mathematics, specifically module theory, given a ring $R$ and $R$-modules $M$ with a submodule $N$, the module $M$ is said to be an essential extension of $N$ (or $N$ is said to be an essential submodule or large submodule of $M$) if for every submodule $H$ of $M$,
+\[
+    H \cap N = \{ 0 \} \mbox{ implies that } H = \{ 0 \}
+\]
+As a special case, an essential left ideal of $R$ is a left ideal which is essential as a submodule of the left module $_RR$. The left ideal has non-zero intersection with any non-zero left ideal of $R$. Analogously, and essential right ideal is exactly an essential submodule of the right R module $R_R$
+
+The dual notion of an essential submodule is that of superfluous submodule (or small submodule). A submodule $N$ is superfluous if for any other submodule $H$,
+\[
+N + H = M \mbox{ implies that } H = M
+\]
 \printbibliography
 \end{document}
