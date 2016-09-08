@@ -20,15 +20,15 @@
 除非特别说明，以下考虑的环都为带乘法幺元的结合环。
 
 环 $R$ 看做自身上的左模, 这时 $R$ 的左理想就是一个左 $R$-模.
-
-1. \cite[p.33]{barot2014introduction}交换环 $R$ 上的代数(称为 $R$-代数)，就是一个环 $A$ 和一个包含映射 $\iota : R \to Z(A)$，其中 $Z(A)$ 为 $A$ 的中心，$\iota$ 为一个单的环同态。我们研究较多的是当 $R$ 为一个域 $k$ 时的 $k$-代数。$\iota$ 诱导出以下映射 $r \cdot a = \iota(r)a$ :
+\begin{enumerate}
+\item \cite[p.33]{barot2014introduction}交换环 $R$ 上的代数(称为 $R$-代数)，就是一个环 $A$ 和一个包含映射 $\iota : R \to Z(A)$，其中 $Z(A)$ 为 $A$ 的中心，$\iota$ 为一个单的环同态。我们研究较多的是当 $R$ 为一个域 $k$ 时的 $k$-代数。$\iota$ 诱导出以下映射 $r \cdot a = \iota(r)a$ :
 \begin{align*}
 \cdot : R \times A &\to A\\
 (r,a) &\mapsto \iota(r)a
 \end{align*}
 当 $R$ 为 $k$ 时，$A$ 就成为一个 $k$-向量空间，此时就可以考虑 $A$ 的维数。
 
-2. 模的张量积。
+\item 模的张量积
 
 考虑一个环 $R$，做张量积的时候，要求一个是右$R$-模，一个是左$R$-模，得到的是一个$Abel$群，和一个 $R$-balanced 映射。当 $R$ 是交换环时，可对得到的$Abel$群赋予一个模结构。以下用更严格的语言描述。
 
@@ -179,7 +179,7 @@ M \!\!\times\!\! N \arrow[r,"\otimes_R"] \arrow[rd,"\otimes_S"] & M \!\!\otimes_
 \end{tikzcd}
 \end{center}
 
-3. 模
+\item 模
 
 令$M$为一个$Abel$群，$R$为一个环，$\mu : R \times M \to M$为一个给定的映射。则三元组$(M, R, \mu)$被叫做一个左$R$-模，如果对$\forall r,s \in R, x,y \in M$满足下面的公理：
 \begin{align*}
@@ -188,9 +188,9 @@ M \!\!\times\!\! N \arrow[r,"\otimes_R"] \arrow[rd,"\otimes_S"] & M \!\!\otimes_
 &(3) \mu(rs, x) = \mu(r, \mu(s, x))
 \end{align*}
 
-4. $R$-代数既有模结构又有环结构
+\item $R$-代数既有模结构又有环结构
 
-5. 自由模
+\item 自由模
 
 令$S$为一个集合，$R$为一个幺环。则有序对$(M, i)$是一个$S$上的自由
 左$R$-模，如果$M$是一个左$R$-模，$i : S \to M$是一个集合映射，并且满足
@@ -238,7 +238,7 @@ $M$为左$R$-模，则$\mathscr{B}$为$M$的一个基当且仅当$M$中的每一个元素都
 有一个基。
 \end{thm}
 
-6. 代数的张量积
+\item 代数的张量积
 
 下面我们讨论怎样做代数的张量积并得到一个代数。值得注意的一点是，做代数
 的张量积并不真正不同于做模的张量积，但是张量积在
@@ -269,7 +269,7 @@ b \mapsto 1_A \otimes b
 量积在所有$R\text{-}$代数范畴中并不是$coproduct$。
 \end{thm}
 
-7. 有限生成代数\cite{finitely_generated_algebra}
+\item 有限生成代数\cite{finitely_generated_algebra}
 在数学中，一个有限生成代数（又叫做有限型代数），是一个域$K$上的结合代
 数$A$，存在$A$中元素的一个有限集$\{a_1,\cdots,a_n\}$，使得$A$中每一个
 元素都可以表示为$a_1,\cdots,a_n$的系数在$K$中的多项式，即$A$中每一个元
@@ -278,7 +278,7 @@ b \mapsto 1_A \otimes b
 \sum\nolimits_ik_ia_1^{\alpha i1}\cdots a_n^{\alpha in}
 \]
 
-8. 半单模(Semisimple module)\cite{semisimple_module}
+\item 半单模(Semisimple module)\cite{semisimple_module}
 
 一个环(不一定可交换,但有幺元)上的模被叫做半单(或者完全可约), 如果它是单(不可约)子模的直和.
 
@@ -315,7 +315,7 @@ b \mapsto 1_A \otimes b
 
 每一个半单环的 Jacobson根基都为 $0$, 但并不是每一个 Jacobson根基为 $0$ 的环都是半单的. 一个 Jacobson半单的环是半单的, 当且仅当它是 Artin 环. 所以, 为了防止混淆, 半单环经常被叫做 Artin 半单环.
 
-9. Jacobson radical\cite{jacobson_radical}
+\item Jacobson radical\cite{jacobson_radical}
 
 环 $R$ 的 Jacobson 根基是一个理想, 这个理想由消灭(annihilate)所有单右 $R$-模的元素组成. 凑巧的是, 把定义中的"右"换成"左", 得到相同的理想. 所以,这个概念是左右对称的.
 
@@ -331,7 +331,7 @@ While not every quasiregular element is in $J(R)$, it can be shown that $y$ is i
 
 $J(R)$ is the set of all such elements $x \in R$ that every element of $1 + RxR$ is a unit: $J(R) = \{ x \in R \mid 1 + RxR \subset R^\times \}$.
 
-10. 模的根基(Radical of a module)\cite{radical_of_a_module}
+\item 模的根基(Radical of a module)\cite{radical_of_a_module}
 
 令 $R$ 为一个环, $M$ 是一个 $R$-模. $M$ 的一个子模 $N$ 被称为极大的或 cosimple, 如果商模 $M/N$ 是一个单模. 模 $M$ 的根基就是 $M$ 所有极大子模的交
 \[
@@ -343,7 +343,7 @@ rad(M) = \sum\{ S \mid S \mbox{ is a superfluous submodule of } M\}
 \]
 $soc(M)$ 可以类似以上定义对偶的定义.
 
-11. Socle of a module\cite{socle_of_a_module}
+\item Socle of a module\cite{socle_of_a_module}
 
 \[
 soc(M) = \sum\{ N \mid N \mbox{ is a simple submodule of } M \}
@@ -365,11 +365,11 @@ Since the sum of semisimple modules is semisimple, the socle of a module could a
 
 From the definition of $rad(R)$, it is easy to see that $rad(R)$ annihilates $soc(R)$. If $R$ is a finite-dimensional unital algebra and $M$ a finitely generated $R$-module then the socle consists precisely of the elements annihilated by the Jacobson radical of $R$.
 
-12. Quasiregular element\cite{quasiregular_element}
+\item Quasiregular element\cite{quasiregular_element}
 
 Let $R$ be a ring (with unity) and let $r$ be an element of $R$. Then $r$ is said to be quasiregular, if $1 - r$ is a unit in $R$; that is, invertible under multiplication. The notions of right or left quasiregularity correspond to the situations where $1 - r$ has a right or left inverse, respectively.
 
-13. Essential extension\cite{essential_extension}
+\item Essential extension\cite{essential_extension}
 
 In mathematics, specifically module theory, given a ring $R$ and $R$-modules $M$ with a submodule $N$, the module $M$ is said to be an essential extension of $N$ (or $N$ is said to be an essential submodule or large submodule of $M$) if for every submodule $H$ of $M$,
 \[
@@ -381,5 +381,6 @@ The dual notion of an essential submodule is that of superfluous submodule (or s
 \[
 N + H = M \mbox{ implies that } H = M
 \]
+\end{enumerate}
 \printbibliography
 \end{document}
