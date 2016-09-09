@@ -9,3 +9,5 @@
 *.bib~
 *.gz(busy)
 *.xml
+*.bcf
+*.synctex

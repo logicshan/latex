@@ -381,6 +381,33 @@ The dual notion of an essential submodule is that of superfluous submodule (or s
 \[
 N + H = M \mbox{ implies that } H = M
 \]
+
+\item 偏序(partially ordered), 格(lattice)
+
+一个集合 $S$ 被称为偏序集, 如果它配备有一个关系 $\leq$, 这个关系满足下面的条件:
+\begin{enumerate}
+  \item $a \leq a, \forall a \in S$ (反身性);
+  \item $a \leq b, b \leq c \Rightarrow a \leq c, \forall a,b,c \in S$ (传递性);
+  \item $a \leq b, b \leq a \Rightarrow a = b, \forall a,b \in S$ (反对称性).
+\end{enumerate}
+这个关系 $\leq$ 叫做\textbf{偏序}.
+
+令 $S$ 是一个偏序集, $T$ 是 $S$ 的一个子集. $T$ 的一个上界(下界)是 $S$ 中的一个元素 $a \in S$, 满足 $t \leq a (a \leq t), \forall t \in T$. 一般地, 一个集合可能有多个上界, 也可能一个都没有.
+
+$T$ 中的一个元素 $a \in T$ 被称为 $T$ 的最大元(最小元), 如果 $t \leq a (a \leq t), \forall t \in T$. 不是偏序集 $S$ 的所有子集 $T$ 都有一个最大元(或最小元). 但是如果 $T$ 有这么一个元素, 那它就是唯一的.
+所以, 如果一个极大元(极小元)存在, 那么它是唯一的, 并且是 $T$ 的一个上界(下界). 如果 $T$ 的所有上界组成的集合有一个最小元, 那么就把它叫做 $T$ 的最小上界(或上确界), 记作 $sup(T)$. 如果 $T$ 的所有下界组成的集合有一个最大元, 那么就把它叫做 $T$ 的最大下界(或下确界), 记作 $inf(T)$.
+
+一个偏序集 $S$, 如果 $S$ 中的每一对元素在 $S$ 中都有一个上确界和一个下确界, 那么 $S$ 就被称为\textbf{格(lattice)}.
+
+令 $S$ 为一个格. 那么 $S$ 中的任意两个元素 $a,b \in S$ 都有上确界和下确界. 我们记
+\[
+a \vee b = \sup\{a,b\} \mbox{  和  } a \wedge b = \inf\{a,b\}
+\]
+那么从 $S \times S$ 到 $S$ 的映射 $\vee$ 和 $\wedge$
+\[
+(a,b) \mapsto a \vee b \mbox{  和  } (a,b) \mapsto a \wedge b
+\]
+就成为 $S$ 上的二元运算.
 \end{enumerate}
 \printbibliography
 \end{document}
