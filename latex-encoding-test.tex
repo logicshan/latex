@@ -1,0 +1,79 @@
+\documentclass{ctexart}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage{tikz-cd}
+\usepackage{url}
+
+\usepackage{biblatex}
+\addbibresource{representation_theory_notes.bib}
+
+\newtheorem*{prop}{命题}
+\newtheorem*{thm}{定理}
+
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\im}{im}
+
+\begin{document}
+\begin{enumerate}
+\item Artin-Wedderburn 定理
+
+Artin-Wedderburn 定理是关于半单环和半单代数的分类定理. 它是说, 如果 $A$ 是一个半单代数, 那么 $A$ 同构于除环上矩阵代数的直和. 这是说, $A$ 作为一个左正则模是半单的, 令 $A$ 作为左正则模有如下分解式:
+\[
+_AA \cong S_1^{n_1} \oplus \cdots \oplus S_r^{n_r}
+\]
+那么 $A$ 作为代数, 可分解为以下矩阵代数的直和:
+\[
+A \cong M_{n_1}(D_1) \oplus \cdots \oplus M_{n_r}(D_r)
+\]
+其中 $D_i = End_A(S_i)^{op}$.
+
+\item Proposition 4.3.1
+
+$RG$ 作为右 $RH$-模, 可分解为如下右 $RH$-模的直和:
+\[
+RG_{RH} = \bigoplus^{\abs{G:H}}_{i=1} g_iRH
+\]
+其中 $g_iRH$ 为 右 $RH$-模.
+
+$V\uparrow^G_H = RG \otimes_{RH}V = (\bigoplus^{\abs{G:H}}_{i=1} g_iRH) \otimes_{RH} V = \bigoplus^{\abs{G:H}}_{i=1}(g_iRH \otimes_{RH} V) = \bigoplus^{\abs{G:H}}_{i=1} g_i\otimes_{RH}V$
+
+注意, $g_i\otimes_{RH}$ 不是 $RG$-模, 仅是 $R$-模, 因为 $\forall x \in G, x\cdot (g_i\otimes v) = (xg_i)\otimes v$, 而 $xg_i$ 可能不是 $g_i$, 从而 $(xg_i)\otimes v$ 可能不属于 $g_i \otimes_{RH} V$. 而 $g_i\otimes_{RH}V$ 是 $R$-模. $\forall r \in R, r \cdot (g_i\otimes v) = re\cdot(g_i\otimes v) = (r(e\cdot g_i))\otimes v = (rg_i)\otimes v = (g_ir)\otimes v = g_i\otimes (rv) \in g_i \otimes_{RH} V$. 其中 $e$ 是 $G$ 的单位元, 并且 $R$ 是交换的.
+
+\item 高阶 socle 和 radical
+
+$Rad^n(U) = Rad(Rad^{n-1}(U))$
+
+$Soc^n(U)/Soc^{n-1}(U) = Soc(U/Soc^{n-1}(U))$.
+
+以下是对高阶 socle 的解释:
+
+首先 $Soc^{n-1}(U)$ 是 $U$ 的一个子模, 可以得到一个商模 $U/Soc^{n-1}(U)$. 有如下自然同态:
+\[
+\pi : U \to U/Soc^{n-1}(U)
+\]
+可以取这个商模的 socle, 得到 $Soc(U/Soc^{n-1}(U))$, 它是这个商模的一个子模. 由定理1.4.7\cite{dlab2012finite}, $U/Soc^{n-1}(U)$ 中的每一个子模, 在 $U$ 中都有一个包含 $Soc^{n-1}(U)$ 的子模与之对应, 这个子模即为 $Soc^n(U)$. \textcolor{red}{(注意记号方面的问题, 由于商模的一个子模还是一个商模, 所以 $Soc(U/Soc^{n-1}(U))$ 是一个商模, 可以有形式 $Soc^n(U)/Soc^{n-1}(U)$.)}
+
+\item 表示的共轭(conjugation of representation)
+
+令 $H$ 为 $G$ 的一个子群, $g \in G$, $V$ 是 $H$ 的一个表示. 我们定义 $^gH$ 的一个表示 $^gV$, 令 $^gV = V$, 并且 $^gh \cdot v = hv, \forall ^gh \in {}^gH$.
+
+\item Double cosets
+
+Let $G$ be a group with subgroups $H$ and $K$.
+
+1. $G/H$ denotes the set of left cosets $\{gH : g \in G\}$ of $H$ in $G$.
+
+2. $H\backslash G$ denotes the set of right cosets $\{Hg : g \in G\}$ of $H$ in $G$.
+
+3. $K\backslash G/H$ denotes the set of double cosets $\{KgH : g \in G\}$ of $H$ and $K$ in $G$.
+
+注意与以下符号的区别
+
+If $\Omega$ is a left $G$-set we use the notation $G\backslash \Omega$ for the set of orbits of $G$ on $\Omega$, and denote a set of representatives for the orbits by $[G\backslash \Omega]$. Similarly if $\Omega$ is a right $G$-set we write $\Omega /G$ and $[\Omega/G]$.
+\end{enumerate}
+\printbibliography
+\end{document}
