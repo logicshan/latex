@@ -1,6 +1,7 @@
-\documentclass{article}
+\documentclass{ctexart}
 
 \usepackage{amsmath,amssymb,mathrsfs,tikz-cd}
+\usepackage{changepage}
 
 % \setlength{\parindent}{0pt}
 \pagestyle{plain}
@@ -31,10 +32,76 @@ open sets in $Y$. (The map $f$ is then continuous with respect to the
 induced topology.). For the inclusion map $f$ of a subset $X \subset
 Y$ we recover the previous definition.
 
-\item \textbf{Separability.} A topological space X is said to be
-  \textit{Hausforff space} if any two distinct points $x,y \in X$
+\item \textbf{Separability.} A topological space X is said to be a
+  \textit{Hausdorff space} if any two distinct points $x,y \in X$
   possess nonintersecting neighborhoods. (A \textit{neighborhood} of a
   point $x$ is an arbitrary open set containing $x$.)
+
+\item \textbf{Quotient topology.} Suppose an equivalence relation $\sim$ is given on a topological space $X$, i.e., a subset $A \subset X \times X$ is chosen so that
+    \begin{adjustwidth}{2em}{}
+    \begin{enumerate}
+      \item $(x,x) \in A$ for all $x \in X$;
+      \item $(x,y) \in A \Rightarrow (y,x) \in A$;
+      \item $(x,y), (x,z) \in A \Rightarrow (y,z) \in A$.
+    \end{enumerate}
+    \end{adjustwidth}
+    Then a topology, called the \textit{quotient topology}, on the set of equivalence classes $X/\!\!\sim$ is defined in the following way. A set $U$ is open if its preimage under the canonical projection $X \to X/\!\!\sim$ is open. The space $X/\!\!\sim$ supplied with the quotient topology is called the \textit{quotient space} of $X$ by $\sim$.
+
+\item \textbf{Definition.} A topological space $X$ is \textit{path-connected} if for any pair of its points $x,y$ there is a continuous map $f : [0,1] \to X$ such that $f(0) = x$ and $f(1) = y$. Maximal path-connected topological subspaces of a topological space will be called its \textit{path-connected components} or briefly \textit{path-components}.
+
+\item \textbf{Suspension.} Let $X$ be a topological space. The suspension $\Sigma X$ is defined as the quotient space $X \times I/\!\!\sim$, where $I$ is the segment $[-1,1]$ and the equivalence relation is the following:
+    \begin{adjustwidth}{2em}{}
+    for $\lambda \neq -1,1\ (x,\lambda) \sim (y,\mu) \Longleftrightarrow x = y, \lambda = \mu$;
+
+    $(x,1) \sim (y,1)$ for all $x,y \in X$;
+
+    $(x,-1) \sim (y,-1)$ for all $x,y \in X$.
+    \end{adjustwidth}
+
+In other words, we take the \textit{cylinder} $X \times I$ and contract its upper base $X \times \{1\}$ to a point and its lower base $X \times \{-1\}$ to a point.
+
+\textbf{Example.} The \textit{n-dimensional sphere} $S^n$ is the topological space homeomorphic to the subset in $\mathbb{R}^{n+1}$ specified by the equation $x_1^2 + \cdots + x_{n+1}^2 = 1$. It can be proved that $\Sigma S^n \approx S^{n+1}$ (this statement holds for $S^0 = \{-1,1\}$ as well).
+
+\item \textbf{Attaching a topological space by a map.} Let $X$ and $Y$ be disjoint topological spaces, let $A \subset X$ and let $\varphi : A \to Y$ be a continuous map. Then the operation of \textit{attaching $X$ to $Y$ by the map $\varphi$} produces the space
+    \[
+    X \cup_\varphi Y = (X \cup Y) / \{ a \sim \varphi(a) \};
+    \]
+this means that a point $a \in A$ is equivalent to the point $\varphi(a)$, while any point not in $A$ and not in the image of $\varphi$ is equivalent only to itself.
+
+The space $X \cup Y$ (here the union is understood in the usual sense) can be treated as $X$ attached to $Y$ by the identical inclusion $X \cap Y \hookrightarrow Y$.
+
+\item \textbf{Join.} The space $X * Y$ can be visualized as follows: we connect each point of $X$ with each point of $Y$ by a segment, and then take the union of all these segments. (The segments are not allowed to have common internal points.) For example, $S^0 * S^0 \approx S^1$.
+
+    The formal definition is
+    \[
+    X * Y = X \times [-1,1] \times Y / \sim,
+    \]
+where the equivalence relation is given by the following rule:
+\begin{adjustwidth}{2em}{}
+  for $\lambda \neq -1,1$ each point $(x,\lambda,y)$ is equivalent only to itself;
+
+  $(x,-1,y) \sim (x,-1,y')$ for all $x \in X$ and $y,y' \in Y$;
+
+  $(x,1,y) \sim (x',1,y)$ for all $x,x' \in X$ and $y \in Y$.
+\end{adjustwidth}
+
+\textbf{定义.} 拓扑空间 $X$ 称为\textit{列紧的}, 若 $X$ 中任意无限点列 $x_1,x_2,\cdots$ 有一个收敛于 $X$ 中某点的无限子列.
+
+\item \textbf{Higher homotopy groups}
+
+It is convenient to solve the recognition problem for topological spaces $X,X'$ by choosing a model set $A$ and considering the set of homotopy equivalence classes of continuous maps $[A,X]$. Depending on the specific problem, choosing an appropriate subset $B \subset A$ and fixing the map $B \to X$ can also be useful.
+
+\qquad Suppose points $a_0 \in A$ and $x_0 \in X$ are fixed. Homotopy provides an equivalence relation on the set of all maps $A \to X$ taking $a_0$ to $x_0$. The set of all equivalence classes is denoted by $\Pi(A,X)$. The set $\Pi(S^n,X)$ is also denoted by $\pi_n(X)$.
+
+\qquad Let us introduce a group structure on the set $\pi_n(X)$. (The group $\pi_n(X)$ is called the \textit{n-dimensional homotopy group}, or the \textit{nth homotopy group}.)
+
+\textbf{Exercise.} Let $B^n$ be the $n$-dimensional disk (the ball) in $\mathbb{R}^n$ with boundary $S^{n-1}$. Then $B^n/S^{n-1}$ is homeomorphic to $S^n$.
+
+\textbf{Corollary.} For any topological space $X$, the set of maps $(S^n,a_0) \to (X, x_0)$ can be identified with the set of maps $B^n \to X$ taking the whole boundary sphere $S^{n-1} = \partial B^n$ to the point $x_0$. This bijection determines a one-to-one correspondence between the homotopy classes of such maps.
+
+\qquad The groups $\pi_n(X)$ form a set of topological invariants: homeomorphic spaces have isomorphic homotopy groups. The sets $\Pi(A,X)$ for arbitrary spaces $A$ form a more general class of topological invariants. However, if the set $\Pi(A,X)$ is not endowed with a algebraic structure, then the corresponding invariant is a very weak one.
+
+\qquad There are examples of nonhomeomorphic topological spaces that the invariants of the form $\Pi(X,A)$ and $\Pi(A,X)$ cannot distinguish. A weaker equivalence relation, homotopy equivalence, is sometimes more useful than homeomorphism.
 
 \item Topological spaces $X$ and $X'$ are called \textit{homotopy
     equivalent} if there exist continuous maps $f : X \to X'$ and $g :
@@ -47,6 +114,8 @@ Y$ we recover the previous definition.
   there is a natural one-to-one correspondence between the sets
   $\Pi(A,X)$ and $\Pi(A,X')$, as well as between the sets $\Pi(X,A)$
   and $\Pi(X',A)$.
+
+\textbf{Definition.} Let $A$ and $B$ be topological spaces with the basepoints $a_0 \in A$ and $b_0 \in B$ respectively. Consider the disjoint union of $A$ and $B$ modulo the equivalence relation $a_0 \sim b_0$ gluing the points $a_0$ and $b_0$. The topological space thus obtained is called the \textit{wedge product} of the spaces $A$ and $B$ and is denoted by $(A,a_0) \vee (B,b_0)$.
 
 \item A map $p : X \to Y$, where the space $Y$ is path-connected, is
   called a \textit{covering} if for any point $y \in Y$ there is a
@@ -207,7 +276,7 @@ instead of "locally trivial fiber bundle".
   $p_2 : E_2 \to B$ are \textit{equivalent} if there is a
   homeomorphism $\varphi : E_1 \to E_2$ such that $p_1 = p_2\varphi$.
 
-\item \textit{Definition.} A \textit{trivialization} of a fiber bundle
+\item \textbf{Definition.} A \textit{trivialization} of a fiber bundle
   $p : E \to B$ is a homeomorphism $E \to B \times F$ of the form
 \[
 e \mapsto (p(e),p_1(e)),
@@ -220,7 +289,7 @@ where $p_1(e) \in F$ (whenever such a homeomorphism exists).
   come step-by-step to the definition of such spaces, which are called
   smooth manifolds.
 
-Recall some notions from calculus. A function $f : \Rn to
+Recall some notions from calculus. A function $f : \Rn \to
 \mathbb{R}$ belongs to the class $C^r$ if for $i \leq r$ all partial
 derivatives $\partial^if/\partial x_{l_1}\dots\partial x_{l_i}$ exist
 and are continuous. In this case the derivative is independent of the
@@ -247,4 +316,4 @@ $C^r$-diffeomorphism of the neighborhood $O(x)$ onto the neighborhood
 $O(F(x))$; a $C^r$-\textit{diffeomorphism} is a map of class $C^r$
 having an inverse map also belonging to the class $C^r$.
 \end{enumerate}
-\end{document}
+\end{document} 
