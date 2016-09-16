@@ -6,7 +6,7 @@
 % \setlength{\parindent}{0pt}
 \pagestyle{plain}
 
-\newcommand{\sk}[2]{\text{sk}_{#1}#2}
+\newcommand{\sk}[2]{\mathrm{sk}_{#1}#2}
 \newcommand{\Rn}{\mathbb{R}^n}
 
 \begin{document}
@@ -126,6 +126,30 @@ It is convenient to solve the recognition problem for topological spaces $X,X'$ 
   natural projection $U \times \Delta \to U$ coincides with $p$. If $\Delta$
   consists of $k$ points, then the covering is called a
   \textit{k-fold} or \textit{k-sheeted} covering.
+
+\item \textbf{覆叠同伦定理.} 考虑一个覆叠 $p : E \to X$. 设我们已给一映射 $f : Y \to E$ 以及映射 $p \circ f : Y \to X$ 的同伦, 即一映射 $F : Y \times [0,1] \to X$, 它在 $Y\times \{0\}$ 上与 $p\circ f$ 一致. 若空间 $Y$ 不太差(即若 $Y$ 为道路连通), 则同伦 $F$ 唯一地提升成一个 $f$ 的同伦, 就是说, 存在一个映射 $\Phi : Y\times [0,1]\to E$ 使
+\begin{adjustwidth}{2em}{}
+    \begin{enumerate}
+      \item $\Phi$ 在 $Y\times \{0\}$ 上与 $f$ 一致;
+      \item 方程 $p\Phi = F$ 成立.
+    \end{enumerate}
+\end{adjustwidth}
+\begin{center}
+\begin{tikzcd}
+&& E \arrow[d, "p"] \\
+Y \arrow[rru, "f"] \arrow[r, "\mathrm{id} \times 0"'] & Y \times [0,1]
+\arrow[ru, dashrightarrow, "\Phi"'] \arrow[r, "F"'] & X
+\end{tikzcd}
+\end{center}
+
+\textbf{定理.} 令 $X$ 为一局部 $1$-连通(特别地,局部道路连通)拓扑空间, 则下面结论成立:
+\begin{enumerate}
+  \item 对任一覆叠映射 $p: E \to X$, 映射 $p_\ast: \pi_1(E) \to \pi_1(X)$ 为一单同态;
+  \item 在集 $p^{-1}(x_0)$ 与 $\pi_1(X)/p_\ast(\pi_1(E))$ 的陪集之间存在一一对应.
+  \item 对 $\pi_1(X)$ 中的任一子群 $G$, 存在一个覆叠 $p : E \to X$ 使得 $p_\ast(\pi_1(E)) = G$ 成立.
+  \item 
+  \item 
+\end{enumerate}
 
 \item Usually, the objects of topology are "sufficiently good"
   topological spaces, mostly, cell spaces. Other kinds of spaces are

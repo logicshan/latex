@@ -84,6 +84,55 @@ In Proposition 3.6.1 it was proved that in a decomposition of $A$ as a direct su
 We will see later that if $A$ is a finite dimensional algebra over a field then in any two decompositions of ${}_AA$ as a direct sum of indecomposable submodules, the submodules are isomorphic in pairs.
 
 We will also see that when $A$ is a finite dimensional algebra over a field, every indecomposable projective $A$-module may be realized as $Ae$ for some primitive idempotent $e$. For other rings this need not be true.
+
+\item Changing the Ground Ring
+Given $f : R \to S$ a ring homomorphism, $f$ induces a functor
+
+\begin{align*}
+\{\text{(left) R-mods.}\} &\to \{\text{(left) S-mods.}\}\\
+V &\mapsto V_S := S \otimes_R V.
+\end{align*}
+
+The map $f$ makes $S$ a two-sided $R$-module (and in particular, a right module), so $S \otimes_R V$ makes sense. $S \otimes_R V$ is an $S$-module via the action
+\[
+s'(s \otimes v) = (s's)\otimes v.
+\]
+If
+\[
+0 \to U \to V \to W \to 0
+\]
+is a short exact sequence of left $R$-modules and $M$ is a right $R$-module then
+\[
+M\otimes_R U \to M\otimes_R V \to M\otimes_R W \to 0
+\]
+is exact, although the first map may not be injective. However, if $M$ is a free $R$-module, $M \cong R^n$ then $M\otimes_R N \cong N^n$, and so
+\[
+M\otimes_R U \hookrightarrow M\otimes_R V
+\]
+in this case.
+\qquad In particular, if $f : R \hookrightarrow S$ makes $S$ into a free $R$-module then when
+\[
+0 \to U \to V \to W \to 0
+\]
+is exact, so is
+\[
+0\to U_S\to V_S\to W_S\to  0,
+\]
+ie. $(V/U)_S \cong V_S/U_S$.
+
+\qquad In particular, if $K \subset M$ is a field extension then $M$ is a free $K$-module.
+
+\qquad $f : K \to M$ induces $K[G]\to M[G]$, and thus
+\begin{align*}
+K[G]\!\!-\!\!\mathrm{mods} &\to M[G]\!\!-\!\!\mathrm{mods}\\
+V &\mapsto V_M
+\end{align*}
+
+\item 2.4. Behavior under Field Extensions\cite{weintraub2003representation}
+
+ring $R$ is an $F$-algebra, for some field $F$. Let $E$ be an extension field of $F$, and set $R' = E\otimes_F R$. 
+
+
 \end{enumerate}
 \printbibliography
-\end{document}
+\end{document} 
