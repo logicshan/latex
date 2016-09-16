@@ -9,8 +9,8 @@
 \usepackage{biblatex}
 \addbibresource{representation_theory_notes.bib}
 
-\newtheorem*{prop}{ÃüÌâ}
-\newtheorem*{thm}{¶¨Àí}
+\newtheorem*{prop}{å‘½é¢˜}
+\newtheorem*{thm}{å®šç†}
 
 \newcommand{\abs}[1]{\left\lvert#1\right\rvert}
 
@@ -19,47 +19,47 @@
 
 \begin{document}
 \begin{enumerate}
-\item Artin-Wedderburn ¶¨Àí
+\item Artin-Wedderburn å®šç†
 
-Artin-Wedderburn ¶¨ÀíÊÇ¹ØÓÚ°ëµ¥»·ºÍ°ëµ¥´úÊıµÄ·ÖÀà¶¨Àí. ËüÊÇËµ, Èç¹û $A$ ÊÇÒ»¸ö°ëµ¥´úÊı, ÄÇÃ´ $A$ Í¬¹¹ÓÚ³ı»·ÉÏ¾ØÕó´úÊıµÄÖ±ºÍ. ÕâÊÇËµ, $A$ ×÷ÎªÒ»¸ö×óÕıÔòÄ£ÊÇ°ëµ¥µÄ, Áî $A$ ×÷Îª×óÕıÔòÄ£ÓĞÈçÏÂ·Ö½âÊ½:
+Artin-Wedderburn å®šç†æ˜¯å…³äºåŠå•ç¯å’ŒåŠå•ä»£æ•°çš„åˆ†ç±»å®šç†. å®ƒæ˜¯è¯´, å¦‚æœ $A$ æ˜¯ä¸€ä¸ªåŠå•ä»£æ•°, é‚£ä¹ˆ $A$ åŒæ„äºé™¤ç¯ä¸ŠçŸ©é˜µä»£æ•°çš„ç›´å’Œ. è¿™æ˜¯è¯´, $A$ ä½œä¸ºä¸€ä¸ªå·¦æ­£åˆ™æ¨¡æ˜¯åŠå•çš„, ä»¤ $A$ ä½œä¸ºå·¦æ­£åˆ™æ¨¡æœ‰å¦‚ä¸‹åˆ†è§£å¼:
 \[
 _AA \cong S_1^{n_1} \oplus \cdots \oplus S_r^{n_r}
 \]
-ÄÇÃ´ $A$ ×÷Îª´úÊı, ¿É·Ö½âÎªÒÔÏÂ¾ØÕó´úÊıµÄÖ±ºÍ:
+é‚£ä¹ˆ $A$ ä½œä¸ºä»£æ•°, å¯åˆ†è§£ä¸ºä»¥ä¸‹çŸ©é˜µä»£æ•°çš„ç›´å’Œ:
 \[
 A \cong M_{n_1}(D_1) \oplus \cdots \oplus M_{n_r}(D_r)
 \]
-ÆäÖĞ $D_i = End_A(S_i)^{op}$.
+å…¶ä¸­ $D_i = End_A(S_i)^{op}$.
 
 \item Proposition 4.3.1
 
-$RG$ ×÷ÎªÓÒ $RH$-Ä£, ¿É·Ö½âÎªÈçÏÂÓÒ $RH$-Ä£µÄÖ±ºÍ:
+$RG$ ä½œä¸ºå³ $RH$-æ¨¡, å¯åˆ†è§£ä¸ºå¦‚ä¸‹å³ $RH$-æ¨¡çš„ç›´å’Œ:
 \[
 RG_{RH} = \bigoplus^{\abs{G:H}}_{i=1} g_iRH
 \]
-ÆäÖĞ $g_iRH$ Îª ÓÒ $RH$-Ä£.
+å…¶ä¸­ $g_iRH$ ä¸º å³ $RH$-æ¨¡.
 
 $V\uparrow^G_H = RG \otimes_{RH}V = (\bigoplus^{\abs{G:H}}_{i=1} g_iRH) \otimes_{RH} V = \bigoplus^{\abs{G:H}}_{i=1}(g_iRH \otimes_{RH} V) = \bigoplus^{\abs{G:H}}_{i=1} g_i\otimes_{RH}V$
 
-×¢Òâ, $g_i\otimes_{RH}$ ²»ÊÇ $RG$-Ä£, ½öÊÇ $R$-Ä£, ÒòÎª $\forall x \in G, x\cdot (g_i\otimes v) = (xg_i)\otimes v$, ¶ø $xg_i$ ¿ÉÄÜ²»ÊÇ $g_i$, ´Ó¶ø $(xg_i)\otimes v$ ¿ÉÄÜ²»ÊôÓÚ $g_i \otimes_{RH} V$. ¶ø $g_i\otimes_{RH}V$ ÊÇ $R$-Ä£. $\forall r \in R, r \cdot (g_i\otimes v) = re\cdot(g_i\otimes v) = (r(e\cdot g_i))\otimes v = (rg_i)\otimes v = (g_ir)\otimes v = g_i\otimes (rv) \in g_i \otimes_{RH} V$. ÆäÖĞ $e$ ÊÇ $G$ µÄµ¥Î»Ôª, ²¢ÇÒ $R$ ÊÇ½»»»µÄ.
+æ³¨æ„, $g_i\otimes_{RH}$ ä¸æ˜¯ $RG$-æ¨¡, ä»…æ˜¯ $R$-æ¨¡, å› ä¸º $\forall x \in G, x\cdot (g_i\otimes v) = (xg_i)\otimes v$, è€Œ $xg_i$ å¯èƒ½ä¸æ˜¯ $g_i$, ä»è€Œ $(xg_i)\otimes v$ å¯èƒ½ä¸å±äº $g_i \otimes_{RH} V$. è€Œ $g_i\otimes_{RH}V$ æ˜¯ $R$-æ¨¡. $\forall r \in R, r \cdot (g_i\otimes v) = re\cdot(g_i\otimes v) = (r(e\cdot g_i))\otimes v = (rg_i)\otimes v = (g_ir)\otimes v = g_i\otimes (rv) \in g_i \otimes_{RH} V$. å…¶ä¸­ $e$ æ˜¯ $G$ çš„å•ä½å…ƒ, å¹¶ä¸” $R$ æ˜¯äº¤æ¢çš„.
 
-\item ¸ß½× socle ºÍ radical
+\item é«˜é˜¶ socle å’Œ radical
 
 $Rad^n(U) = Rad(Rad^{n-1}(U))$
 
 $Soc^n(U)/Soc^{n-1}(U) = Soc(U/Soc^{n-1}(U))$.
 
-ÒÔÏÂÊÇ¶Ô¸ß½× socle µÄ½âÊÍ:
+ä»¥ä¸‹æ˜¯å¯¹é«˜é˜¶ socle çš„è§£é‡Š:
 
-Ê×ÏÈ $Soc^{n-1}(U)$ ÊÇ $U$ µÄÒ»¸ö×ÓÄ£, ¿ÉÒÔµÃµ½Ò»¸öÉÌÄ£ $U/Soc^{n-1}(U)$. ÓĞÈçÏÂ×ÔÈ»Í¬Ì¬:
+é¦–å…ˆ $Soc^{n-1}(U)$ æ˜¯ $U$ çš„ä¸€ä¸ªå­æ¨¡, å¯ä»¥å¾—åˆ°ä¸€ä¸ªå•†æ¨¡ $U/Soc^{n-1}(U)$. æœ‰å¦‚ä¸‹è‡ªç„¶åŒæ€:
 \[
 \pi : U \to U/Soc^{n-1}(U)
 \]
-¿ÉÒÔÈ¡Õâ¸öÉÌÄ£µÄ socle, µÃµ½ $Soc(U/Soc^{n-1}(U))$, ËüÊÇÕâ¸öÉÌÄ£µÄÒ»¸ö×ÓÄ£. ÓÉ¶¨Àí1.4.7\cite{dlab2012finite}, $U/Soc^{n-1}(U)$ ÖĞµÄÃ¿Ò»¸ö×ÓÄ£, ÔÚ $U$ ÖĞ¶¼ÓĞÒ»¸ö°üº¬ $Soc^{n-1}(U)$ µÄ×ÓÄ£ÓëÖ®¶ÔÓ¦, Õâ¸ö×ÓÄ£¼´Îª $Soc^n(U)$. \textcolor{red}{(×¢Òâ¼ÇºÅ·½ÃæµÄÎÊÌâ, ÓÉÓÚÉÌÄ£µÄÒ»¸ö×ÓÄ£»¹ÊÇÒ»¸öÉÌÄ£, ËùÒÔ $Soc(U/Soc^{n-1}(U))$ ÊÇÒ»¸öÉÌÄ£, ¿ÉÒÔÓĞĞÎÊ½ $Soc^n(U)/Soc^{n-1}(U)$.)}
+å¯ä»¥å–è¿™ä¸ªå•†æ¨¡çš„ socle, å¾—åˆ° $Soc(U/Soc^{n-1}(U))$, å®ƒæ˜¯è¿™ä¸ªå•†æ¨¡çš„ä¸€ä¸ªå­æ¨¡. ç”±å®šç†1.4.7\cite{dlab2012finite}, $U/Soc^{n-1}(U)$ ä¸­çš„æ¯ä¸€ä¸ªå­æ¨¡, åœ¨ $U$ ä¸­éƒ½æœ‰ä¸€ä¸ªåŒ…å« $Soc^{n-1}(U)$ çš„å­æ¨¡ä¸ä¹‹å¯¹åº”, è¿™ä¸ªå­æ¨¡å³ä¸º $Soc^n(U)$. \textcolor{red}{(æ³¨æ„è®°å·æ–¹é¢çš„é—®é¢˜, ç”±äºå•†æ¨¡çš„ä¸€ä¸ªå­æ¨¡è¿˜æ˜¯ä¸€ä¸ªå•†æ¨¡, æ‰€ä»¥ $Soc(U/Soc^{n-1}(U))$ æ˜¯ä¸€ä¸ªå•†æ¨¡, å¯ä»¥æœ‰å½¢å¼ $Soc^n(U)/Soc^{n-1}(U)$.)}
 
-\item ±íÊ¾µÄ¹²éî(conjugation of representation)
+\item è¡¨ç¤ºçš„å…±è½­(conjugation of representation)
 
-Áî $H$ Îª $G$ µÄÒ»¸ö×ÓÈº, $g \in G$, $V$ ÊÇ $H$ µÄÒ»¸ö±íÊ¾. ÎÒÃÇ¶¨Òå $^gH$ µÄÒ»¸ö±íÊ¾ $^gV$, Áî $^gV = V$, ²¢ÇÒ $^gh \cdot v = hv, \forall ^gh \in {}^gH$.
+ä»¤ $H$ ä¸º $G$ çš„ä¸€ä¸ªå­ç¾¤, $g \in G$, $V$ æ˜¯ $H$ çš„ä¸€ä¸ªè¡¨ç¤º. æˆ‘ä»¬å®šä¹‰ $^gH$ çš„ä¸€ä¸ªè¡¨ç¤º $^gV$, ä»¤ $^gV = V$, å¹¶ä¸” $^gh \cdot v = hv, \forall ^gh \in {}^gH$.
 
 \item Double cosets
 
@@ -71,15 +71,15 @@ Let $G$ be a group with subgroups $H$ and $K$.
 
 3. $K\backslash G/H$ denotes the set of double cosets $\{KgH : g \in G\}$ of $H$ and $K$ in $G$.
 
-×¢ÒâÓëÒÔÏÂ·ûºÅµÄÇø±ğ
+æ³¨æ„ä¸ä»¥ä¸‹ç¬¦å·çš„åŒºåˆ«
 
 If $\Omega$ is a left $G$-set we use the notation $G\backslash \Omega$ for the set of orbits of $G$ on $\Omega$, and denote a set of representatives for the orbits by $[G\backslash \Omega]$. Similarly if $\Omega$ is a right $G$-set we write $\Omega /G$ and $[\Omega/G]$.
 
 \item 7.2 Projectives by means of idempotents
 
-One way to obtain projective $A$-modules is from idempotents of the ring $A$. If $e^2 = e \in A$ then ${}_AA = Ae \oplus A(1 - e)$ as $A$-modules, and so the submodules $Ae$ and $A(1 - e)$ are projective. We formalize this with the next result, which should be \textcolor{red}{compared with Proosition 3.6.1} in which we were dealing with ring summands of $A$ and central idempotents.
+One way to obtain projective $A$-modules is from idempotents of the ring $A$. If $e^2 = e \in A$ then ${}_AA = Ae \oplus A(1 - e)$ as $A$-modules, and so the submodules $Ae$ and $A(1 - e)$ are projective. We formalize this with the next result, which should be \textcolor{red}{compared with Proposition 3.6.1} in which we were dealing with ring summands of $A$ and central idempotents.
 
-In Proposition 3.6.1 it was proved that in a decomposition of $A$ as a direct sum of indecomposable rings, the rings are uniquely determined as subsets of $A$ and the corresponding primitive central idempotents are also unique. We point out that the corresponding uniqueness property need not hold with module decompositions of ${}_AA$ that are not ring decompositions. ¾ÍÊÇËµ, $A$ ±¾Éí×÷Îª»·, Èô·Ö½âÎª\textcolor{red}{²»¿É·Ö½â»·µÄÖ±ºÍ}, ÔòÊÇÎ¨Ò»µÄ, Èô×÷ÎªÕıÔòÄ£, ·Ö½âÎª\textcolor{red}{²»¿É·Ö½âÄ£µÄÖ±ºÍ}, Ôò²»Ò»¶¨Î¨Ò».
+In Proposition 3.6.1 it was proved that in a decomposition of $A$ as a direct sum of indecomposable rings, the rings are uniquely determined as subsets of $A$ and the corresponding primitive central idempotents are also unique. We point out that the corresponding uniqueness property need not hold with module decompositions of ${}_AA$ that are not ring decompositions. å°±æ˜¯è¯´, $A$ æœ¬èº«ä½œä¸ºç¯, è‹¥åˆ†è§£ä¸º\textcolor{red}{ä¸å¯åˆ†è§£ç¯çš„ç›´å’Œ}, åˆ™æ˜¯å”¯ä¸€çš„, è‹¥ä½œä¸ºæ­£åˆ™æ¨¡, åˆ†è§£ä¸º\textcolor{red}{ä¸å¯åˆ†è§£æ¨¡çš„ç›´å’Œ}, åˆ™ä¸ä¸€å®šå”¯ä¸€.
 
 We will see later that if $A$ is a finite dimensional algebra over a field then in any two decompositions of ${}_AA$ as a direct sum of indecomposable submodules, the submodules are isomorphic in pairs.
 
@@ -130,7 +130,7 @@ V &\mapsto V_M
 
 \item 2.4. Behavior under Field Extensions\cite{weintraub2003representation}
 
-ring $R$ is an $F$-algebra, for some field $F$. Let $E$ be an extension field of $F$, and set $R' = E\otimes_F R$. 
+ring $R$ is an $F$-algebra, for some field $F$. Let $E$ be an extension field of $F$, and set $R' = E\otimes_F R$.
 
 
 \end{enumerate}

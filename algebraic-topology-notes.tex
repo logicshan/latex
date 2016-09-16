@@ -5,125 +5,125 @@
 \usepackage{color}
 \usepackage{tikz-cd}
 
-\newtheorem*{prop}{ÃüÌâ}
-\newtheorem*{thm}{¶¨Àí}
-\newtheorem*{defn}{¶¨Òå}
+\newtheorem*{prop}{å‘½é¢˜}
+\newtheorem*{thm}{å®šç†}
+\newtheorem*{defn}{å®šä¹‰}
 
 \DeclareMathOperator{\rel}{rel}
 
 \begin{document}
 \begin{defn}
-Éè $X,Y$ ÊÇÁ½¸öÍØÆË¿Õ¼ä. ¼Ç
+è®¾ $X,Y$ æ˜¯ä¸¤ä¸ªæ‹“æ‰‘ç©ºé—´. è®°
 \[
-C(X,Y) = \{f : X \to Y \mid f \text{ÊÇÁ¬ĞøÓ³Éä}\}.
+C(X,Y) = \{f : X \to Y \mid f \text{æ˜¯è¿ç»­æ˜ å°„}\}.
 \]
-ÈÎÈ¡ $f,g \in C(X,Y)$, ÈôÓĞÁ¬ĞøÓ³Éä $H : X \times [0,1] \to Y$ Âú×ã
+ä»»å– $f,g \in C(X,Y)$, è‹¥æœ‰è¿ç»­æ˜ å°„ $H : X \times [0,1] \to Y$ æ»¡è¶³
 \[
 H(x,0) \equiv f(x),\hspace{1em} H(x,1) \equiv g(x),
 \]
-Ôò³Æ $f$ ºÍ $g$ \textbf{Í¬Â×}(homotopic), ¼ÇÎª $f \overset{H}{\simeq}
-g$; ²¢³Æ $H$ Îª´Ó $f$ µ½ $g$ µÄ \textbf{Â×ÒÆ}(homotopy), ³ÆÃ¿¸öÓ³Éä
-$h_t : X \to Y, x \mapsto H(x,t)$ Îª $H$ ÔÚ $t$ Ê±¿ÌµÄ \textbf{ÇĞ
-  Æ¬}(section), ³ÆÃ¿ÌõµÀÂ· $\eta_x : [0,1] \to Y, t \mapsto H(x,t)$ Îª
-$H$ ÔÚ $x$ µã´¦µÄ \textbf{×Ù}(trace).
+åˆ™ç§° $f$ å’Œ $g$ \textbf{åŒä¼¦}(homotopic), è®°ä¸º $f \overset{H}{\simeq}
+g$; å¹¶ç§° $H$ ä¸ºä» $f$ åˆ° $g$ çš„ \textbf{ä¼¦ç§»}(homotopy), ç§°æ¯ä¸ªæ˜ å°„
+$h_t : X \to Y, x \mapsto H(x,t)$ ä¸º $H$ åœ¨ $t$ æ—¶åˆ»çš„ \textbf{åˆ‡
+  ç‰‡}(section), ç§°æ¯æ¡é“è·¯ $\eta_x : [0,1] \to Y, t \mapsto H(x,t)$ ä¸º
+$H$ åœ¨ $x$ ç‚¹å¤„çš„ \textbf{è¸ª}(trace).
 \end{defn}
 \begin{defn}
-°´Í¬Â×¹ØÏµ½« $C(X,Y)$ ÖĞµÄÓ³Éä»®·ÖµÈ¼ÛÀà, Ã¿Ò»¸öµÈ¼ÛÀà³ÆÎªÒ»¸ö
-\textbf{Ó³ÉäÀà}(mapping class). $f$ ËùÔÚµÄÓ³ÉäÀà¼ÇÎª $\langle f
-\rangle$. ËùÓĞ´Ó $X$ µ½ $Y$ µÄÓ³ÉäÀà¹¹³ÉµÄ¼¯ºÏ¼ÇÎª $[X,Y]$.
+æŒ‰åŒä¼¦å…³ç³»å°† $C(X,Y)$ ä¸­çš„æ˜ å°„åˆ’åˆ†ç­‰ä»·ç±», æ¯ä¸€ä¸ªç­‰ä»·ç±»ç§°ä¸ºä¸€ä¸ª
+\textbf{æ˜ å°„ç±»}(mapping class). $f$ æ‰€åœ¨çš„æ˜ å°„ç±»è®°ä¸º $\langle f
+\rangle$. æ‰€æœ‰ä» $X$ åˆ° $Y$ çš„æ˜ å°„ç±»æ„æˆçš„é›†åˆè®°ä¸º $[X,Y]$.
 \end{defn}
 
-$[X,Y]$ ×ÜÊÇ·Ç¿ÕµÄ, ÒòÎªËüÖÁÉÙÒªº¬ÓĞÒ»¸ö³£ÖµÓ³ÉäËùÔÚµÄÓ³ÉäÀà. Èç¹û $f$
-Í¬Â×ÓÚ³£ÖµÓ³Éä, Ôò³Æ $f$ \textbf{ÁãÂ×}(null homotopic).
+$[X,Y]$ æ€»æ˜¯éç©ºçš„, å› ä¸ºå®ƒè‡³å°‘è¦å«æœ‰ä¸€ä¸ªå¸¸å€¼æ˜ å°„æ‰€åœ¨çš„æ˜ å°„ç±». å¦‚æœ $f$
+åŒä¼¦äºå¸¸å€¼æ˜ å°„, åˆ™ç§° $f$ \textbf{é›¶ä¼¦}(null homotopic).
 
 \begin{defn}
-Éè $A \subset X, f,g \in C(X,Y)$. Èç¹û´æÔÚÂ×ÒÆ $H : f \simeq g$ Âú×ãÈÎ
-È¡ $a \in A, H(a,t) \equiv f(a) = g(a)$, Ôò³Æ $f$ ºÍ $g$ \textbf{Ïà¶Ô
-  ÓÚ} $A$ \textbf{Í¬Â×}(homotopic relative to A), ¼ÇÎª $H : f \simeq g
-\rel A$, ²¢³Æ $H$ ÎªÒ»¸ö \textbf{Ïà¶ÔÓÚ} $A$ \textbf{µÄÂ×ÒÆ}(homotopy
+è®¾ $A \subset X, f,g \in C(X,Y)$. å¦‚æœå­˜åœ¨ä¼¦ç§» $H : f \simeq g$ æ»¡è¶³ä»»
+å– $a \in A, H(a,t) \equiv f(a) = g(a)$, åˆ™ç§° $f$ å’Œ $g$ \textbf{ç›¸å¯¹
+  äº} $A$ \textbf{åŒä¼¦}(homotopic relative to A), è®°ä¸º $H : f \simeq g
+\rel A$, å¹¶ç§° $H$ ä¸ºä¸€ä¸ª \textbf{ç›¸å¯¹äº} $A$ \textbf{çš„ä¼¦ç§»}(homotopy
 relative to A).
 \end{defn}
 
 \begin{defn}
-Éè $X$ Óë $Y$ ÎªÍØÆË¿Õ¼ä, Èç¹û´æÔÚÁ¬ĞøÓ³Éä $f : X \to Y$ ºÍ $g : Y \to
-Y$, Ê¹µÃ
+è®¾ $X$ ä¸ $Y$ ä¸ºæ‹“æ‰‘ç©ºé—´, å¦‚æœå­˜åœ¨è¿ç»­æ˜ å°„ $f : X \to Y$ å’Œ $g : Y \to
+Y$, ä½¿å¾—
 \[
 g \circ f \simeq id_X, \hspace{1em} f \circ g \simeq id_Y,
 \]
-Ôò³Æ $X$ ºÍ $Y$ \textbf{Í¬Â×µÈ¼Û}(homotopy equivalent), ¼ÇÎª $X \simeq
-Y$. ÎÒÃÇÒ²³ÆÓ³Éä $f$ ºÍ $g$ Îª \textbf{Í¬Â×µÈ¼Û}(homotopy
-equivalence), ²¢³ÆËüÃÇ»¥Îª \textbf{Í¬Â×Äæ}(homotopy inverse).
+åˆ™ç§° $X$ å’Œ $Y$ \textbf{åŒä¼¦ç­‰ä»·}(homotopy equivalent), è®°ä¸º $X \simeq
+Y$. æˆ‘ä»¬ä¹Ÿç§°æ˜ å°„ $f$ å’Œ $g$ ä¸º \textbf{åŒä¼¦ç­‰ä»·}(homotopy
+equivalence), å¹¶ç§°å®ƒä»¬äº’ä¸º \textbf{åŒä¼¦é€†}(homotopy inverse).
 \end{defn}
-\textcolor{red}{×¢Òâ, Ò»¸öÍ¬Â×µÈ¼ÛµÄÍ¬Â×Äæ²¢²»Î¨Ò».}
+\textcolor{red}{æ³¨æ„, ä¸€ä¸ªåŒä¼¦ç­‰ä»·çš„åŒä¼¦é€†å¹¶ä¸å”¯ä¸€.}
 
 \begin{defn}
-Éè $A \subset X, i : A \hookrightarrow X$ ÊÇ°üº¬Ó³Éä. Èç¹ûÓ³Éä $r : X
-\to A$ Âú×ã $r \circ i = r|_A = id_A$, Ôò³ÆÖ®Îª \textbf{ÊÕËõÓ³
-  Éä}(retraction), ³Æ $A$ Îª $X$ µÄ \textbf{ÊÕËõºË}(retract). Èç¹ûÒ»¸ö
-ÊÕËõÓ³Éä $r$ »¹Âú×ã $i \circ r \simeq id_X$, Ôò³ÆÖ®Îª \textbf{ĞÎ±äÊÕ
-  Ëõ}(deformation retraction), ³Æ $A$ Îª $X$ µÄ \textbf{ĞÎ±äÊÕËõ
-  ºË}(deformation retract). Èç¹ûĞÎ±äÊÕËõ $r$ »¹Âú×ã $i \circ r \simeq
-id_X \rel A$, Ôò³ÆÖ®Îª \textbf{Ç¿ĞÎ±äÊÕËõ}(strong deformation
-retraction), ³Æ $A$ Îª $X$ µÄ\textbf{Ç¿ĞÎ±äÊÕËõºË}(strong deformation retract).
+è®¾ $A \subset X, i : A \hookrightarrow X$ æ˜¯åŒ…å«æ˜ å°„. å¦‚æœæ˜ å°„ $r : X
+\to A$ æ»¡è¶³ $r \circ i = r|_A = id_A$, åˆ™ç§°ä¹‹ä¸º \textbf{æ”¶ç¼©æ˜ 
+  å°„}(retraction), ç§° $A$ ä¸º $X$ çš„ \textbf{æ”¶ç¼©æ ¸}(retract). å¦‚æœä¸€ä¸ª
+æ”¶ç¼©æ˜ å°„ $r$ è¿˜æ»¡è¶³ $i \circ r \simeq id_X$, åˆ™ç§°ä¹‹ä¸º \textbf{å½¢å˜æ”¶
+  ç¼©}(deformation retraction), ç§° $A$ ä¸º $X$ çš„ \textbf{å½¢å˜æ”¶ç¼©
+  æ ¸}(deformation retract). å¦‚æœå½¢å˜æ”¶ç¼© $r$ è¿˜æ»¡è¶³ $i \circ r \simeq
+id_X \rel A$, åˆ™ç§°ä¹‹ä¸º \textbf{å¼ºå½¢å˜æ”¶ç¼©}(strong deformation
+retraction), ç§° $A$ ä¸º $X$ çš„\textbf{å¼ºå½¢å˜æ”¶ç¼©æ ¸}(strong deformation retract).
 \end{defn}
 
 \begin{defn}
-Èç¹ûÒ»¸ö¿Õ¼ä¿ÉÒÔĞÎ±äÊÕËõµ½Ò»µã, Ôò³ÆËü \textbf{¿ÉËõ}(contractible).
+å¦‚æœä¸€ä¸ªç©ºé—´å¯ä»¥å½¢å˜æ”¶ç¼©åˆ°ä¸€ç‚¹, åˆ™ç§°å®ƒ \textbf{å¯ç¼©}(contractible).
 \end{defn}
 
-ÏÔÈ»¿ÉËõ¿Õ¼äÒ»¶¨ÊÇµÀÂ·Á¬Í¨µÄ, ÒòÎªÕâ¸ö¿Õ¼äÖĞµÄÃ¿¸öµã¶¼¿ÉÒÔÑØÒ»ÌõµÀÂ·ÒÆ
-¶¯µ½×÷ÎªÊÕËõºËµÄÄÇ¸öµãÉÏÈ¥. \textcolor{red}{×¢Òâ, ÔÚÊÕËõ¹ı³ÌÖĞÄÇ¸öµãÍêÈ«¿ÉÒÔÏÈÔİÊ±ÅÜµ½
-±ğµÄµØ·½ÔÙÅÜ»ØÀ´. »»ÑÔÖ®, Õâ¸ö¸ÅÄî²»ÒªÇóËüÊÇÇ¿ĞÎ±äÊÕËõºË.}
+æ˜¾ç„¶å¯ç¼©ç©ºé—´ä¸€å®šæ˜¯é“è·¯è¿é€šçš„, å› ä¸ºè¿™ä¸ªç©ºé—´ä¸­çš„æ¯ä¸ªç‚¹éƒ½å¯ä»¥æ²¿ä¸€æ¡é“è·¯ç§»
+åŠ¨åˆ°ä½œä¸ºæ”¶ç¼©æ ¸çš„é‚£ä¸ªç‚¹ä¸Šå». \textcolor{red}{æ³¨æ„, åœ¨æ”¶ç¼©è¿‡ç¨‹ä¸­é‚£ä¸ªç‚¹å®Œå…¨å¯ä»¥å…ˆæš‚æ—¶è·‘åˆ°
+åˆ«çš„åœ°æ–¹å†è·‘å›æ¥. æ¢è¨€ä¹‹, è¿™ä¸ªæ¦‚å¿µä¸è¦æ±‚å®ƒæ˜¯å¼ºå½¢å˜æ”¶ç¼©æ ¸.}
 
 \begin{defn}
-Éè $a,b : [0,1] \to X$ ¶¼ÊÇ´Ó $x$ µ½ $y$ µÄµÀÂ·, $H : [0,1] \times
-[0,1] \to X$ ÊÇ´Ó $a$ µ½ $b$ µÄÂ×ÒÆ, ²¢ÇÒÃ¿¸öÊ±¿Ì $t$ µÄÇĞÆ¬ $h_t :
-[0,1] \to X, s \mapsto H(s,t)$ Ò²¶¼ÊÇ´Ó $x$ µ½ $y$ µÄµÀÂ·, ¼´
+è®¾ $a,b : [0,1] \to X$ éƒ½æ˜¯ä» $x$ åˆ° $y$ çš„é“è·¯, $H : [0,1] \times
+[0,1] \to X$ æ˜¯ä» $a$ åˆ° $b$ çš„ä¼¦ç§», å¹¶ä¸”æ¯ä¸ªæ—¶åˆ» $t$ çš„åˆ‡ç‰‡ $h_t :
+[0,1] \to X, s \mapsto H(s,t)$ ä¹Ÿéƒ½æ˜¯ä» $x$ åˆ° $y$ çš„é“è·¯, å³
 \[
 h_0 = a, \hspace{1ex}h_1 = b,\hspace{1ex} h_t(0) \equiv x,\hspace{1ex} h_t(1) \equiv y,
 \]
-Ôò³Æ $a$ ºÍ $b$ \textbf{¶¨¶ËÍ¬Â×}(path homotopic, Ò²³Æ \textbf{µÀÂ·Í¬
-  Â×}), ¼ÇÎª $a \simeq b$, ³Æ $H$ Îª \textbf{¶¨¶ËÂ×ÒÆ}(path homotopy,
-Ò²³Æ \textbf{µÀÂ·Â×ÒÆ}), ²¢³ÆËùÓĞÓë $a$ ¶¨¶ËÍ¬Â×µÄµÀÂ·¹¹³ÉµÄ¼¯ºÏÎª $a$
-µÄ \textbf{µÀÂ·Àà}(class of paths), ¼ÇÎª $\langle a \rangle$.
+åˆ™ç§° $a$ å’Œ $b$ \textbf{å®šç«¯åŒä¼¦}(path homotopic, ä¹Ÿç§° \textbf{é“è·¯åŒ
+  ä¼¦}), è®°ä¸º $a \simeq b$, ç§° $H$ ä¸º \textbf{å®šç«¯ä¼¦ç§»}(path homotopy,
+ä¹Ÿç§° \textbf{é“è·¯ä¼¦ç§»}), å¹¶ç§°æ‰€æœ‰ä¸ $a$ å®šç«¯åŒä¼¦çš„é“è·¯æ„æˆçš„é›†åˆä¸º $a$
+çš„ \textbf{é“è·¯ç±»}(class of paths), è®°ä¸º $\langle a \rangle$.
 \end{defn}
 
 \begin{defn}
-³Æ´Ó $x_0$ µ½ $x_0$ µÄµÀÂ·ÎªÒÔ $x_0$ Îª \textbf{»ùµã}(base point) µÄ
-\textbf{±ÕµÀÂ·}(loop). ±ÕµÀÂ·ËùÔÚµÄµÀÂ·Àà³ÆÎª \textbf{±ÕµÀÂ·Àà}(class
-of loops). $X$ ÉÏËùÓĞÒÔ $x_0$ Îª»ùµãµÄ±ÕµÀÂ·Àà¹¹³ÉµÄ¼¯ºÏ¼ÇÎª $\pi_1(X,x_0)$.
+ç§°ä» $x_0$ åˆ° $x_0$ çš„é“è·¯ä¸ºä»¥ $x_0$ ä¸º \textbf{åŸºç‚¹}(base point) çš„
+\textbf{é—­é“è·¯}(loop). é—­é“è·¯æ‰€åœ¨çš„é“è·¯ç±»ç§°ä¸º \textbf{é—­é“è·¯ç±»}(class
+of loops). $X$ ä¸Šæ‰€æœ‰ä»¥ $x_0$ ä¸ºåŸºç‚¹çš„é—­é“è·¯ç±»æ„æˆçš„é›†åˆè®°ä¸º $\pi_1(X,x_0)$.
 \end{defn}
 
 \begin{defn}
-Éè $a$ ÊÇ´Ó $x$ µ½ $y$ µÄµÀÂ·, $b$ ÊÇ´Ó $y$ µ½ $z$ µÄµÀÂ·, Ôò³ÆÒÔÁ½±¶
-ËÙ¶ÈÒÀ´Î×ßÍê $a$ ºÍ $b$ µÄµÀÂ·
+è®¾ $a$ æ˜¯ä» $x$ åˆ° $y$ çš„é“è·¯, $b$ æ˜¯ä» $y$ åˆ° $z$ çš„é“è·¯, åˆ™ç§°ä»¥ä¸¤å€
+é€Ÿåº¦ä¾æ¬¡èµ°å®Œ $a$ å’Œ $b$ çš„é“è·¯
 \[
 c(t) =
 \begin{cases}
-a(2t),     & \text{Èô} 0 \leq t \leq \frac{1}{2};\\
-b(2t - 1), & \text{Èô} \frac{1}{2} \leq t \leq 1
+a(2t),     & \text{è‹¥} 0 \leq t \leq \frac{1}{2};\\
+b(2t - 1), & \text{è‹¥} \frac{1}{2} \leq t \leq 1
 \end{cases}
 \]
-Îª $a$ ºÍ $b$ µÄ \textbf{³Ë»ıµÀÂ·}(product path), ¼ÇÎª $ab$.
+ä¸º $a$ å’Œ $b$ çš„ \textbf{ä¹˜ç§¯é“è·¯}(product path), è®°ä¸º $ab$.
 \end{defn}
 
 \begin{defn}
-»ù±¾ÈºÆ½·²µÄµÀÂ·Á¬Í¨¿Õ¼ä³ÆÎª \textbf{µ¥Á¬Í¨}(simply connected)¿Õ¼ä.
+åŸºæœ¬ç¾¤å¹³å‡¡çš„é“è·¯è¿é€šç©ºé—´ç§°ä¸º \textbf{å•è¿é€š}(simply connected)ç©ºé—´.
 \end{defn}
 
 \begin{thm}
-Á¬ĞøÓ³Éä $f : X \to Y$ ÓÕµ¼»ù±¾ÈºµÄÍ¬Ì¬
+è¿ç»­æ˜ å°„ $f : X \to Y$ è¯±å¯¼åŸºæœ¬ç¾¤çš„åŒæ€
 \[
 f_\pi : \pi_1(X,x_0) \to \pi_1(Y,f(x_0)), \hspace{1em}\langle a
 \rangle \mapsto \langle f \circ a \rangle,
 \]
-³ÆÎª $f$ µÄ \textbf{ÓÕµ¼Í¬Ì¬}(induced homomorphism).
+ç§°ä¸º $f$ çš„ \textbf{è¯±å¯¼åŒæ€}(induced homomorphism).
 \end{thm}
 
 \begin{defn}
-Éè $p : E \to B$ Á¬Ğø. Èç¹ûÁ¬ĞøÓ³Éä $f : X \to B$ ºÍ $f^\uparrow : X
-\to E$ Âú×ãÈçÏÂ½»»»Í¼±í, ¼´ $f = p \circ f^\uparrow$, Ôò³Æ
-$f^\uparrow$ Îª $f$ ¹ØÓÚ $p$ µÄ \textbf{ÌáÉı}(lift »ò lifting).
+è®¾ $p : E \to B$ è¿ç»­. å¦‚æœè¿ç»­æ˜ å°„ $f : X \to B$ å’Œ $f^\uparrow : X
+\to E$ æ»¡è¶³å¦‚ä¸‹äº¤æ¢å›¾è¡¨, å³ $f = p \circ f^\uparrow$, åˆ™ç§°
+$f^\uparrow$ ä¸º $f$ å…³äº $p$ çš„ \textbf{æå‡}(lift æˆ– lifting).
 \begin{center}
 \begin{tikzcd}
 & E \arrow[d, "p"] \\
@@ -133,10 +133,10 @@ X \arrow[r, "f"] \arrow[ur, dashrightarrow, "f^\uparrow"] & B
 \end{defn}
 
 \begin{defn}
-Éè $p : E \to B$ Á¬Ğø. ³ÆÒ»¸ö¿Õ¼ä $X$ ¹ØÓÚ $p$ Âú×ã \textbf{Í¬Â×ÌáÉıĞÔ
-  ÖÊ}(homotopy lifting property), Èç¹ûËüÂú×ãÏÂÊöÌõ¼ş: ÈÎÈ¡Á¬ĞøÓ³Éä $f
-: X \to B$, Ö»Òª $f$ ÓĞÌáÉı $f^\uparrow$, Ôò´Ó $f$ ¿ªÊ¼µÄÈÎÒâÂ×ÒÆ $F$
-Ò»¶¨´æÔÚ´Ó $f^\uparrow$ ¿ªÊ¼µÄÂ×ÒÆ×÷ÎªÆäÌáÉı.
+è®¾ $p : E \to B$ è¿ç»­. ç§°ä¸€ä¸ªç©ºé—´ $X$ å…³äº $p$ æ»¡è¶³ \textbf{åŒä¼¦æå‡æ€§
+  è´¨}(homotopy lifting property), å¦‚æœå®ƒæ»¡è¶³ä¸‹è¿°æ¡ä»¶: ä»»å–è¿ç»­æ˜ å°„ $f
+: X \to B$, åªè¦ $f$ æœ‰æå‡ $f^\uparrow$, åˆ™ä» $f$ å¼€å§‹çš„ä»»æ„ä¼¦ç§» $F$
+ä¸€å®šå­˜åœ¨ä» $f^\uparrow$ å¼€å§‹çš„ä¼¦ç§»ä½œä¸ºå…¶æå‡.
 \end{defn}
 \begin{center}
 \begin{tikzcd}
@@ -147,21 +147,21 @@ X \arrow[rru, "f^\uparrow"] \arrow[r, "\mathrm{id} \times 0"'] & X \times [0,1]
 \end{center}
 
 \begin{defn}
-Éè $p : E \to B$ Á¬Ğø. Èç¹ûÈÎºÎ¿Õ¼ä $X$ ¹ØÓÚ $p$ ¾ùÂú×ãÍ¬Â×ÌáÉıĞÔÖÊ,
-Ôò³Æ $p$ ÎªÒ»¸ö \textbf{ÏËÎ¬»¯}(fibration). ³Æ $E$ Îª \textbf{È«¿Õ
-  ¼ä}(total space), ³Æ $B$ Îª \textbf{µ×¿Õ¼ä}(base space), ³ÆÃ¿¸ö
-$p^{-1}(b)$ Îª $b$ ÉÏµÄÒ»¸ù \textbf{ÏËÎ¬}(fiber).
+è®¾ $p : E \to B$ è¿ç»­. å¦‚æœä»»ä½•ç©ºé—´ $X$ å…³äº $p$ å‡æ»¡è¶³åŒä¼¦æå‡æ€§è´¨,
+åˆ™ç§° $p$ ä¸ºä¸€ä¸ª \textbf{çº¤ç»´åŒ–}(fibration). ç§° $E$ ä¸º \textbf{å…¨ç©º
+  é—´}(total space), ç§° $B$ ä¸º \textbf{åº•ç©ºé—´}(base space), ç§°æ¯ä¸ª
+$p^{-1}(b)$ ä¸º $b$ ä¸Šçš„ä¸€æ ¹ \textbf{çº¤ç»´}(fiber).
 \end{defn}
 
 \begin{defn}
-Éè $p : E \to B$ ÊÇÒ»¸öÁ¬ĞøÂúÉä, ²¢ÇÒ¶ÔÓÚÃ¿¸ö $b \in B$ ´æÔÚÆä¿ªÁÚÓò
-$U_b$, Ê¹µÃ $p^{-1}(U_b)$ ÊÇÒ»×å»¥²»Ïà½»µÄ¿ª¼¯
-$\{V_{b,\lambda}\}_{\lambda \in \Lambda}$ µÄ²¢, ²¢ÇÒÃ¿¸ö
-$p|_{V_{b,\lambda}} : V_{b,\lambda} \to U_b$ ¶¼ÊÇÍ¬Åß, Ôò³Æ $(E,p)$ Îª
-$B$ ÉÏµÄ \textbf{¸´µü¿Õ¼ä}(covering space), ²¢³Æ $p$ ÎªÒ»¸ö \textbf{¸´
-  µüÓ³Éä}(covering map). ³Æ $E$ ÎªÆä \textbf{È«¿Õ¼ä}(total space), ³Æ
-$B$ ÎªÆä \textbf{µ×¿Õ¼ä}(base space), ³ÆÕâĞ© $U_b$ Îª \textbf{¾ùÔÈ¸´µü
-  ÁÚÓò}(evenly-covered neighborhood), ³ÆÃ¿¸ö $p^{-1}(b)$ Îª $b$ ÉÏµÄ
-\textbf{ÏËÎ¬}(fiber).
+è®¾ $p : E \to B$ æ˜¯ä¸€ä¸ªè¿ç»­æ»¡å°„, å¹¶ä¸”å¯¹äºæ¯ä¸ª $b \in B$ å­˜åœ¨å…¶å¼€é‚»åŸŸ
+$U_b$, ä½¿å¾— $p^{-1}(U_b)$ æ˜¯ä¸€æ—äº’ä¸ç›¸äº¤çš„å¼€é›†
+$\{V_{b,\lambda}\}_{\lambda \in \Lambda}$ çš„å¹¶, å¹¶ä¸”æ¯ä¸ª
+$p|_{V_{b,\lambda}} : V_{b,\lambda} \to U_b$ éƒ½æ˜¯åŒèƒš, åˆ™ç§° $(E,p)$ ä¸º
+$B$ ä¸Šçš„ \textbf{å¤è¿­ç©ºé—´}(covering space), å¹¶ç§° $p$ ä¸ºä¸€ä¸ª \textbf{å¤
+  è¿­æ˜ å°„}(covering map). ç§° $E$ ä¸ºå…¶ \textbf{å…¨ç©ºé—´}(total space), ç§°
+$B$ ä¸ºå…¶ \textbf{åº•ç©ºé—´}(base space), ç§°è¿™äº› $U_b$ ä¸º \textbf{å‡åŒ€å¤è¿­
+  é‚»åŸŸ}(evenly-covered neighborhood), ç§°æ¯ä¸ª $p^{-1}(b)$ ä¸º $b$ ä¸Šçš„
+\textbf{çº¤ç»´}(fiber).
 \end{defn}
 \end{document}

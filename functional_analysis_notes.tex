@@ -4,9 +4,9 @@
 \usepackage{mathrsfs}
 \usepackage{color}
 
-\newtheorem{defn}{¶¨Òå}[section]
-\newtheorem{prop}[defn]{ÃüÌâ}
-\newtheorem{thm}[defn]{¶¨Àí}
+\newtheorem{defn}{å®šä¹‰}[section]
+\newtheorem{prop}[defn]{å‘½é¢˜}
+\newtheorem{thm}[defn]{å®šç†}
 
 \newcommand{\X}{\mathscr{X}}
 \newcommand{\Xp}{(\mathscr{X},\rho)}
@@ -30,41 +30,41 @@
 \DeclareMathOperator{\supp}{supp}
 
 \begin{document}
-\chapter{¶ÈÁ¿¿Õ¼ä}
+\chapter{åº¦é‡ç©ºé—´}
 
-\section{Ñ¹ËõÓ³ÏñÔ­Àí}
+\section{å‹ç¼©æ˜ åƒåŸç†}
 \begin{defn}
-Éè$\X$ÊÇÒ»¸ö·Ç¿Õ¼¯,Èô´æÔÚ$\X$ÉÏÒ»¸öË«±äÁ¿µÄÊµÖµº¯Êı$\rho(x,y)$,Âú×ã
-ÏÂÁĞÈı¸öÌõ¼ş:
+è®¾$\X$æ˜¯ä¸€ä¸ªéç©ºé›†,è‹¥å­˜åœ¨$\X$ä¸Šä¸€ä¸ªåŒå˜é‡çš„å®å€¼å‡½æ•°$\rho(x,y)$,æ»¡è¶³
+ä¸‹åˆ—ä¸‰ä¸ªæ¡ä»¶:
 \renewcommand{\labelenumi}{(\theenumi)}
 \begin{enumerate}
-\item Õı¶¨ĞÔ: $\rho(x,y)\geq 0$,¶øÇÒ$\rho(x,y) = 0$µ±ÇÒ½öµ±$x = y$;
-\item ¶Ô³ÆĞÔ: $\rho(x,y) = \rho(y,x)$;
-\item Èı½Ç²»µÈÊ½: $\rho(x,z)\leq \rho(x,y) + \rho(y,z)(\forall x,y,z \in
+\item æ­£å®šæ€§: $\rho(x,y)\geq 0$,è€Œä¸”$\rho(x,y) = 0$å½“ä¸”ä»…å½“$x = y$;
+\item å¯¹ç§°æ€§: $\rho(x,y) = \rho(y,x)$;
+\item ä¸‰è§’ä¸ç­‰å¼: $\rho(x,z)\leq \rho(x,y) + \rho(y,z)(\forall x,y,z \in
   \X)$,
 \end{enumerate}
-Ôò³Æ$\rho$Îª$\X$ÉÏÒ»¸ö\textbf{¾àÀë},$\X$³ÆÎª\textbf{¾àÀë¿Õ¼ä}.Ò»¸öÒÔ$\rho$Îª¾àÀëµÄ¾àÀë¿Õ¼ä$\X$¼Ç×÷$\textcolor{red}{\Xp}$.
+åˆ™ç§°$\rho$ä¸º$\X$ä¸Šä¸€ä¸ª\textbf{è·ç¦»},$\X$ç§°ä¸º\textbf{è·ç¦»ç©ºé—´}.ä¸€ä¸ªä»¥$\rho$ä¸ºè·ç¦»çš„è·ç¦»ç©ºé—´$\X$è®°ä½œ$\textcolor{red}{\Xp}$.
 \end{defn}
 
 \begin{defn}
-¾àÀë¿Õ¼ä$\Xp$ÖĞµÄµãÁĞ$\{x_n\}$³ÆÎª\textbf{ÊÕÁ²ÁĞ},ÊÇÖ¸´æÔÚ$\X$ÖĞ
-µÄµã$x$,µ±$n \rightarrow \infty$Ê±,$\rho(x_n,x) \rightarrow 0$.´ËÊ±³Æ$x$ÊÇµãÁĞ
-$\{x_n\}$µÄ\textbf{¼«ÏŞ},¼Ç×÷$x_n \rightarrow x (n \rightarrow \infty)$,Ò²¼Ç×÷
+è·ç¦»ç©ºé—´$\Xp$ä¸­çš„ç‚¹åˆ—$\{x_n\}$ç§°ä¸º\textbf{æ”¶æ•›åˆ—},æ˜¯æŒ‡å­˜åœ¨$\X$ä¸­
+çš„ç‚¹$x$,å½“$n \rightarrow \infty$æ—¶,$\rho(x_n,x) \rightarrow 0$.æ­¤æ—¶ç§°$x$æ˜¯ç‚¹åˆ—
+$\{x_n\}$çš„\textbf{æé™},è®°ä½œ$x_n \rightarrow x (n \rightarrow \infty)$,ä¹Ÿè®°ä½œ
 $\lim\limits_{n\rightarrow \infty}{x_n} = x$.
 \end{defn}
 
 \begin{defn}
-¾àÀë¿Õ¼ä$\Xp$ÉÏµÄµãÁĞ$\{x_n\}$½Ğ×ö\textbf{»ù±¾ÁĞ},ÊÇÖ¸µ±$n,m \rightarrow
-\infty$Ê±,$\rho(x_n,x_m)\rightarrow 0$.
+è·ç¦»ç©ºé—´$\Xp$ä¸Šçš„ç‚¹åˆ—$\{x_n\}$å«åš\textbf{åŸºæœ¬åˆ—},æ˜¯æŒ‡å½“$n,m \rightarrow
+\infty$æ—¶,$\rho(x_n,x_m)\rightarrow 0$.
 \end{defn}
 
 \begin{defn}
-¾àÀë¿Õ¼ä$\Xp$½Ğ×ö\textbf{Íê±¸µÄ},ÊÇÖ¸Ã¿¸ö»ù±¾ÁĞÊÇÊÕÁ²ÁĞ.
+è·ç¦»ç©ºé—´$\Xp$å«åš\textbf{å®Œå¤‡çš„},æ˜¯æŒ‡æ¯ä¸ªåŸºæœ¬åˆ—æ˜¯æ”¶æ•›åˆ—.
 \end{defn}
 
 \begin{defn}
-Éè$T : \Xp \to \Yt$ÊÇÒ»¸öÓ³Éä,¸ø¶¨$x_0 \in \X$,³Æ$T$ÔÚµã$x_0$´¦Á¬Ğø,ÊÇ
-Ö¸$\forall \{x_0\} \subset \X$,
+è®¾$T : \Xp \to \Yt$æ˜¯ä¸€ä¸ªæ˜ å°„,ç»™å®š$x_0 \in \X$,ç§°$T$åœ¨ç‚¹$x_0$å¤„è¿ç»­,æ˜¯
+æŒ‡$\forall \{x_0\} \subset \X$,
 \[
 \lim_{n\rightarrow \infty}{\rho(x_n,x_0) = 0} \Rightarrow
 \lim_{n\rightarrow \infty}{\tau(Tx_n,Tx_0) = 0}
@@ -72,141 +72,141 @@ $\lim\limits_{n\rightarrow \infty}{x_n} = x$.
 \end{defn}
 
 \begin{prop}
-¸ø¶¨$x_0 \in \X$,Ó³Éä$T : \Xp \to \Yt$ÔÚµã$x_0$´¦Á¬ĞøµÄ³ä·Ö±ØÒªÌõ¼ş
-ÊÇ:$\forall \epsilon > 0, \exists \delta = \delta(x_0,\epsilon)
-> 0$,Ê¹µÃ¶ÔÓÚ$x \in \X$,
+ç»™å®š$x_0 \in \X$,æ˜ å°„$T : \Xp \to \Yt$åœ¨ç‚¹$x_0$å¤„è¿ç»­çš„å……åˆ†å¿…è¦æ¡ä»¶
+æ˜¯:$\forall \epsilon > 0, \exists \delta = \delta(x_0,\epsilon)
+> 0$,ä½¿å¾—å¯¹äº$x \in \X$,
 \[
 \rho(x,x_0) < \delta \Rightarrow \tau(Tx,Tx_0) < \epsilon
 \].
 \end{prop}
 
 \begin{defn}
-³Æ$T : \Xp \to \Xp$ÊÇÒ»¸ö\textbf{Ñ¹ËõÓ³Éä},Èç¹û´æÔÚ$0 < \alpha < 1$,Ê¹
-µÃ$\rho(Tx,Ty)\leq\alpha\rho(x,y)(\forall x,y \in \X)$.
+ç§°$T : \Xp \to \Xp$æ˜¯ä¸€ä¸ª\textbf{å‹ç¼©æ˜ å°„},å¦‚æœå­˜åœ¨$0 < \alpha < 1$,ä½¿
+å¾—$\rho(Tx,Ty)\leq\alpha\rho(x,y)(\forall x,y \in \X)$.
 \end{defn}
 
-\begin{thm}[\textbf{Banach²»¶¯µã¶¨Àí--Ñ¹ËõÓ³ÏñÔ­Àí}]
-Éè$\X$ÊÇÒ»¸öÍê±¸µÄ¾àÀë¿Õ¼ä,$T$ÊÇ$\X$µ½Æä×ÔÉíµÄÒ»¸öÑ¹ËõÓ³Éä£¬ÄÇÃ´ÔÚ$\X$ÖĞ´æÔÚÎ¨Ò»µÄ$T$µÄ²»¶¯µã.
+\begin{thm}[\textbf{Banachä¸åŠ¨ç‚¹å®šç†--å‹ç¼©æ˜ åƒåŸç†}]
+è®¾$\X$æ˜¯ä¸€ä¸ªå®Œå¤‡çš„è·ç¦»ç©ºé—´,$T$æ˜¯$\X$åˆ°å…¶è‡ªèº«çš„ä¸€ä¸ªå‹ç¼©æ˜ å°„ï¼Œé‚£ä¹ˆåœ¨$\X$ä¸­å­˜åœ¨å”¯ä¸€çš„$T$çš„ä¸åŠ¨ç‚¹.
 \end{thm}
 
-\section{Íê±¸»¯}
+\section{å®Œå¤‡åŒ–}
 \begin{thm}
-Ã¿¸ö¶ÈÁ¿¿Õ¼ä$\Xp$ÓĞÒ»¸öÍê±¸»¯¿Õ¼ä,ÇÒÆäÍê±¸»¯¿Õ¼äÔÚµÈ¾àÍ¬¹¹µÄÒâÒåÏÂÎ¨Ò».
+æ¯ä¸ªåº¦é‡ç©ºé—´$\Xp$æœ‰ä¸€ä¸ªå®Œå¤‡åŒ–ç©ºé—´,ä¸”å…¶å®Œå¤‡åŒ–ç©ºé—´åœ¨ç­‰è·åŒæ„çš„æ„ä¹‰ä¸‹å”¯ä¸€.
 \end{thm}
 
-\section{ÁĞ½ô¼¯}
+\section{åˆ—ç´§é›†}
 \begin{defn}
-¸ø¶¨¾àÀë¿Õ¼ä$\Xp$,$A$ÊÇ$\X$µÄ×Ó¼¯,Èç¹û$A$ÖĞµÄÈÎÒâµãÁĞÔÚ$A$ÖĞÓĞÒ»¸öÊÕ
-Á²×ÓÁĞ£¬Ôò³Æ$A$ÊÇ\textbf{ÁĞ½ôµÄ}.Èç¹ûÕâ¸öÊÕÁ²×ÓÁĞ»¹ÊÕÁ²µ½$A$ÖĞµÄµã£¬Ôò
-³Æ$A$ÊÇ\textbf{×ÔÁĞ½ôµÄ}.Èç¹û¿Õ¼ä$\X$ÊÇÁĞ½ôµÄ£¬ÄÇÃ´³Æ$\X$ÊÇ\textbf{ÁĞ½ô¿Õ¼ä}.
+ç»™å®šè·ç¦»ç©ºé—´$\Xp$,$A$æ˜¯$\X$çš„å­é›†,å¦‚æœ$A$ä¸­çš„ä»»æ„ç‚¹åˆ—åœ¨$A$ä¸­æœ‰ä¸€ä¸ªæ”¶
+æ•›å­åˆ—ï¼Œåˆ™ç§°$A$æ˜¯\textbf{åˆ—ç´§çš„}.å¦‚æœè¿™ä¸ªæ”¶æ•›å­åˆ—è¿˜æ”¶æ•›åˆ°$A$ä¸­çš„ç‚¹ï¼Œåˆ™
+ç§°$A$æ˜¯\textbf{è‡ªåˆ—ç´§çš„}.å¦‚æœç©ºé—´$\X$æ˜¯åˆ—ç´§çš„ï¼Œé‚£ä¹ˆç§°$\X$æ˜¯\textbf{åˆ—ç´§ç©ºé—´}.
 \end{defn}
 
 \begin{prop}
-$\mathbb{R}^n$ÖĞÓĞ½ç¼¯ÊÇÁĞ½ô¼¯£¬ÈÎÒâÓĞ½ç±Õ¼¯ÊÇ×ÔÁĞ½ô¼¯¡£
+$\mathbb{R}^n$ä¸­æœ‰ç•Œé›†æ˜¯åˆ—ç´§é›†ï¼Œä»»æ„æœ‰ç•Œé—­é›†æ˜¯è‡ªåˆ—ç´§é›†ã€‚
 \end{prop}
 
 \begin{prop}
-ÁĞ½ô¿Õ¼äÄÚÈÎÒâ×Ó¼¯ÊÇÁĞ½ô¼¯£»ÈÎÒâ±Õ×Ó¿Õ¼äÊÇ×ÔÁĞ½ô¼¯.
+åˆ—ç´§ç©ºé—´å†…ä»»æ„å­é›†æ˜¯åˆ—ç´§é›†ï¼›ä»»æ„é—­å­ç©ºé—´æ˜¯è‡ªåˆ—ç´§é›†.
 \end{prop}
 
 \begin{prop}
-ÁĞ½ô¿Õ¼ä±ØÊÇÍê±¸¿Õ¼ä.
+åˆ—ç´§ç©ºé—´å¿…æ˜¯å®Œå¤‡ç©ºé—´.
 \end{prop}
 
 \begin{defn}
-¸ø¶¨¾àÀë¿Õ¼ä$\Xp$,$M \subset \X$.
+ç»™å®šè·ç¦»ç©ºé—´$\Xp$,$M \subset \X$.
 \renewcommand{\labelenumi}{(\theenumi)}
 \begin{enumerate}
-\item Éè´æÔÚ$N \subset M$,$\epsilon > 0$,Èô¶ÔÈÎÒâ$x \in M$,×Ü´æÔÚ$y
-  \in N$,Ê¹µÃ$x \in B(y,\epsilon)$,ÄÇÃ´³Æ$N$ÊÇ$M$µÄÒ»¸ö$\epsilon$\textbf{Íø}.Èç¹û$N$»¹ÊÇÒ»¸öÓĞÏŞ¼¯£¬ÄÇÃ´³Æ$N$ÊÇ$M$µÄÒ»¸ö\textbf{ÓĞÏŞ$\epsilon$Íø}.
-\item Èç¹û¶ÔÈÎÒâ$\epsilon>0$,¶¼´æÔÚ$M$µÄÒ»¸öÓĞÏŞ$\epsilon$Íø£¬Ôò³Æ¼¯ºÏ
-  $M$ÊÇ\textbf{ÍêÈ«ÓĞ½çµÄ}.
+\item è®¾å­˜åœ¨$N \subset M$,$\epsilon > 0$,è‹¥å¯¹ä»»æ„$x \in M$,æ€»å­˜åœ¨$y
+  \in N$,ä½¿å¾—$x \in B(y,\epsilon)$,é‚£ä¹ˆç§°$N$æ˜¯$M$çš„ä¸€ä¸ª$\epsilon$\textbf{ç½‘}.å¦‚æœ$N$è¿˜æ˜¯ä¸€ä¸ªæœ‰é™é›†ï¼Œé‚£ä¹ˆç§°$N$æ˜¯$M$çš„ä¸€ä¸ª\textbf{æœ‰é™$\epsilon$ç½‘}.
+\item å¦‚æœå¯¹ä»»æ„$\epsilon>0$,éƒ½å­˜åœ¨$M$çš„ä¸€ä¸ªæœ‰é™$\epsilon$ç½‘ï¼Œåˆ™ç§°é›†åˆ
+  $M$æ˜¯\textbf{å®Œå…¨æœ‰ç•Œçš„}.
 \end{enumerate}
 \end{defn}
 
-\begin{thm}[\textbf{Hausdorff¶¨Àí}]
-Éè$\Xp$ÊÇ¾àÀë¿Õ¼ä£¬$M \subset \X$.
+\begin{thm}[\textbf{Hausdorffå®šç†}]
+è®¾$\Xp$æ˜¯è·ç¦»ç©ºé—´ï¼Œ$M \subset \X$.
 \end{thm}
 
 \renewcommand{\labelenumi}{(\theenumi)}
 \begin{enumerate}
-\item Èô$M$ÔÚ$\X$ÖĞÁĞ½ô£¬Ôò$M$ÍêÈ«ÓĞ½ç;
-\item Èô$\X$ÊÇÍê±¸¿Õ¼ä£¬$M$ÍêÈ«ÓĞ½ç£¬Ôò$M$ÁĞ½ô.
+\item è‹¥$M$åœ¨$\X$ä¸­åˆ—ç´§ï¼Œåˆ™$M$å®Œå…¨æœ‰ç•Œ;
+\item è‹¥$\X$æ˜¯å®Œå¤‡ç©ºé—´ï¼Œ$M$å®Œå…¨æœ‰ç•Œï¼Œåˆ™$M$åˆ—ç´§.
 \end{enumerate}
 
 \begin{defn}
-Ò»¸ö¾àÀë¿Õ¼äÈôÓĞ¿ÉÊı³íÃÜ×Ó¼¯£¬¾Í³ÆÎªÊÇ\textbf{¿É·ÖµÄ}.
+ä¸€ä¸ªè·ç¦»ç©ºé—´è‹¥æœ‰å¯æ•°ç¨ å¯†å­é›†ï¼Œå°±ç§°ä¸ºæ˜¯\textbf{å¯åˆ†çš„}.
 \end{defn}
 
 \begin{thm}
-ÍêÈ«ÓĞ½çµÄ¾àÀë¿Õ¼äÊÇ¿É·ÖµÄ.
+å®Œå…¨æœ‰ç•Œçš„è·ç¦»ç©ºé—´æ˜¯å¯åˆ†çš„.
 \end{thm}
 
 \begin{defn}
-½ô¼¯
+ç´§é›†
 \end{defn}
 
 \begin{thm}
-Éè$\Xp$ÊÇ¾àÀë¿Õ¼ä,ÎªÁË$M \subset \X$ÊÇ½ôÖÂ¼¯£¬±ØĞëÇÒ½öĞëËüÊÇ×ÔÁĞ½ô¼¯.
+è®¾$\Xp$æ˜¯è·ç¦»ç©ºé—´,ä¸ºäº†$M \subset \X$æ˜¯ç´§è‡´é›†ï¼Œå¿…é¡»ä¸”ä»…é¡»å®ƒæ˜¯è‡ªåˆ—ç´§é›†.
 \end{thm}
 
 \begin{defn}
-Ò»ÖÂÓĞ½ç
+ä¸€è‡´æœ‰ç•Œ
 \end{defn}
 
 \begin{defn}
-µÈ¶ÈÁ¬Ğø
+ç­‰åº¦è¿ç»­
 \end{defn}
 
-\begin{thm}[\textbf{Arzela-Ascoli¶¨Àí}]
-½áºÏ$F \subset C(M)$ÊÇÒ»¸öÁĞ½ô¼¯µÄ³ä·Ö±ØÒªÌõ¼şÊÇ£º
+\begin{thm}[\textbf{Arzela-Ascoliå®šç†}]
+ç»“åˆ$F \subset C(M)$æ˜¯ä¸€ä¸ªåˆ—ç´§é›†çš„å……åˆ†å¿…è¦æ¡ä»¶æ˜¯ï¼š
 \renewcommand{\labelenumi}{(\theenumi)}
 \begin{enumerate}
-\item $F$Ò»ÖÂÓĞ½ç£¬¼´´æÔÚ³£Êı$M_1$£¬¶ÔÈÎºÎ$f \in F$£¬¶¼ÓĞ$|f(x)|
+\item $F$ä¸€è‡´æœ‰ç•Œï¼Œå³å­˜åœ¨å¸¸æ•°$M_1$ï¼Œå¯¹ä»»ä½•$f \in F$ï¼Œéƒ½æœ‰$|f(x)|
   \leq M_1$;
-\item $F$ÊÇµÈ¶ÈÁ¬ĞøµÄ£¬¼´ÈÎ¸ø$\epsilon > 0$,´æÔÚ$\delta =
-  \delta(\epsilon) > 0$,Ê¹µÃ¶ÔÈÎÒâ$f \in F$ÒÔ¼°$x_1,x_2 \in M$,Ö»Òª
-  $\rho(x_1,x_2) < \delta$,¾ÍÓĞ$|f(x_1) - f(x_2)| < \epsilon$.
+\item $F$æ˜¯ç­‰åº¦è¿ç»­çš„ï¼Œå³ä»»ç»™$\epsilon > 0$,å­˜åœ¨$\delta =
+  \delta(\epsilon) > 0$,ä½¿å¾—å¯¹ä»»æ„$f \in F$ä»¥åŠ$x_1,x_2 \in M$,åªè¦
+  $\rho(x_1,x_2) < \delta$,å°±æœ‰$|f(x_1) - f(x_2)| < \epsilon$.
 \end{enumerate}
 \end{thm}
 
 \begin{prop}
-$M$ÊÇÒ»¸ö½ô¾àÀë¿Õ¼ä£¬Ôò$(C(M), d)$ÊÇÍê±¸¾àÀë¿Õ¼ä.
+$M$æ˜¯ä¸€ä¸ªç´§è·ç¦»ç©ºé—´ï¼Œåˆ™$(C(M), d)$æ˜¯å®Œå¤‡è·ç¦»ç©ºé—´.
 \end{prop}
 
-\section{ÏßĞÔ¸³·¶¿Õ¼ä}
-$B^*$ - ¸´µÄÏßĞÔ¸³·¶¿Õ¼ä
+\section{çº¿æ€§èµ‹èŒƒç©ºé—´}
+$B^*$ - å¤çš„çº¿æ€§èµ‹èŒƒç©ºé—´
 
-Íê±¸µÄÏßĞÔ¸³·¶¿Õ¼ä½Ğ×ö\textbf{Banach¿Õ¼ä},¼ò³ÆÎª$B$¿Õ¼ä.
+å®Œå¤‡çš„çº¿æ€§èµ‹èŒƒç©ºé—´å«åš\textbf{Banachç©ºé—´},ç®€ç§°ä¸º$B$ç©ºé—´.
 
 \begin{thm}
-ÓĞÇîÎ¬ÏßĞÔ¿Õ¼äÉÏÈÎÒâÁ½¸ö·¶ÊıµÈ¼Û.
+æœ‰ç©·ç»´çº¿æ€§ç©ºé—´ä¸Šä»»æ„ä¸¤ä¸ªèŒƒæ•°ç­‰ä»·.
 \end{thm}
 
 
-\chapter{ÏßĞÔËã×ÓÓëÏßĞÔ·ºº¯}
+\chapter{çº¿æ€§ç®—å­ä¸çº¿æ€§æ³›å‡½}
 
-\section{ÏßĞÔËã×ÓÓëÏßĞÔ·ºº¯µÄ¶¨Òå}
+\section{çº¿æ€§ç®—å­ä¸çº¿æ€§æ³›å‡½çš„å®šä¹‰}
 \begin{defn}
-Éè$\X,\Y$ÊÇÁ½¸öÏßĞÔ¿Õ¼ä£¬$D$ÊÇ$\X$µÄÒ»¸öÏßĞÔ×Ó¿Õ¼ä.$T :¡¡D \to \Y$ÊÇÒ»
-ÖÖÓ³Éä£¬$D$³ÆÎª$T$µÄ\textbf{¶¨ÒåÓò},ÓĞÊ±¼Ç×÷$D(T)$.$R(T) = \{Tx \mid
-  \forall x \in D\}$³ÆÎª$T$µÄ\textbf{ÖµÓò}.Èç¹û
+è®¾$\X,\Y$æ˜¯ä¸¤ä¸ªçº¿æ€§ç©ºé—´ï¼Œ$D$æ˜¯$\X$çš„ä¸€ä¸ªçº¿æ€§å­ç©ºé—´.$T :ã€€D \to \Y$æ˜¯ä¸€
+ç§æ˜ å°„ï¼Œ$D$ç§°ä¸º$T$çš„\textbf{å®šä¹‰åŸŸ},æœ‰æ—¶è®°ä½œ$D(T)$.$R(T) = \{Tx \mid
+  \forall x \in D\}$ç§°ä¸º$T$çš„\textbf{å€¼åŸŸ}.å¦‚æœ
 \[
 T(\alpha x + \beta y) = \alpha Tx + \beta Ty (\forall x,y \in D,
 \forall \alpha,\beta \in \K),
 \]
-ÄÇÃ´³Æ$T$ÊÇÒ»¸ö\textbf{ÏßĞÔËã×Ó}.
+é‚£ä¹ˆç§°$T$æ˜¯ä¸€ä¸ª\textbf{çº¿æ€§ç®—å­}.
 \end{defn}
 
 \begin{defn}
-µ±$\Y$ÊÇÊıÓò$\K$Ê±£¬$T$³ÆÎª$\K$ÓòÉÏµÄÏßĞÔ·ºº¯.ÌØ±ğµØ£¬
-È¡ÖµÓÚÊµÊı(»ò¸´Êı)µÄÏßĞÔËã×Ó³ÆÎª\textbf{Êµ}(»ò\textbf{¸´})\textbf{ÏßĞÔ
-  ·ºº¯}.
+å½“$\Y$æ˜¯æ•°åŸŸ$\K$æ—¶ï¼Œ$T$ç§°ä¸º$\K$åŸŸä¸Šçš„çº¿æ€§æ³›å‡½.ç‰¹åˆ«åœ°ï¼Œ
+å–å€¼äºå®æ•°(æˆ–å¤æ•°)çš„çº¿æ€§ç®—å­ç§°ä¸º\textbf{å®}(æˆ–\textbf{å¤})\textbf{çº¿æ€§
+  æ³›å‡½}.
 \end{defn}
 
 \begin{defn}
-Éè$\X,\Y$ÊÇ$B^*$¿Õ¼ä£¬ÏßĞÔËã×Ó$T : D(T) \to \Y, D(T) \subset \X$. ³Æ
-$T$ÔÚ$x_0 \in D(T)$\textbf{Á¬Ğø}ÊÇÖ¸
+è®¾$\X,\Y$æ˜¯$B^*$ç©ºé—´ï¼Œçº¿æ€§ç®—å­$T : D(T) \to \Y, D(T) \subset \X$. ç§°
+$T$åœ¨$x_0 \in D(T)$\textbf{è¿ç»­}æ˜¯æŒ‡
 \[
 \left.
 \begin{array}{l}
@@ -219,146 +219,146 @@ x_n \rightarrow x_0
 \end{defn}
 
 \begin{prop}
-$T$ÔÚ¶¨ÒåÓòÉÏ´¦´¦Á¬ĞøµÄ³ä·Ö±ØÒªÌõ¼şÊÇ$T$ÔÚ$x=\theta$´¦Á¬Ğø.
+$T$åœ¨å®šä¹‰åŸŸä¸Šå¤„å¤„è¿ç»­çš„å……åˆ†å¿…è¦æ¡ä»¶æ˜¯$T$åœ¨$x=\theta$å¤„è¿ç»­.
 \end{prop}
 
 \begin{defn}
-Éè$\X$ºÍ$\Y$ÊÇÏßĞÔ¸³·¶¿Õ¼ä£¬$T$ÊÇ$\X$µ½$\Y$µÄÏßĞÔËã×Ó£¬Èç¹ûÓĞ³£Êı$M >
-0$£¬Ê¹µÃ
+è®¾$\X$å’Œ$\Y$æ˜¯çº¿æ€§èµ‹èŒƒç©ºé—´ï¼Œ$T$æ˜¯$\X$åˆ°$\Y$çš„çº¿æ€§ç®—å­ï¼Œå¦‚æœæœ‰å¸¸æ•°$M >
+0$ï¼Œä½¿å¾—
 \[
 \norm{Tx}_\Y \leq M \norm{x}_\X (\forall x \in \X),
 \]
-Ôò³Æ$T$ÊÇ\textbf{ÓĞ½çÏßĞÔËã×Ó}.
+åˆ™ç§°$T$æ˜¯\textbf{æœ‰ç•Œçº¿æ€§ç®—å­}.
 \end{defn}
 
 \begin{prop}
-Éè$\X$ºÍ$\Y$¶¼ÊÇÏßĞÔ¸³·¶¿Õ¼ä£¬ÎªÁËÏßĞÔËã×Ó$T$Á¬Ğø£¬±ØĞëÇÒ½öĞë$T$ÊÇÓĞ½ç
-µÄ£¬¼´$T$Á¬Ğø$\Leftrightarrow T$ÓĞ½ç.
+è®¾$\X$å’Œ$\Y$éƒ½æ˜¯çº¿æ€§èµ‹èŒƒç©ºé—´ï¼Œä¸ºäº†çº¿æ€§ç®—å­$T$è¿ç»­ï¼Œå¿…é¡»ä¸”ä»…é¡»$T$æ˜¯æœ‰ç•Œ
+çš„ï¼Œå³$T$è¿ç»­$\Leftrightarrow T$æœ‰ç•Œ.
 \end{prop}
 
 \begin{defn}
-ÓÃ$\LXY$±íÊ¾Ò»ÇĞÓÉ$\X$µ½$\Y$µÄÓĞ½çÏßĞÔËã×ÓµÄÈ«Ìå£¬²¢¹æ¶¨
+ç”¨$\LXY$è¡¨ç¤ºä¸€åˆ‡ç”±$\X$åˆ°$\Y$çš„æœ‰ç•Œçº¿æ€§ç®—å­çš„å…¨ä½“ï¼Œå¹¶è§„å®š
 \[
 \norm{T} = \sup_{x\neq \theta}\frac{\norm{Tx}}{\norm{x}} =
-\sup_{\norm{x} = 1}\norm{Tx}, \text{ÆäÖĞ}T \in \LXY.
+\sup_{\norm{x} = 1}\norm{Tx}, \text{å…¶ä¸­}T \in \LXY.
 \]
 \end{defn}
 
-ÌØ±ğÓÃ$\SCRL(\X)$±íÊ¾$\LXX$ÒÔ¼°ÓÃ$\X^*$±íÊ¾$\LXK$,¼´$\X^*$±íÊ¾$\X$ÉÏµÄÓĞ
-½çÏßĞÔ·ºº¯µÄÈ«Ìå.
+ç‰¹åˆ«ç”¨$\SCRL(\X)$è¡¨ç¤º$\LXX$ä»¥åŠç”¨$\X^*$è¡¨ç¤º$\LXK$,å³$\X^*$è¡¨ç¤º$\X$ä¸Šçš„æœ‰
+ç•Œçº¿æ€§æ³›å‡½çš„å…¨ä½“.
 
-ÈôÔÚ$\LXY$ÉÏ¹æ¶¨ÏßĞÔÔËËã
+è‹¥åœ¨$\LXY$ä¸Šè§„å®šçº¿æ€§è¿ç®—
 \[
 (a_1T_1 + a_2T_2)x = a_1T_1x + a_2T_2x, \forall x \in \X,
 \]
-ÆäÖĞ$a_1,a_2 \in \K, T_1,T_2 \in \LXY$,Ôò$\LXY$ÊÇÒ»¸öÏßĞÔ¿Õ¼ä.
+å…¶ä¸­$a_1,a_2 \in \K, T_1,T_2 \in \LXY$,åˆ™$\LXY$æ˜¯ä¸€ä¸ªçº¿æ€§ç©ºé—´.
 
 \begin{thm}
-µ±$\X$ÊÇ$B^*$¿Õ¼ä,$\Y$ÊÇ$B$¿Õ¼äÊ±£¬$\LXY$°´
-$\left\lVert\cdot\right\rVert$¹¹³ÉÒ»¸öBanach¿Õ¼ä.
+å½“$\X$æ˜¯$B^*$ç©ºé—´,$\Y$æ˜¯$B$ç©ºé—´æ—¶ï¼Œ$\LXY$æŒ‰
+$\left\lVert\cdot\right\rVert$æ„æˆä¸€ä¸ªBanachç©ºé—´.
 \end{thm}
 
-\section{Riesz¶¨Àí¼°ÆäÓ¦ÓÃ}
+\section{Rieszå®šç†åŠå…¶åº”ç”¨}
 
-\begin{thm}[\textbf{Riesz±íÊ¾¶¨Àí}]
-Éè$f$ÊÇHilbert¿Õ¼ä$\X$ÉÏµÄÁ¬ĞøÏßĞÔ·ºº¯£¬Ôò´æÔÚÎ¨Ò»µÄÔª$y_f \in \X$,Ê¹
-µÃ
+\begin{thm}[\textbf{Rieszè¡¨ç¤ºå®šç†}]
+è®¾$f$æ˜¯Hilbertç©ºé—´$\X$ä¸Šçš„è¿ç»­çº¿æ€§æ³›å‡½ï¼Œåˆ™å­˜åœ¨å”¯ä¸€çš„å…ƒ$y_f \in \X$,ä½¿
+å¾—
 \[
 f(x) = (x,y_f) (\forall x \in \X),
 \]
-¶øÇÒ$\norm{f} = \norm{y_f}$.ÓÚÊÇÓÉ$f$µ½$y_f$¸ø³öÁË$\X^*$µ½$\X$µÄÒ»¸öÍ¬
-¹¹.
+è€Œä¸”$\norm{f} = \norm{y_f}$.äºæ˜¯ç”±$f$åˆ°$y_f$ç»™å‡ºäº†$\X^*$åˆ°$\X$çš„ä¸€ä¸ªåŒ
+æ„.
 \end{thm}
 
-\section{¸ÙÓë¿ªÓ³Ïñ¶¨Àí}
+\section{çº²ä¸å¼€æ˜ åƒå®šç†}
 
-\section{Hahn-Banach¶¨Àí}
+\section{Hahn-Banachå®šç†}
 
-\section{¹²éî¿Õ¼ä $\cdot$ ÈõÊÕÁ² $\cdot$ ×Ô·´¿Õ¼ä}
+\section{å…±è½­ç©ºé—´ $\cdot$ å¼±æ”¶æ•› $\cdot$ è‡ªåç©ºé—´}
 
 \begin{defn}
-Éè$\X$ÊÇ$B^*$¿Õ¼ä£¬$\X$ÉÏËùÓĞÁ¬ĞøÏßĞÔ·ºº¯È«Ìå£¬°´·¶Êı
+è®¾$\X$æ˜¯$B^*$ç©ºé—´ï¼Œ$\X$ä¸Šæ‰€æœ‰è¿ç»­çº¿æ€§æ³›å‡½å…¨ä½“ï¼ŒæŒ‰èŒƒæ•°
 \[
 \norm{f} = \sup_{\norm{x}=1}\abs{f(x)}
 \]
-¹¹³ÉÒ»¸ö$B$¿Õ¼ä£¬³ÆÎª$\X$µÄ\textbf{¹²éî¿Õ¼ä}£¬¼ÇÎª$\X^*$.
+æ„æˆä¸€ä¸ª$B$ç©ºé—´ï¼Œç§°ä¸º$\X$çš„\textbf{å…±è½­ç©ºé—´}ï¼Œè®°ä¸º$\X^*$.
 \end{defn}
 
 \begin{defn}
-Éè$\X$ÊÇÒ»¸ö$B^*$¿Õ¼ä£¬$\{x_n\} \subset \X, x \in \X$, ³Æ$\{x_n\}$ÈõÊÕ
-Á²µ½$x$,¼Ç×÷$x_n \rightharpoonup x$,ÊÇÖ¸£º¶Ô$\forall f \in \X^*$¶¼ÓĞ
-$\lim\limits_{n\to \infty}f(x_n) = f(x)$,$x$³Æ×öµãÁĞ$\{x_n\}$µÄÈõ¼«ÏŞ.
+è®¾$\X$æ˜¯ä¸€ä¸ª$B^*$ç©ºé—´ï¼Œ$\{x_n\} \subset \X, x \in \X$, ç§°$\{x_n\}$å¼±æ”¶
+æ•›åˆ°$x$,è®°ä½œ$x_n \rightharpoonup x$,æ˜¯æŒ‡ï¼šå¯¹$\forall f \in \X^*$éƒ½æœ‰
+$\lim\limits_{n\to \infty}f(x_n) = f(x)$,$x$ç§°åšç‚¹åˆ—$\{x_n\}$çš„å¼±æé™.
 \end{defn}
 
-\section{ÏßĞÔËã×ÓµÄÆ×}
+\section{çº¿æ€§ç®—å­çš„è°±}
 \begin{defn}
-Éè $A$ ÊÇ±ÕÏßĞÔËã×Ó, $D(A)\subset \X, A : \X \to \X, \lambda \in \C$
-³ÆÎª $A$ µÄ\textbf{±¾Õ÷Öµ}ÊÇÖ¸: $\exists x_0 \in D(A) \setminus \{\theta\}$, ÊÊºÏ
-$Ax_0 = \lambda x_0$, ²¢³ÆÏàÓ¦µÄ $x_0$ Îª¶ÔÓ¦ÓÚ $A$ µÄ\textbf{±¾Õ÷Ôª}.
+è®¾ $A$ æ˜¯é—­çº¿æ€§ç®—å­, $D(A)\subset \X, A : \X \to \X, \lambda \in \C$
+ç§°ä¸º $A$ çš„\textbf{æœ¬å¾å€¼}æ˜¯æŒ‡: $\exists x_0 \in D(A) \setminus \{\theta\}$, é€‚åˆ
+$Ax_0 = \lambda x_0$, å¹¶ç§°ç›¸åº”çš„ $x_0$ ä¸ºå¯¹åº”äº $A$ çš„\textbf{æœ¬å¾å…ƒ}.
 \end{defn}
 
 \begin{defn}
-Éè $\X$ ÊÇ¸´ $B$ ¿Õ¼ä, $A : D(A) \to \X$ ÊÇ±ÕÏßĞÔËã×Ó, ³Æ
+è®¾ $\X$ æ˜¯å¤ $B$ ç©ºé—´, $A : D(A) \to \X$ æ˜¯é—­çº¿æ€§ç®—å­, ç§°
 \[
 \rho(A) \overset{\text{def}}{=} \{\lambda \in \C \mid (\lambda I -
 A)^{-1} \in \SCRL(\X)\}
 \]
-Îª $A$ µÄ\textbf{Ô¤½â¼¯}. $\lambda \in \rho(A)$ ³ÆÎª $A$ µÄ\textbf{ÕıÔò
-  Öµ}.
+ä¸º $A$ çš„\textbf{é¢„è§£é›†}. $\lambda \in \rho(A)$ ç§°ä¸º $A$ çš„\textbf{æ­£åˆ™
+  å€¼}.
 \end{defn}
 
 \begin{defn}
-³Æ¼¯ºÏ $\sigma(A) \overset{\text{def}}{=} \C \setminus \rho(A)$ Îª $A$
-µÄ\textbf{Æ×¼¯}. $\lambda \in \sigma(A)$ ³ÆÎª $A$ µÄ\textbf{Æ×µã}.
+ç§°é›†åˆ $\sigma(A) \overset{\text{def}}{=} \C \setminus \rho(A)$ ä¸º $A$
+çš„\textbf{è°±é›†}. $\lambda \in \sigma(A)$ ç§°ä¸º $A$ çš„\textbf{è°±ç‚¹}.
 \end{defn}
 
-×¢: ±ÕÏßĞÔËã×Ó-¶¨Òå2.3.9.
+æ³¨: é—­çº¿æ€§ç®—å­-å®šä¹‰2.3.9.
 
-\chapter{¹ãÒåº¯ÊıÓëSobolev¿Õ¼ä}
+\chapter{å¹¿ä¹‰å‡½æ•°ä¸Sobolevç©ºé—´}
 
-\section{¹ãÒåº¯ÊıµÄ¸ÅÄî}
+\section{å¹¿ä¹‰å‡½æ•°çš„æ¦‚å¿µ}
 
-¹ãÒåº¯ÊıÊÇ¶¨ÒåÔÚÒ»Àà"ĞÔÖÊºÜºÃ"µÄº¯Êı¿Õ¼äÉÏµÄÁ¬ĞøÏßĞÔ·ºº¯.
+å¹¿ä¹‰å‡½æ•°æ˜¯å®šä¹‰åœ¨ä¸€ç±»"æ€§è´¨å¾ˆå¥½"çš„å‡½æ•°ç©ºé—´ä¸Šçš„è¿ç»­çº¿æ€§æ³›å‡½.
 
-Éè $\Omega \subset \R^n$ ÊÇÒ»¸ö¿ª¼¯, $u \in \CRM(\overline{\Omega})$,
-³Æ¼¯ºÏ
+è®¾ $\Omega \subset \R^n$ æ˜¯ä¸€ä¸ªå¼€é›†, $u \in \CRM(\overline{\Omega})$,
+ç§°é›†åˆ
 \[
 F = \{x \in \Omega \mid u(x) \neq 0\}
 \]
-µÄ±Õ°ü(¹ØÓÚ$\Omega$)Îª $u$ µÄ¹ØÓÚ $\Omega$ µÄ\textbf{Ö§¼¯}, ¼Ç×÷
-$\supp{u}$. »»¾ä»°Ëµ, Á¬Ğøº¯Êı $u$ µÄÖ§¼¯ÊÇÔÚ´Ë¼¯Íâ $u$ ºãÎª $0$ µÄÏà¶ÔÓÚ
-$\Omega$ µÄ×îĞ¡±Õ¼¯.
+çš„é—­åŒ…(å…³äº$\Omega$)ä¸º $u$ çš„å…³äº $\Omega$ çš„\textbf{æ”¯é›†}, è®°ä½œ
+$\supp{u}$. æ¢å¥è¯è¯´, è¿ç»­å‡½æ•° $u$ çš„æ”¯é›†æ˜¯åœ¨æ­¤é›†å¤– $u$ æ’ä¸º $0$ çš„ç›¸å¯¹äº
+$\Omega$ çš„æœ€å°é—­é›†.
 
-¶ÔÓÚÕûÊı $k \le 0$ (¿ÉÒÔÊÇ $\infty$), $\CRM^k_0(\Omega)$ ±í¼ÇÖ§¼¯
-ÔÚ $\Omega$ ÄÚ½ôµÄÈ«Ìå $\CRM^k(\overline{\Omega})$ º¯ÊıËù×é³ÉµÄ¼¯ºÏ,
-ÓÚÊÇ
+å¯¹äºæ•´æ•° $k \le 0$ (å¯ä»¥æ˜¯ $\infty$), $\CRM^k_0(\Omega)$ è¡¨è®°æ”¯é›†
+åœ¨ $\Omega$ å†…ç´§çš„å…¨ä½“ $\CRM^k(\overline{\Omega})$ å‡½æ•°æ‰€ç»„æˆçš„é›†åˆ,
+äºæ˜¯
 \[
 \CRM^\infty_0(\Omega) \subset \cdots \subset \CRM^{k+1}_0(\Omega)
 \subset \CRM^k_0(\Omega) \subset \cdots \subset \CRM^0_0(\Omega).
 \]
 
 \begin{defn}
-ÔÚ¼¯ºÏ $\CRM^\infty_0(\Omega)$ ÉÏ¶¨ÒåÊÕÁ²ĞÔÈçÏÂ: ÎÒÃÇËµĞòÁĞ
-$\{\varphi_j\}$ ÊÕÁ²ÓÚ $\varphi_0$, Èç¹û
+åœ¨é›†åˆ $\CRM^\infty_0(\Omega)$ ä¸Šå®šä¹‰æ”¶æ•›æ€§å¦‚ä¸‹: æˆ‘ä»¬è¯´åºåˆ—
+$\{\varphi_j\}$ æ”¶æ•›äº $\varphi_0$, å¦‚æœ
 \renewcommand{\labelenumi}{(\theenumi)}
 \begin{enumerate}
-\item ´æÔÚÒ»¸öÏà¶ÔÓÚ $\Omega$ µÄ½ô¼¯ $\mathrm{K} \subset \Omega$, Ê¹µÃ
+\item å­˜åœ¨ä¸€ä¸ªç›¸å¯¹äº $\Omega$ çš„ç´§é›† $\mathrm{K} \subset \Omega$, ä½¿å¾—
   $\supp{(\varphi_j)} \subset \mathrm{K} (j = 0, 1, 3, \cdots);$
-\item ¶ÔÓÚÈÎÒâÖ¸±ê $\alpha = (\alpha_1, \cdots, \alpha_n)$ ¶¼ÓĞ
+\item å¯¹äºä»»æ„æŒ‡æ ‡ $\alpha = (\alpha_1, \cdots, \alpha_n)$ éƒ½æœ‰
 \[
 \max_{x\in \mathrm{K}}{\abs{\partial^\alpha\varphi_j(x)
     - \partial^\alpha\varphi_0(x)}} \rightarrow 0 (j \rightarrow \infty).
 \]
 \end{enumerate}
-´øÉÏÊöÊÕÁ²ĞÔµÄÏßĞÔ¿Õ¼ä $\CRM^\infty_0(\Omega)$, ³ÆÎª\textbf{»ù±¾¿Õ¼ä} $\D(\Omega)$.
+å¸¦ä¸Šè¿°æ”¶æ•›æ€§çš„çº¿æ€§ç©ºé—´ $\CRM^\infty_0(\Omega)$, ç§°ä¸º\textbf{åŸºæœ¬ç©ºé—´} $\D(\Omega)$.
 \end{defn}
 
 \begin{defn}
-$\DO$ ÉÏµÄÒ»ÇĞÏßĞÔÁ¬Ğø·ºº¯¶¼³ÆÎª\textbf{¹ãÒåº¯Êı}, ¼´¹ãÒåº¯ÊıÊÇÕâÑùµÄ
-·ºº¯ $f : \DO \to \R^1$, Âú×ã
+$\DO$ ä¸Šçš„ä¸€åˆ‡çº¿æ€§è¿ç»­æ³›å‡½éƒ½ç§°ä¸º\textbf{å¹¿ä¹‰å‡½æ•°}, å³å¹¿ä¹‰å‡½æ•°æ˜¯è¿™æ ·çš„
+æ³›å‡½ $f : \DO \to \R^1$, æ»¡è¶³
 \renewcommand{\labelenumi}{(\theenumi)}
 \begin{enumerate}
-\item ÏßĞÔ:
+\item çº¿æ€§:
 \[
 \langle f, \lambda_1\varphi_1 + \lambda_2\varphi_2\rangle =
 \lambda_1\langle f,\varphi_1\rangle + \lambda_2\langle
@@ -368,38 +368,38 @@ f,\varphi_2\rangle
 (\forall \varphi_1, \varphi_2 \in \DO, \forall \lambda_1, \lambda_2
 \in \R^1);
 \]
-\item ¶ÔÓÚÈÎÒâµÄ $\{\varphi_j\} \subset \DO$, Ö»Òª $\varphi_j \to
-  \varphi_0 (\DO)$, ¶¼ÓĞ
+\item å¯¹äºä»»æ„çš„ $\{\varphi_j\} \subset \DO$, åªè¦ $\varphi_j \to
+  \varphi_0 (\DO)$, éƒ½æœ‰
 \[
 \langle f,\varphi_j\rangle \to \langle f,\varphi_0\rangle (j \to \infty).
 \]
 \end{enumerate}
-Ò»ÇĞ¹ãÒåº¯ÊıËù×é³ÉµÄ¼¯ºÏ¼Ç×÷ $\D'(\Omega)$.
+ä¸€åˆ‡å¹¿ä¹‰å‡½æ•°æ‰€ç»„æˆçš„é›†åˆè®°ä½œ $\D'(\Omega)$.
 \end{defn}
 
-\section{$B_0$¿Õ¼ä}
+\section{$B_0$ç©ºé—´}
 
-\section{¹ãÒåº¯ÊıµÄÔËËã}
+\section{å¹¿ä¹‰å‡½æ•°çš„è¿ç®—}
 
-$\D(\Omega)$ ÖĞµÄÔËËã(Ö¸Èô¸É $\D(\Omega)$ µ½×ÔÉíµÄÁ¬ĞøÏßĞÔËã×ÓµÄÔËËã).
+$\D(\Omega)$ ä¸­çš„è¿ç®—(æŒ‡è‹¥å¹² $\D(\Omega)$ åˆ°è‡ªèº«çš„è¿ç»­çº¿æ€§ç®—å­çš„è¿ç®—).
 
-ÏßĞÔËã×Ó $A : \D(\Omega) \to \D(\Omega)$ ³ÆÎªÁ¬ĞøµÄ, ÊÇÖ¸:
+çº¿æ€§ç®—å­ $A : \D(\Omega) \to \D(\Omega)$ ç§°ä¸ºè¿ç»­çš„, æ˜¯æŒ‡:
 \[
 \varphi_j \rightarrow \varphi (\DO) \Rightarrow A\varphi_j \rightarrow
 A\varphi (\DO).
 \]
-$A$ ÊÇÁ¬ĞøÏßĞÔËã×Ó $\Leftrightarrow \varphi_j \rightarrow 0 (\DO)
-\Rightarrow A\varphi_j \rightarrow 0 (\DO)$, ¼Ç×÷ $A \in \SCRL(\DO).$
+$A$ æ˜¯è¿ç»­çº¿æ€§ç®—å­ $\Leftrightarrow \varphi_j \rightarrow 0 (\DO)
+\Rightarrow A\varphi_j \rightarrow 0 (\DO)$, è®°ä½œ $A \in \SCRL(\DO).$
 
-$\D'(\Omega)$ ÖĞµÄÔËËã(Ö¸Èô¸É $\D'(\Omega)$ µ½×ÔÉíµÄÁ¬ĞøÏßĞÔËã×ÓµÄÔËËã).
+$\D'(\Omega)$ ä¸­çš„è¿ç®—(æŒ‡è‹¥å¹² $\D'(\Omega)$ åˆ°è‡ªèº«çš„è¿ç»­çº¿æ€§ç®—å­çš„è¿ç®—).
 
-ÔÚ $\D'(\Omega)$ ÉÏ¶¨ÒåËã×Ó $A^*$ ÈçÏÂ:
+åœ¨ $\D'(\Omega)$ ä¸Šå®šä¹‰ç®—å­ $A^*$ å¦‚ä¸‹:
 
-Éè $A : \DO \to \DO$ ÎªÏßĞÔËã×Ó, $\forall f \in \D'(\Omega), A^*f \in
-\D'(\Omega)$ ÓÉÏÂÊ½È·¶¨:
+è®¾ $A : \DO \to \DO$ ä¸ºçº¿æ€§ç®—å­, $\forall f \in \D'(\Omega), A^*f \in
+\D'(\Omega)$ ç”±ä¸‹å¼ç¡®å®š:
 \[
 \langle A^*f, \varphi \rangle = \langle f, A\varphi\rangle (\forall \varphi \in \DO),
 \]
-Ôò $A^* : \D'(\Omega) \to \D'(\Omega)$ ²¢ÇÒÊÇÁ¬ĞøµÄ.
+åˆ™ $A^* : \D'(\Omega) \to \D'(\Omega)$ å¹¶ä¸”æ˜¯è¿ç»­çš„.
 
 \end{document}

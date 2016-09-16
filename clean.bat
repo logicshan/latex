@@ -3,6 +3,7 @@ del *.bcf
 del *.run
 del *.bbl
 del *.synctex
+del *.synctex(busy)
 del *.blg
 del *.log
 del *.xml
