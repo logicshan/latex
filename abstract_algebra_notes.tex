@@ -1,0 +1,62 @@
+\documentclass{ctexart}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage{tikz-cd}
+\usepackage{url}
+
+
+\begin{document}
+\begin{enumerate}
+\item \textbf{定义 4.3.1} 设 $p$ 是素数. 若群 $G$ 的阶是 $p$ 的方幂, 即 $\left\lvert G\right\lvert = [G : e] = p^k(k \in \mathbb{N})$, $e$ 为 $G$ 的幺元, 则称 $G$ 是一个 $p$ \textbf{群}.
+\item \textbf{定理 4.3.1} 设 $p$ 群 $G$ 作用在集合 $X$ 上, $\left\lvert X\right\rvert = n$, 则有下列结论:
+\begin{enumerate}
+  \item $t \equiv n\;(\bmod\;p)$, 其中, $t = \left\lvert\{x \mid x\in X, gx=x,\forall g\in G\}\right\rvert$
+  \item 当 $(n,p) = 1$ 时, $t\geqslant1$, 即 $\exists x\in X$, 使 $g(x) = x(\forall g\in G)$;
+  \item $G$ 的中心 $C(G)\neq\{e\}$.
+\end{enumerate}
+
+\item \textbf{引理 4.3.1} 设 $p$ 是素数, $n = p^lm, (m,p) = 1$. 若 $k\in\mathbb{N},k\leqslant l$, 则
+\[
+p^{l-k}\|C_n^{p^k},
+\]
+其中, $\|$ 表示恰能整除, $C_n^{p^k}$ 是组合数.
+
+\item \textbf{定理 4.3.2}(Sylow 第一定理) 设 $G$ 是一个阶为 $p^lm$ 的群, 其中, $p$ 为素数, $l \geqslant 1, (p,m) = 1$, 则对任何 $1 \leqslant k \leqslant l$, $G$ 中一定有 $p^k$ 阶子群.
+
+\item \textbf{定义 4.3.2} 设群 $G$ 的阶为 $p^lm$, $p$ 为素数且 $(p,m) = 1$, 则 $G$ 的 $p^l$ 阶子群称为 $G$ 的\textbf{Sylow} $p$ \textbf{子群}.
+
+\item \textbf{定理 4.3.3} (Sylow 第二定理) 设群 $G$ 的阶为 $p^lm$, $p$ 为素数, $(p,m) = 1$. 又 $P$ 是 $G$ 的一个 Sylow $p$ 子群, $H$ 是 $G$ 的一个 $p^k$ 阶子群, 则 $\exists g\in G$, 使 $H\subseteq gPg^{-1}$.
+
+\item \textbf{定理 4.3.4} (Sylow 第三定理) 设群 $G$ 的阶为 $p^lm$, $p$ 为素数, $(p,m) = 1$. 又设 $G$ 中 Sylow $p$ 子群的个数为 $k$, 则有
+    \begin{enumerate}
+      \item 当且仅当 $k = 1$ 时, $G$ 的 Sylow $p$ 子群 $P\vartriangleleft G$;
+      \item $k|m, k \equiv 1\;(\bmod\;p)$.
+    \end{enumerate}
+
+\item Sylow 定理在群论中有许多应用, 其一就是判断某些有限群不是\textbf{单群}(一个群如果没有非平凡的正规子群就称为\textbf{单群}).
+
+\item \textbf{定义 4.4.1} 若有限群 $G$ 无非平凡的正规子群, 则称 $G$ 为\textbf{有限单群}.
+
+\item \textbf{定理 4.4.1} 设 $G$ 为 Abel 群且 $G\neq\{e\}$, $e$ 为 $G$ 的幺元, 则 $G$ 为单群的充分必要条件是 $G$ 的阶为素数. 这时 $G$ 必为循环群.
+
+\item \textbf{定理 4.5.3} 设 $A,B$ 是 $G$ 的子群.
+\begin{enumerate}
+  \item $G=AB,A\cap B=\{1\}$ 当且仅当 $\forall g\in G, \exists a\in A,b\in B$, 使得 $g=ab$ 且这种表示唯一.
+  \item 若 $G=AB, A\cap B=\{1\}$, 则 $A,B$ 都是 $G$ 的正规子群的充分必要条件是 $ab=ba(\forall a\in A,b\in B)$, 此时 $G=A\otimes B$.
+\end{enumerate}
+
+\item \textbf{定义 4.6.1} 设 $g_1,g_2$ 是群 $G$ 中的两个元素, 称
+\[
+[g_1,g_2] = g_1^{-1}g_2^{-1}g_1g_2
+\]
+为 $g_1$ 与 $g_2$ 的\textbf{换位子}.
+
+\item \textbf{定义 4.6.2} 若 $H,K$ 是群 $G$ 的两个子群, 称
+\[
+[H,K] = \langle\{[h,k]\mid h\in H,k\in K\}\rangle
+\]
+为 $H$ 与 $K$ 的\textbf{换位子群}.
+\end{enumerate}
+\end{document}
