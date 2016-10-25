@@ -1,0 +1,40 @@
+\documentclass{ctexart}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage{tikz-cd}
+\usepackage{url}
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+$R$ 为一个交换环.
+
+$A$ 为 $R$ 上的一个代数.
+
+$U$ 是一个 $A$-模.
+
+$R\to R'$ 为一个环同态.($R'$ 为另一个交换环)
+
+可以得到一个 $R'$-代数 $R'\otimes_R A$, 并且 $R'\otimes_R U$ 成为一个 $R'\otimes_R A$-模.
+
+这一章就是研究 $U$ 与 $R'\otimes_R U$ 之间的关系.
+
+当我们特别取 $A=RG$ 为群代数时, 我们把 $R'\otimes_R RG$ 等同于 $R'G$.
+\[
+RG\cong R^n,R'\otimes_R RG \cong R'\otimes_R R^n \cong (R'\otimes_R R)^n\cong R'^n\cong R'G, \text{其中} n = \lvert G\rvert
+\]
+
+下面我们考虑这种构造的两种特殊情况.
+\begin{enumerate}
+  \item $R$ 是 $R'$ 的一个子环.
+  \item $R' = R/I$
+\end{enumerate}
+
+Let $A$ be a finite dimensional $F$-algebra, where $F$ is a field. A simple $A$-module $U$ is said to be \textit{absolutely simple} if and only if $E\otimes_F U$ is a simple $E\otimes_F A$-module for all extension fields $E$ of $F$. We say that an extension field $E$ of $F$ is a \textit{splitting field} for $A$ if and only if every simple $E\otimes_F A$-module is absolutely simple. If $A$ is a group algebra, we say that $E$ is a splitting field for $G$, by extension of the terminology.
+
+单$E\otimes_F A$-模 $U$ 绝对单的意思:
+
+$E\otimes_F A$ 是 $E$ 上的代数, 对$E$的任何一个扩域$K$, 都有 $K\otimes_E U$ 是 $K\otimes_E (E\otimes_F A)$ 上的单模. 其中, $K\otimes_E (E\otimes_F A) \cong (K\otimes_E E)\otimes_F A\cong K\otimes_F A$.
+\end{document}

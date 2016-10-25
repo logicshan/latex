@@ -58,5 +58,48 @@ p^{l-k}\|C_n^{p^k},
 [H,K] = \langle\{[h,k]\mid h\in H,k\in K\}\rangle
 \]
 为 $H$ 与 $K$ 的\textbf{换位子群}.
+
+\item 最小多项式(Minimal polynomial (field theory))
+
+域论中的最小多项式是相对于一个域扩张(field extension) $E/F$ 和 $E$ 中的一个元素来定义的. 一个元素的最小多项式如果存在的话, 是 $F[x]$ 中的一个多项式. 给定 $E$ 中的一个元素 $\alpha$, 令 $J_\alpha$ 为 $F[x]$ 中所有满足 $f(\alpha) = 0$ 的多项式 $f(x)$ 组成的集合. $\alpha$ 就被称为 $J_\alpha$ 中每一个多项式的根(root)或零点(zero). $J_\alpha$ 是 $F[x]$ 的一个理想. 如果 $J_\alpha$ 含有任何一个非零多项式, 那么 $\alpha$ 就被称为 $F$ 上的一个代数元(algebraic element), 并且在 $J_\alpha$ 中存在一个次数最小的首一多项式(monic polynomial). 这就是 $\alpha$ 相对于 $E/F$ 的最小多项式. 它是唯一的, 并且相对于 $F$ 不可约(irreducible). 如果 $J_\alpha$ 只含有零多项式, 那么 $\alpha$ 被称为 $F$ 上的一个超越元(transcendental element), 并且相对于 $E/F$ 没有最小多项式.
+
+最小多项式在构造和分析域扩张的时候是有用的. 当 $\alpha$ 是代数的, 并且其最小多项式 为 $a(x)$ 时, 同时包含 $F$ 和 $\alpha$ 的最小的域同构于商环 $F[x]/\langle a(x)\rangle$, 其中 $\langle a(x)\rangle$ 是由 $a(x)$ 生成的 $F[x]$ 的理想.
+
+\item Artinian 环上的模
+
+Let $M$ be a left module over a left Artinian ring. Then the following are equivalent (Hopkins' theorem): (i) $M$ is finitely generated, (ii) $M$ has finite length (i.e., has composition series), (iii) $M$ is Noetherian, (iv) $M$ is Artinian.
+
+群环 $kG$ 都为 artinian. 进一步如果域的特征为零或与群的阶互素(Maschke's theorem), $kG$ 是半单的, 而半单环既是 artinian 又是 noetherian.
+
+以下考虑的环都为 Artinian.
+
+\item 区分半单(semisimple)和完全可约(complete reducible)
+
+模 $M$ 是半单的, 如果它是单模的直和.
+
+模 $M$ 是完全可约的, 如果对所有的子模 $U\subset M$, 存在一个补子模 $V\subset M$, 满足 $M = U\oplus V$(也就是 $M=U+V$ 并且 $U\cap V = 0$.
+
+\item 环的 Jacobson radical
+
+\[
+Rad(A) = \{ x\mid xS = 0 \text{ for all simple modules } S \}.
+\]
+
+$Rad(A)$ 是最大的幂零理想.
+
+$Rad(A)$ 是所有极大左(右)理想的交.
+
+$Rad(A)$ 是使得 $A/Rad(A)$ 半单的最小的左理想.
+
+$M$ 为任意的 $A$-模, 我们定义 $R(M) := Rad(A)M$.
+
+$M$ 为 $A$-模, 则 $Rad(M)$ 是使得 $M/Rad(M)$ 半单的最小子模, 并且它是 $M$ 的所有极大左子模的交.
+
+若 $A$ 为 Artinian 环, 则 $A$ 上的有限生成的不可分解投射模和 $A$上的单模一一对应.
+
+有限群的群代数是Artinian环.
+\item Frobenius algebra
+
+$P$ 是不可分解投射模当且仅当 $P/Rad(P)\cong Soc(P)$.
 \end{enumerate}
 \end{document}

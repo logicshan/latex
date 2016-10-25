@@ -1,0 +1,17 @@
+\documentclass{ctexart}
+
+\usepackage{amsmath,amssymb,mathrsfs,color}
+
+\setlength{\parindent}{0pt}
+\newcommand{\ideala}{\mathfrak{a}}
+\begin{document}
+Set $P:=R[[X_1,\dots,X_n]]$ and $\ideala:=\langle X_1,\dots,X_n\rangle$. Then $\sum a_{(i)}X_1^{i_1}\cdots X_n^{i_n}\mapsto a_{(0)}$ is a canonical surjective ring map $P\to R$ with kernel $\ideala$; hence, $P/\ideala=R$.
+
+\begin{enumerate}
+  \item universal mapping properties (UMPs); they are used to characterize notions and to make constructions.
+  \item An $R$-\textbf{algebra} is a ring $R'$ that comes equipped with a ring map $\varphi : R \to R'$, called the \textbf{stucture map}. An $R$-\textbf{algebra homomorphism}, or $R$-\textbf{algebra map}, $R'\to R''$ is a ring map between $R$-algebras compatible with their structure maps.
+  \item In practice, it is usually more productive to view $R/\ideala$ not as a set of cosets, but simply as another ring $R'$ that comes equipped with a surjective ring map $\varphi:R\to R'$ whose kernel is the given ideal $\ideala$.
+  \item $R/\ideala$ has, as we saw, this \textcolor{red}{UMP}: $\kappa(\ideala) = 0$, and given $\varphi:R\to R'$ such that $\varphi(\ideala) = 0$, there is a unique ring map $\psi:R/\ideala\to R'$ such that $\psi\kappa=\varphi$. In other words, $R/\ideala$ is universal among $R$-algebras $R'$ such that $\ideala R'=0$.
+  \item Let $R$ be a domain, $p$ a nonzero nonunit. $p$ is prime if and only if the ideal $\langle p\rangle$ is prime.
+\end{enumerate}
+\end{document} 

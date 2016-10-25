@@ -1,0 +1,120 @@
+\documentclass{ctexart}
+
+\usepackage{amsmath,amssymb,amsthm,tikz-cd,mathrsfs}
+\usepackage{color}
+\DeclareMathOperator{\Kom}{Kom}
+\begin{document}
+\begin{enumerate}
+\item 链复形(Chain complex)
+
+$d^2 = 0$
+\item 链映射(Chain map)
+
+It is worth noticing that the concept of chain map reduces to the one of boundary through the construction of the cone of a chain map.
+
+\item 链同伦(Chain homotopy)
+
+Chain homotopies give an important equivalence relation between chain maps. Chain homotopic chain maps induce the same maps on homology groups. A particular case is that homotopic maps between two spaces $X$ and $Y$ induce the same maps from homology of $X$ to homology of $Y$.
+
+\item Quasi-isomorphism
+
+In homological algebra, a branch of mathematics, a quasi-isomorphism is a morphism $A\to B$ of chain complexes (respectively, cochain complexes) such that the induced morphisms
+\[
+H_n(A_\bullet) \to H_n(B_\bullet)\ (\text{respectively, } H^n(A^\bullet) \to H^n(B^\bullet))
+\]
+of homology groups (respectively, of cohomology groups) are isomorphisms for all $n$.
+
+\item Homotopy category of chain complexes
+
+In homological algebra in mathematics, the homotopy category $K(A)$ of chain complexes in an additive category $A$ is a framework for working with chain homotopies and homotopy equivalences. It lies intermediate between the category of chain complexes $\Kom(A)$ of $A$ and the derived category $D(A)$ of $A$ when $A$ is abelian; unlike the former it is a triangulated category, and unlike the latter its formation does not require that $A$ is abelian. Philosophically, while $D(A)$ makes isomorphisms of any maps of complexes that are quasi-isomorphisms in $\Kom(A)$, $K(A)$ does so only for those that are quasi-isomorphisms for a "good reason", namely actually having an inverse up to homotopy equivalence. Thus, $K(A)$ is more understandable than $D(A)$.
+
+$\Kom(A)$ - the category of chain complexes in an \textcolor{blue}{abelian category $A$}.
+
+$K(A)$ - homotopy category of chain complexes in an \textcolor{red}{additive category $A$}.
+
+$D(A)$ - the derived category $D(A)$ in an \textcolor{blue}{abelian category $A$}.
+
+A morphism $f:A\rightarrow B$ which is an isomorphism in $K(A)$ is called a \textbf{homotopy equivalence}. In detail, this means there is another map $g : B\rightarrow A$, such that the two compositions are homotopic to the identities: $f\circ g\sim Id_{B}$ and $g\circ f\sim Id_{A}$.
+
+$K(A)$ 中的态射为模去同伦等价的等价类, 所以 $f:A\to B$实际是$[f]:A\to B$(和$f$同伦的等价类), $[f]$是同构, 就是存在另外一个等价类$[g]:B\to A$, 使得 $[f]\circ [g] = [Id_B], [g]\circ [f]=[Id_A]$, 即 $f\circ g\sim Id_{B}$ and $g\circ f\sim Id_{A}$.
+
+Two chain homotopic maps $f$ and $g$ induce the same maps on homology because $(f − g)$ sends cycles to boundaries, which are zero in homology. In particular a homotopy equivalence is a quasi-isomorphism. (The converse is false in general.) This shows that there is a canonical functor $K(A)\rightarrow D(A)$ to the derived category (if $A$ is abelian).
+
+\item Zig-zag lemma
+
+从复形的短正合列得到同调的长正合列.
+
+
+\item Homotopy extension property
+
+In mathematics, in the area of algebraic topology, the homotopy extension property indicates which homotopies defined on a subspace can be extended to a homotopy defined on a larger space.
+\begin{center}
+\begin{tikzcd}
+Y \arrow[r, leftarrow, "\tilde{f}_0"] \arrow[d, twoheadleftarrow, "p_0"']&X \arrow[ld, dashrightarrow, "\tilde{f}"]\\
+Y^I \arrow[r, leftarrow, "f"'] & A \arrow[u, "i"']
+\end{tikzcd}
+\end{center}
+$i : A \to X$ 对于 $Y$ 满足同伦扩张性质, 如果给定交换图, 存在 $\tilde{f} : X\to Y^I$ 使得图交换.
+
+\item Cofibration
+
+In mathematics, in particular homotopy theory, a continuous mapping
+\[
+i\colon A\to X,
+\]
+where $A$ and $X$ are topological spaces, is a cofibration if it satisfies the homotopy extension property with respect to \textcolor{red}{all spaces $Y$}. This definition is dual to that of a fibration, which is required to satisfy the homotopy lifting property with respect to all spaces. This duality is informally referred to as Eckmann–Hilton duality.
+
+In fact, if you consider any cofibration $i:Y\to Z$, then we have that $Y$ is homeomorphic to its image under $\mathbf{\mathit {i}}$ . This implies that any cofibration can be treated as an inclusion map.
+
+\item Mapping cylinder
+
+In mathematics, specifically algebraic topology, the mapping cylinder of a function $f$ between topological spaces $X$ and $Y$ is the quotient
+\[
+M_{f}=(([0,1]\times X)\amalg Y)\,/\,\sim
+\]
+
+The mapping cylinder may be viewed as a way to replace an arbitrary map by an equivalent cofibration, in the following sense:
+
+Given a map $f\colon X\to Y$, the mapping cylinder is a space $M_{f}$, together with a cofibration $\tilde f\colon X \to M_f$ and a surjective homotopy equivalence $M_f \to Y$ (indeed, $Y$ is a deformation retract of $M_{f}$), such that the composition $X \to M_f \to Y$ equals $f$.
+\begin{center}
+\begin{tikzcd}
+X \arrow[rr, "f"] \arrow[rd, "\tilde f"'] & & Y\\
+& M_f \arrow[ru]
+\end{tikzcd}
+\end{center}
+
+\item Homotopy lifting property and fibration
+
+Given a map $\pi \colon E\to B$, and a space $X\,$, one says that $(X,\pi )\,$ has the homotopy lifting property, or that $\pi \,$ has the homotopy lifting property with respect to $X\,$, if:
+
+    for any homotopy $f\colon X\times [0,1]\to B\,$, and
+
+    for any map ${\tilde {f}}_{0}\colon X\to E$ lifting $f_{0}=f|_{X\times \{0\}}$ (i.e., so that $f_{0}=\pi \circ {\tilde {f}}_{0}\,$),
+
+there exists a homotopy ${\tilde {f}}\colon X\times [0,1]\to E$ lifting $f\,$ (i.e., so that $f=\pi \circ {\tilde {f}}\,$) which also satisfies ${\tilde {f}}_{0}={\tilde {f}}|_{X\times \{0\}}\,$.
+
+The following diagram depicts this situation.
+
+\begin{center}
+\begin{tikzcd}
+X \arrow[r, "{\tilde f}_0"] \arrow[d, "X\times \{0\}"']& E \arrow[d, "\pi"]\\
+X\times I \arrow[r, "f"'] \arrow[ru, dashrightarrow, "{\tilde f}"] & B
+\end{tikzcd}
+\end{center}
+
+
+The outer square (without the dotted arrow) commutes if and only if the hypotheses of the lifting property are true. A lifting ${\tilde {f}}$ corresponds to a dotted arrow making the diagram commute. This diagram is dual to that of the homotopy extension property; this duality is loosely referred to as Eckmann–Hilton duality.
+
+If the map $\pi\,$ satisfies the homotopy lifting property with respect to all spaces $X$, then $\pi\,$ is called a fibration, or one sometimes simply says that $\pi\,$ has the homotopy lifting property.
+
+Note that this is the definition of fibration in the sense of Hurewicz, which is more restrictive than fibration in the sense of Serre, for which homotopy lifting only for $X\,$ a CW complex is required.
+
+\item Mapping cone (homological algebra)
+
+Suppose now that we are working over an abelian category, so that the cohomology of a complex is defined. The main use of the cone is to identify quasi-isomorphisms: if the cone is acyclic, then the map is a quasi-isomorphism.
+
+\item Relative homology
+
+
+\end{enumerate}
+\end{document} 

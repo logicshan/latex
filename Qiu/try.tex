@@ -1,0 +1,36 @@
+\documentclass[12pt]{ctexart}
+\usepackage{amssymb,amsmath,cases}
+\usepackage{listings}
+\textheight=8.0in \topmargin=0in \textwidth=6.05in
+\oddsidemargin=0.28in \baselineskip=30pt %\linespread{1.5}
+\date{}
+\title{¡¶Preconditioned iterative methods for fractional diffusion equation}
+\pagestyle{plain}
+\begin{document}
+\maketitle
+\begin{center}
+\textbf{ABSTRACT}
+\end{center}
+In this paper,we are concerned with numerical methods for the solution of initial-boundary value problems of anomalous diffusion equations of $\alpha\in(1,2)$.The classical Crank-Nicholson method is used to discretize the fractional diffusion equation and then the spatial extrapolation is used to obtain temporally and spatially second-order accurate numerical estimates.Two preconditioned iterative methods,namely,the preconditioned generalized minimal residual (preconditioned GMRES) method and the preconditioned conjugate gradient for normal residual (preconditioned CGNR) method,are proposed to solve relevant linear systems,Numerical experiments are given to illustrate the efficiency of the methods.
+
+
+
+
+ \begin{numcases}{}
+ g_{0}^{(\alpha)}=1,\qquad g_{1}^{(\alpha)}=-\alpha<0,\qquad g_{2}^{(\alpha)}>g_{3}^{(\alpha)}>\cdot\cdot\cdot>0,\nonumber\\
+ \sum_{j=0}^{\infty}g_{j}^{(\alpha)}=0,\qquad \sum_{j=0}^{n}g_{j}^{(\alpha)}<0,\qquad for\qquad n\geq1,\nonumber\\
+ g_{j}^{(\alpha)}=O(j^{-(\alpha+1)}).\nonumber
+ \end{numcases}
+
+\begin{equation*} \label{eq}
+ \left\{ \begin{aligned}
+ g_{0}^{(\alpha)}=1,\qquad g_{1}^{(\alpha)}=-\alpha<0,\qquad g_{2}^{(\alpha)}>g_{3}^{(\alpha)}>\cdot\cdot\cdot>0,\\
+ \sum_{j=0}^{\infty}g_{j}^{(\alpha)}=0,\qquad \sum_{j=0}^{n}g_{j}^{(\alpha)}<0,\qquad for\qquad n\geq1,\\
+ g_{j}^{(\alpha)}=O(j^{-(\alpha+1)}).
+        \end{aligned}
+ \right.
+\end{equation*}
+
+
+
+\end{document} 

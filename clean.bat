@@ -7,3 +7,4 @@ del *.synctex(busy)
 del *.blg
 del *.log
 del *.xml
+del *.toc
