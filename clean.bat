@@ -8,3 +8,4 @@ del *.blg
 del *.log
 del *.xml
 del *.toc
+del *.out

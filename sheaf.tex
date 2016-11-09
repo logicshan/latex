@@ -1,0 +1,57 @@
+\documentclass{ctexart}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage{tikz-cd}
+\usepackage{url}
+
+\setlength{\parindent}{0pt}
+
+\newcommand{\F}{\mathscr{F}}
+\newcommand{\NBR}[1]{\mathfrak{O}(#1)}
+\newcommand{\nbr}[1]{\mathfrak{U}(#1)}
+
+\usepackage{biblatex}
+\addbibresource{sheaf.bib}
+
+\begin{document}
+$\F \colon \NBR{X}^{op} \to \mathbf{A\!b}$
+
+$V \subset U, \rho_{VU} : \F(U) \to \F(V)$
+
+对于拓扑空间 $X$ 上的预层 $\F$ 以及 $X$ 的一个开子集 $U$, $\F(U)$ 中的
+元素 $s \in \F(U)$ 称为预层 $\F$ 在开子集 $U$ 上的\textbf{瓣}(\textit{section}). $\F(U)$
+就是由 $U$ 上的瓣所构成的群. 全空间 $X$ 上的瓣被称为\textbf{整体
+  瓣}(\textit{global section}). 我们往往把 $\F(U)$ 记为 $\Gamma(U,
+\F)$. $\rho_{VU}$ 也被称为\textbf{限制映射}(\textit{restriction}). 如果 $s \in
+\F(U)$, 常常把 $\rho_{VU}(s)$ 记为 $s|_{V}$.
+
+\begin{enumerate}
+\item In mathematics, the constant sheaf on a topological space $X$ associated to a set $A$ is a sheaf of sets on $X$ whose stalks are all equal to $A$. It is denoted by $\underline{A}$ or $A_X$. The constant presheaf with value $A$ is the presheaf that assigns to each open subset of $X$ the value $A$, and all of whose restriction maps are the identity map $A\to A$. The constant sheaf associated to $A$ is the sheafification of the constant presheaf associated to $A$.\cite{constant_sheaf}
+
+    注意 constant \textcolor{red}{presheaf} 和 constant \textcolor{blue}{sheaf} 的区别.
+
+\item 层上同调的定义
+
+层的上同调就定义为整体瓣函子(global section functor)的右导出函子, 所以是一个 universal 的 $\delta$-函子.
+
+\item The different types of homology theory arise from functors mapping from various categories of mathematical objects to the category of chain complexes. In each case the composition of the functor from objects to chain complexes and the functor from chain complexes to homology groups defines the overall homology functor for the theory.
+
+比如, 单纯同调(simplicial homology)定义在单纯复形(simplicial complex)上. 奇异同调(singular homology)定义在所有拓扑空间上. 胞腔同调(cellular homology)定义在 CW复形(CW-complex)上.
+
+For $X$ a CW-complex, its cellular homology $H^{CW}_\bullet(X)$ agrees with its singular homology $H_\bullet(X)$:
+\[
+H^{CW}_\bullet(X)\simeq H_\bullet(X)
+\]
+可以把一个同调理论(homology theory)看成一族函子.
+
+上面定理也可以叙述为: The cellular and singular homology of a CW-complex are naturally isomorphic.
+
+The homology $H_\ast(K;R)$ of an abstract simplicial complex $K$ is isomorphic to $H_\ast(\left|K\right|;R)$, the singular homology of its geometric realization. This can be seen by noting that $\left|K\right|$ is naturally a CW-complex. The cellular chain complex of $\left|K\right|$ is isomorphic to the simplicial chain complex of $K$.
+\end{enumerate}
+
+\newpage
+\printbibliography
+
+\end{document}
