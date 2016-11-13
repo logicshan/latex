@@ -4,12 +4,20 @@
 \usepackage{mathrsfs}
 \usepackage{color}
 \usepackage{tikz-cd}
+\usepackage{relsize}
+
+\usepackage{biblatex}
+\addbibresource{algebraic-topology-notes.bib}
 
 \newtheorem*{prop}{命题}
 \newtheorem*{thm}{定理}
 \newtheorem*{defn}{定义}
 
 \DeclareMathOperator{\rel}{rel}
+\DeclareMathOperator{\Top}{Top}
+\DeclareMathOperator{\pullback}{\mathsmaller{\prod}}
+\DeclareMathOperator{\pushout}{\mathsmaller{\coprod}}
+\DeclareMathOperator{\im}{im}
 
 \begin{document}
 \begin{defn}
@@ -164,4 +172,147 @@ $B$ 为其 \textbf{底空间}(base space), 称这些 $U_b$ 为 \textbf{均匀复
   邻域}(evenly-covered neighborhood), 称每个 $p^{-1}(b)$ 为 $b$ 上的
 \textbf{纤维}(fiber).
 \end{defn}
-\end{document} 
+
+%\noindent\hrulefill
+
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
+
+\begin{enumerate}
+\item Pullback and Pushout in \textbf{Top}
+
+Consider the diagram
+\begin{center}
+\begin{tikzcd}[row sep=large]
+  & Y \arrow[d, "g"] \\
+X \arrow[r, "f"'] & Z
+\end{tikzcd}
+\end{center}
+in \textbf{Top}. Then the pullback of $f$ and $g$ is $X \pullback_Z Y \in \Top$ given by
+\[
+X \pullback_{Z} Y := \{(x,y) \in X \times Y \mid f(x) = g(y)\} \subset X \times Y
+\]
+(with subspace topology).
+
+Consider the diagram
+\begin{center}
+\begin{tikzcd}[row sep=large]
+Z \arrow[d,"f"'] \arrow[r,"g"] & Y \\
+X
+\end{tikzcd}
+\end{center}
+in \textbf{Top}. Then the pushout $X \pushout_Z Y\in \Top$ of $f$ and $g$ is given by $X\pushout Y/\sim$ where $i_X f(z) \sim i_Y g(z)$ for all $z \in Z$.
+
+\item Attaching Maps
+Given $A\subset X$ with $f : A\to Y$, we define "the space obtained from $Y$ by attaching $X$ by means of $f$" (wrriten $X \cup_f Y$) as
+\[
+X\cup_f Y = (X\pushout Y)/\sim
+\]
+where $a\sim f(a)\forall a\in A$.
+\begin{center}
+\begin{tikzcd}[row sep=huge]
+A \arrow[d, hook'] \arrow[r, "f"] & Y \arrow[d, hook', "i_Y"]\\
+X \arrow[r, "j_X"] & X\cup_f Y
+\end{tikzcd}
+\end{center}
+is a pushout in the category of topological spaces.
+
+$i_Y$ is always an injection.
+
+$j_X$ is an injection iff $f$ is.
+
+\item CW complex
+
+$S^n$ : the unit sphere in $\mathbb{R}^{n+1}$, all points of distance $1$ from the origin.
+
+$D^n$ : the unit disk or ball in $\mathbb{R}^n$, all points of distance $\leq 1$ from the origin.
+
+$\partial D^n = S^{n-1}$ : the boundary of the $n$-disk.
+
+$e^n$ : an $n$-cell, homeomorphic to the open $n$-disk $D^n - {\partial D^n}$.
+
+In particular, $D^0$ and $e^0$ consist of a single point since $\mathbb{R}^0 = \{0\}$. But $S^0$ consists of two points since it is $\partial D^1$.
+
+\textcolor{red}{C} - closure finite
+
+\textcolor{blue}{W} - weak topology
+
+\[
+X_0 = \text{a set of discrete pts}
+\]
+
+\begin{center}
+\begin{tikzcd}[row sep=huge]
+\amalg{\partial D^{n+1}} \arrow[d,hook'] \arrow[r] & X_n \arrow[d,hook']\\
+\amalg{D^{n+1}} \arrow[r] & X_{n+1}
+\end{tikzcd}
+\end{center}
+
+\item \textbf{standard n-simplex}
+
+The standard n-simplex (or unit n-simplex) is the subset of $\mathbb{R}^{n+1}$ given by
+\[
+\Delta^n = \left\{(t_0,\ldots,t_n)\in \mathbb{R}^{n+1}\mid \sum_{i=0}^{n} t_i = 1 \text{ and } t_i \geq 0 \text{ for all } i\right\}
+\]
+
+\item Singular homology\cite[p.1]{kirklecture}\cite{singular_homology}
+
+Construction of the singular chain complex.
+
+The \textit{(geometric) q-simplex} $\Delta^q$ is defined by
+\[
+\Delta^q = \left\{(t_0,t_1,\ldots,t_q)\in \mathbb{R}^{q+1}\mid \mathsmaller{\sum} t_i = 1, t_i \geq 0\text{ for all } i\right\}
+\]
+The \textit{face maps} are the functions
+\[
+f_m^q : \Delta^{q-1} \to \Delta^q
+\]
+defined by
+\[
+(t_0,t_1,\ldots,t_{q-1}) \mapsto (t_0,\ldots,t_{m-1},0,t_m,\ldots,t_{q-1})
+\]
+A \textit{singular $q$-simplex in a space} $X$ is a continuous map $\sigma : \Delta^{q} \to X$.
+
+Let $R$ be a \textit{commutative ring} with unit. Denote by $S_q(X;R)$ the free $R$-module with basis the singular $q$-simplices $\left\{\sigma : \Delta^q \to X\right\}$ and define the differential $\partial : S_q(X;R)\to S_{q-1}(X;R)$ to be the $R$-linear map defined on a singular simplex $\sigma$ by
+\[
+\partial(\sigma) = \sum_{m=0}^{q} (-1)^m\sigma\circ f_m^q.
+\]
+\[
+\Delta^{q-1} \overset{f_m^q}{\to} \Delta^q \overset{\sigma}{\to} X
+\]
+Thus, on a chain $\sum_{i=1}^{\ell}r_i\sigma_i$, $\partial$ has the formula
+\[
+\partial\left(\sum_{i=1}^{\ell}r_i\sigma_i\right) = \sum_{i=1}^{\ell}r_i\left(\sum_{m=0}^{q}\left(-1\right)^m \sigma_i \circ f_m^q \right).
+\]
+One calculates that $\partial^2 = 0$.
+
+例子: 单点的 singular homology. $X = \{\ast\}, R=\mathbb{Z}$.
+
+$q\geq0$ 时, $\Delta^q \to \{\ast\}$ 都只有一个映射 $\sigma_q$, 此时 $S_q(X) = \mathbb{Z}\sigma_q \cong \mathbb{Z}$.
+$\partial\sigma_q = \sum\limits_{m=0}^{q}(-1)^m\sigma_q\circ f_m^q$, 由于$\sigma_q\circ f_m^q$ 只可能是 $\sigma_{q-1}$, 所以
+\[
+\partial\sigma_q =
+\begin{cases}
+0, & q\text{为奇数}\\
+\sigma_{q-1}, & q\text{为偶数}
+\end{cases}
+\]
+\[
+\cdots\to S_{q+1}(X)\to S_q(X) \to\cdots \to S_1(X)\to S_0(X)\to 0
+\]
+当 $q=0$ 时, $Z_0 = \ker\partial_0 \cong \mathbb{Z}$, $B_0 = \im\partial_1 = 0$, 所以$H_0(X) = Z_0/B_0 \cong \mathbb{Z}$.
+
+当 $q > 0$ 且为奇数时, $Z_q = \ker\partial_q \cong \mathbb{Z}$, $B_q = \im\partial_{q+1} \cong \mathbb{Z}$, 所以 $H_q(X) = Z_q/B_q \cong 0$.
+
+当 $q > 0$ 且为偶数时, $Z_q = \ker\partial_q \cong 0$, $B_q = \im\partial_{q+1} \cong 0$, 所以 $H_q(X) = Z_q/B_q \cong 0$.
+
+\[
+H_n(\{\ast\}) =
+\begin{cases}
+\mathbb{Z}, & n = 0\\
+0, & n \neq 0
+\end{cases}
+\]
+\end{enumerate}
+\newpage
+\printbibliography
+\end{document}
