@@ -1,0 +1,205 @@
+% !mode::"TeX:UTF-8"
+\documentclass[a4paper,11pt,openany]{ctexart}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{xltxtra}
+\usepackage{titlesec}
+%\usepackage[all]{xy}
+\usepackage[all]{xypic}
+\usepackage{hyperref}
+\usepackage{colortbl}
+\usepackage{graphics}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{color}
+\usepackage[text={150mm,195mm},centering]{geometry}
+
+\author{\kaishu \zihao{4}陌并\thanks{E-mail:529666596@qq.com}}
+\title{\heiti\zihao{-2}你也可以发明谱序列}
+\date{\kaishu \zihao{-4}译自AMS《You Could Have Invented Spectral Sequences》Timothy Y.Chow\footnote{\url{http://www.ams.org/notices/200601/fea-chow.pdf}}}
+
+\begin{document}
+  \maketitle
+ \section{简介}
+ 谱序列对于初学者来说一直很难，G.W.Whitehead也曾经说“谱序列这个工具，来源于Lyndon和Koszul的代数工作，对很多拓扑学家来说是复杂难懂的。”(引用自John McCleary“A User's Guide to Spectral Sequences”)
+
+ 为什么会这样？David Eisenbud给出一个解释：“谱序列这个内容是基本的，但是一个双复形的谱序列的记号包含了太多项和太多指标，乍看起来时令人厌恶的。”我也曾听说其他人对上下指标的增长有过类似的抱怨。
+
+ 然而我自己的解释是，谱序列通常不是这样教授给学生的：从最开始如何得到谱序列的定义开始解释。比如，John McCleary的书中写道“使用者需要熟悉这些玩意儿的计算，无需知晓他们的源头”。不了解谱序列从何而来，人们自然会认为他们很神秘。相反地，如果真正了解了谱序列由何而来，这些记号不应该成为绊脚石。
+
+傻瓜敢于冲向天使不敢落脚的地方\footnote{Fools rush in where angels fear to tread}，所以我下面的目标是使你，读者，感觉到你也可以发明谱序列(从一个非常好的方式，我保证！)。我假定读者对同调群比较熟悉，但只需很少。这里的所有东西对专家都是熟知的，但我希望使这个想法让更多人知道，而不仅是那些在正确的时间和正确的专家谈论正确的问题时了解到的幸运儿。
+
+若读者对谱序列的历史感兴趣，想知道事实上他们是如何被发明的，请参考John McCleary“A history of spectral sequences：Origins to 1953 ”，它给出了精确的解释。
+\section{简化假设}
+全篇我们在域上进行研究。所有的链群是有限维的，并且所有的滤(下面解释)只有有限项。在“现实”中，这些假设可能并不成立，但其中的关键想法在这样的简化处理下更容易抓住。
+\section{分次复形}
+自然出现的链复形通常在边缘算子上带有另外的结构。这种附加结构经常出现，因此导致寻找一个系统方法来研究这种性质。这样我们不必每次我们想计算同调群时都重新组装车轮。
+
+下面就是一个简单的例子。假设我们有一个链复形
+\[
+    \cdots\xrightarrow{\partial} C_{d+1} \xrightarrow{\partial}C_d\xrightarrow{\partial}C_{d-1} \xrightarrow{\partial} \cdots
+   \]
+他们是分次的，就是说每一个$C_d$分裂成直和
+\[C_d=\bigoplus_{p=1}^n C_{d,p}\]
+并且边缘映射$\partial$保持分次结构，即$\partial C_{d,p}\subset C_{d-1,p},\forall d,p$. 于是分次允许我们将同调群的计算分成小块：独立地计算每个分次的同调群然后将他们加起来就得到原来复形的同调。
+
+不幸的是，实际上我们并不总能幸运地在我们的复形上有一个分次结构。我们通常遇到的带滤的复形，即每一个$C_d$都附有一串子模
+\[0=C_{d,0}\subset C_{d,1}\subset C_{d,2}\subset \cdots \subset C_{d,n}=C_d\]
+并且边缘映射保持滤结构，即：
+\begin{equation}
+  \partial C_{d,p}\subset C_{d-1,p},\forall d,p
+\end{equation}
+(注：指标$p$叫做滤次数。当$0\leq p \leq n$ 时自然有意义，但本文中我们有时允许指标超过范围，当指标超过允许范围时则对象为零。比如$C_{d,-1}=0.$)
+
+尽管一个带滤复形并不和分次复形相同，但他们很相似，我们或许要猜想之前的“分而治之”的策略是否行得通。举个例子，是否有一个自然的方式将带滤复形的同调群分割成一个直和形式？答案最终是可以的，但是情况却令人惊异的复杂。正如我们即将看到的，这个分析过程将直接导致谱序列的概念。
+
+让我们首先天真地尝试将这个问题约化为之前已经解决过的分次复形的情况。为了达到这个目的，我们只需将每个$C_d$表达成一个直和。现在，$C_d$ 当然不是所有$C_{d,p}$的直和，事实上$C_{d,n}$已经是$C_d$了。然而由于$C_d$是一个有限维的向量空间(回顾我们之前的假设)，我们可以得到一个空间与$C_d$同构：模掉任何一个子空间$U$再直和上$U$,就是说$C_d\cong (C_d/U)\oplus U.$特别地，我们取$U=C_{d,n-1}$.从而我们迭代这一过程将$U$写成直和并继续做下去。形式上我们定义
+\begin{equation}
+  E^0_{d,p}:=C_{d,p}/C_{d,p-1},\forall d,p
+\end{equation}
+(警告：对谱序列存在不同的指标约定，很多作者写成$E_{p,q}^0,q=d-p$,称作互补次数。这里使用的指标约定我感觉是最清楚用来讲解的。)则
+\begin{equation}
+  C_d\cong \bigoplus_{p=1}^n E_{d,p}^0.
+\end{equation}
+关于这个直和分解最漂亮的事是边缘映射$\partial$自然诱导了映射
+\[\partial^0:\bigoplus_{p=1}^n E_{d,p}^0 \to \bigoplus_{p=1}^n E_{d-1,p}^0\]
+使得$\partial^0 E_{d,p}^0\subset E^0_{d-1,p},\forall d,p$.(原因是有方程(1))
+
+因而我们得到了一个分次复形，分割成$n$部分：
+\begin{equation}
+  \begin{array}{ccccccc}
+     \cdots\xrightarrow{\partial^0}& E_{d+1,n}^0& \xrightarrow{\partial^0}&E_{d,n}^0&\xrightarrow{\partial^0}&E_{d-1,n}^0& \xrightarrow{\partial^0} \cdots \\
+     \cdots\xrightarrow{\partial^0}& E_{d+1,n-1}^0 & \xrightarrow{\partial^0}&E_{d,n-1}^0&\xrightarrow{\partial^0}&E_{d-1,n-1}^0& \xrightarrow{\partial^0} \cdots \\
+     \vdots \\
+     \cdots\xrightarrow{\partial^0}& E_{d+1,1}^0& \xrightarrow{\partial^0}&E_{d,1}^0&\xrightarrow{\partial^0}&E_{d-1,1}^0& \xrightarrow{\partial^0} \cdots
+   \end{array}
+\end{equation}
+现在我们定义$E^1_{d,p}$为这个复形的同调的第$p$个分次块：
+\begin{equation}
+  E^1_{d,p}:=H_d(E^0_{d,p})=\frac{ker \partial^0:E^0_{d,p}\to E_{d-1,p}^0}{im \partial^0:E^0_{d+1,p}\to E_{d,p}^0}
+\end{equation}
+(若喜欢相对同调，我们指出$E_{d,p}^1$就是相对同调群$H_d(C_{d,p},C_{d,p-1}).$)仍然天真地希望
+\begin{equation}
+  \bigoplus_{p=1}^nE^1_{d,p}
+\end{equation}
+是我们最初的复形的同调。不幸的是是错误的。然而复形$(\bigoplus_p E_{d,p}^0,\partial^0)$(称为最初带滤复形$(C_d,\partial)$ 相关联分次复形)的每一项同构于原先复形的相应项(即(3))，但这并不保证两个复形作为链复形是同构的。(译者注：$\partial$和$\partial^0$并不相同)因此尽管$\bigoplus_p E_{d,p}^1$的确给出了相关联分次复形的同调，但它并不能给出最初复形的同调。(译者注：即$C_d\cong \bigoplus_{p} E_{d,p}^0,\bigoplus_p E_{d,p}^1=H_d(\bigoplus_p E_{d,p}^0)\neq H_d(C_d)$)
+
+\section{分析其中的差距}
+这虽然有些不尽人意，但让我们不要就此放弃。相关联分次复形和原本的复形如此相似，尽管它的同调并非就是我们想要的，但它肯定是一个合理的好的近似值。让我们仔细研究其中的差距看看我们是否能解决这个问题。
+
+另外，为了使事情变得简单一点，我们考虑$n=2$的情形。那么，图(4)中的箭头只有两行，我们称“楼上”($p=2$)和“楼下”($p=1$)\footnote{
+\begin{equation*}
+  \begin{array}{ccccccc}
+  \cdots\xrightarrow{\partial}& C_{d+1} & \xrightarrow{\partial}&C_{d}&\xrightarrow{\partial}&C_{d-1}& \xrightarrow{\partial} \cdots \\
+     \cdots\xrightarrow{\partial^0}& C_{d+1,2}/C_{d+1,1}& \xrightarrow{\partial^0}&C_{d,2}/C_{d,1}&\xrightarrow{\partial^0}&C_{d-1,2}/C_{d-1,1}& \xrightarrow{\partial^0} \cdots \\
+     \cdots\xrightarrow{\partial^0}& C_{d+1,1} & \xrightarrow{\partial^0}&C_{d,1}&\xrightarrow{\partial^0}&C_{d-1,1}& \xrightarrow{\partial^0} \cdots \\
+   \end{array}
+\end{equation*}
+}。
+\begin{equation*}
+  \begin{array}{ccccccc}
+     \cdots\xrightarrow{\partial^0}& E_{d+1,2}^0& \xrightarrow{\partial^0}&E_{d,2}^0&\xrightarrow{\partial^0}&E_{d-1,2}^0& \xrightarrow{\partial^0} \cdots \\
+     \cdots\xrightarrow{\partial^0}& E_{d+1,1}^0 & \xrightarrow{\partial^0}&E_{d,1}^0&\xrightarrow{\partial^0}&E_{d-1,1}^0& \xrightarrow{\partial^0} \cdots \\
+   \end{array}
+\end{equation*}
+
+我们实际要的同调群$H_d$是$Z_d/B_d$,其中$Z_d$是包含在$C_d$的闭链空间，$B_d$是包含在$C_d$中的边缘链空间(译者注：$Z_d=ker(C_{d}\to C_{d-1})$,$B_d=im(C_{d+1}\to C_d)$).由于$C_d$是带滤的，自然在$Z_d$和$B_d$上有滤结构：\footnote{\[(Z_{d,1}=Z_d\cap C_{d,1}=ker(C_{d}\to C_{d-1})\cap C_{d,1}=ker(C_{d,1}\to C_{d-1})=ker(C_{d,1}\to C_{d-1,1})\]
+\[B_{d,1}=B_d\cap C_{d,1}=im(C_{d+1}\to C_{d})\cap C_{d,1}=im(C_{d+1}\to C_{d,1}).)\]}
+
+\[0=Z_{d,0}\subset Z_{d,1}\subset Z_{d,2}=Z_d\]
+\[0=B_{d,0}\subset B_{d,1}\subset B_{d,2}=B_d\]
+
+回忆我们已经尝试去寻找一个自然的方式将$H_d$分解成直和。就像我们之前看到的一样：$C_d$不是$C_{d,1}$和$C_{d,2}$的直和，我们现在的$Z_d/B_d$也不是$Z_{d,1}/B_{d,1}$和$Z_{d,2}/B_{d,2}$的直和；事实上$Z_{d,2}/B_{d,2}$就已经是整个同调群了。但同样我们用之前的把戏：通过模掉楼下部分再直和上楼下部分:
+\[\frac{Z_d}{B_d}\cong \frac{Z_d+C_{d,1}}{B_d+C_{d,1}}\oplus \frac{Z_d \cap C_{d,1}}{B_d\cap C_{d,1}}\]
+\[=\frac{Z_{d,2}+C_{d,1}}{B_{d,2}+C_{d,1}}\oplus \frac{Z_{d,1}}{B_{d,1}}.\]
+现在我们单纯地希望
+\begin{equation}
+  E^1_{d,2}\cong \frac{Z_{d,2}+C_{d,1}}{B_{d,2}+C_{d,1}}?
+\end{equation}
+\begin{equation}
+  E^1_{d,1}\cong \frac{Z_{d,1}}{B_{d,1}}?
+\end{equation}
+并且甚至想(7)和(8)中的分子和分母就是$E_{d,p}^1$中的闭链和边缘链(等式$(5)$).如果这样的话$E^1_{d,2}\oplus E^1_{d,1}$(根据$(6)$)将会给我们$H_d$的直和分解。但仍然不幸的是通常，$(7)$和$(8)$都不成立，需要附加条件\footnote{译者注：下面我们将几个群写出来：
+\[E^{1}_{d,1}=H_d(E^0_{d,1})=\frac{ker(E^0_{d,1}\to E_{d-1,1}^0)}{im(E^0_{d+1,1}\to E_{d,1}^0)}=\frac{ker(C_{d,1}\to C_{d-1,1})}{im(C_{d+1,1}\to C_{d,1})}\]
+\[\frac{Z_{d,1}}{B_{d,1}}=\frac{ker(C_{d,1}\to C_{d-1,1})}{im(C_{d+1,2}\to C_{d,1})}=\frac{ker(C_{d,1}\to C_{d-1,1})}{im(C_{d+1}\to C_{d,1})}\]
+\[E^1_{d,2}=\frac{ker(E^0_{d,2}\to E_{d-1,2}^0)}{im(E^0_{d+1,2}\to E_{d,2}^0)}=\frac{ker(C_{d,2}/C_{d,1}\to C_{d-1,2}/C_{d-1,1})}{im(C_{d+1,2}/C_{d+1,1}\to C_{d,2}/C_{d,1})}\]
+\[\frac{Z_{d,2}+C_{d,1}}{B_{d,2}+C_{d,1}}=\frac{ker(C_{d,2}\to C_{d-1,2})+C_{d,1}}{im(C_{d+1,2}\to C_{d,2})+C_{d,1}}\]
+}。
+
+
+
+我们首先来看一下“楼下”的$E_{d,1}^1$:$E_{d,1}^1$的“闭链”就是$E_{d,1}^0$的闭链，而$E_{d,1}^1$的“边缘链”是映射$\partial^0:E_{d+1,1}^0\to E_{d,1}^0$的像$I$.
+
+$E^0_{d,1}$的闭链空间就是$Z_{d,1}$,是$(8)$中的分子。但是，像$I$不是$B_{d,1}$：因为$B_{d,1}$是$B_d$中的那些落在$C_ {d,1}$中的部分，这部分包含$I$，但它可能也包含其它东西。详细地说，映射$\partial$可能将某$x\in C_{d,1}$从“楼上”降到“楼下”，而$I$只抓取了那些开始就在“楼下”的元素的边界。因此$Z_{d,1}/B_{d,1}$是$E^1_{d,1}$的商群。
+
+现在让我们接着看“楼上”的$E_{d,2}^1$:$E_{d,2}^1$的“边缘链”就是$B_{d,2}+C_{d,1}$($(7)$中的分母)，然而$E_{d,2}^1$的“闭链”是映射$\partial^0:E_{d,2}^0\to E_{d-1,2}^0$的核$K$，由$E^0$的定义就是$$\partial^0:\frac{C_{d,2}}{C_{d,1}}\to\frac{C_{d-1,2}}{C_{d-1,1}}.$$
+因此我们看到$K$不止包含那些由$\partial$送到$0$的链，也包含那些通过$\partial$送到“楼下”$C_{d-1,1}$的链。与此相比较而言，$Z_{d,2}+C_{d,1}$中的元素更特别：他们的边界是来自$C_{d,1}$的边界。因此
+\[\frac{Z_{d,2}+C_{d,1}}{B_{d,2}+C_{d,1}}\]
+是$E^1_{d,2}$的子空间，这个子空间中的元素的边界是$C_{d,1}$中链的边界。
+
+直观地讲问题在于相关联分次复形只能识别仅限于简单的水平层面的行为；所有这个层面以上和以下的东西都被舍去。但在最初的复形中，边缘映射$\partial$可能将元素降低一或多个层面（不能将元素提升一或多个层面，由于边缘映射保持滤结构），因此我们必须对层级之间的行为进行校正。
+\section{谱序列的浮现}
+使得谱序列这个工具得以成功运转的美妙事实是上面两个调整到同调群$E^1_{d,p}$的过程都可以视为取“同调群的同调群”。
+
+注意到$\partial$诱导了一个自然映射---我们称之为$\partial^1:E^1_{d+1,2}\to E_{d,1}^1,\forall d$,这是因为$E_{d+1,2}^1$中的元素的边界是位于$C_{d,1}$中的闭链，由此它定义了$E_{d,1}^1$的元素。当$n=2$时，我们的关键断言如下：
+
+\begin{itemize}
+  \item 断言1:我们取模掉$\partial^1$的像，得到了$Z_{d,1}/B_{d,1}$.(只需验证$\partial^1$的像给出了所有位于$C_{d,1}$的边界\footnote{首先\[E^1_{d+1,2}=\frac{ker(E^0_{d+1,2}\to E_{d,2}^0)}{im(E^0_{d+2,2}\to E_{d+1,2}^0)}=\frac{ker(C_{d+1,2}/C_{d+1,1}\to C_{d,2}/C_{d,1})}{im(C_{d+2,2}/C_{d+2,1}\to C_{d+1,2}/C_{d+1,1})}\]
+      \[E^{1}_{d,1}=H_d(E^0_{d,1})=\frac{ker(E^0_{d,1}\to E_{d-1,1}^0)}{im(E^0_{d+1,1}\to E_{d,1}^0)}=\frac{ker(C_{d,1}\to C_{d-1,1})}{im(C_{d+1,1}\to C_{d,1})}\]
+      \[\partial^1:E^1_{d+1,2}\to E_{d,1}^1\]
+      \[\partial^1:\frac{ker(C_{d+1,2}/C_{d+1,1}\to C_{d,2}/C_{d,1})}{im(C_{d+2,2}/C_{d+2,1}\to C_{d+1,2}/C_{d+1,1})}\to\frac{ker(C_{d,1}\to C_{d-1,1})}{im(C_{d+1,1}\to C_{d,1})}\]
+      \[\partial^1 E_{d+1,2}^1 =\frac{im(C_{d+1}\to C_{d,1})}{im(C_{d+1,1}\to C_{d,1})}\]
+
+      })
+  \item 断言2:$\partial^1$的核是$E_{d+1,2}^1$的子空间\footnote{原文有误}，它同构于
+  \[\frac{Z_{d+1,2}+C_{d+1,1}}{B_{d+1,2}+C_{d+1,1}}.\](验证核中的元素满足:它的边界等于$C_{d+1,1}$中某个元素的边界\footnote{$x+im(C_{d+2}/C_{d+2,1}\to C_{d+1}/C_{d+1,1})\in ker\partial^1,x\in C_{d+1}/C_{d+1,1},\partial^0:C_{d+1}/C_{d+1,1}\to C_{d}/C_{d,1},$
+  $$ x \in ker\partial^1 ,\partial^1(x+im(C_{d+2}/C_{d+2,1}\to C_{d+1}/C_{d+1,1}))=\partial^0x\in im(C_{d+1,1}\to C_{d,1})$$
+  \[ker\partial^1=\frac{ker(\partial^0:C_{d+1}/C_{d+1,1}\to C_{d}/C_{d,1})}{im(C_{d+2,2}/C_{d+2,1}\to C_{d+1,2}/C_{d+1,1})} \cong \frac{ker(C_{d+1,2}\to C_{d,2})+C_{d+1,1}}{im(C_{d+2,2}\to C_{d+1,2})+C_{d+1,1}}\]
+  注意其中$ker(C_{d+1,2}\to C_{d,2}=ker(C_{d+1,2}\to C_{d,1}$,
+  于是$E^{1}_{d,1}/\partial^1 E_{d+1,2}^1 \cong \frac{Z_{d,1}}{B_{d,1}}$}
+)
+\end{itemize}
+我们可以将上述断言通过下图表示：
+
+ \begin{equation}
+   \xymatrix{
+  0\ar@{->}[dr]^{\partial^1} & 0\ar@{->}[dr]^{\partial^1} & 0\ar@{->}[dr]^{\partial^1} & 0\ar@{->}[dr]^{\partial^1} & 0 \\
+  \cdots \ar@{->}[dr]^{\partial^1} & E_{d+1,2}^1\ar@{->}[dr]^{\partial^1} &E_{d,2}^1\ar@{->}[dr]^{\partial^1}&E_{d-1,2}^1\ar@{->}[dr]^{\partial^1}&\cdots \\
+   \cdots \ar@{->}[dr]^{\partial^1} & E_{d+1,1}^1\ar@{->}[dr]^{\partial^1} &E_{d,1}^1\ar@{->}[dr]^{\partial^1}&E_{d-1,1}^1\ar@{->}[dr]^{\partial^1}&\cdots \\
+   0&0&0&0&0
+  }
+ \end{equation}
+图(9)包含了许多链复形；它只不过不如(4)那样是水平箭头的，而是朝下倾斜$45^\circ$的，并且每个复形只有两个非零项。（提醒：这里的符号和大多数作者的符号不同，因此他们的图看起来与图(9)是方向不同的。）现在我们如果定义$E_{d,p}^2$是它的同调，即
+\begin{equation}
+  E_{d,p}^2:=H_d(E^1_{d,p})=\frac{ker \partial^1:E^1_{d,p}\to E_{d-1,p-1}^1}{im \partial^1:E^1_{d+1,p+1}\to E_{d,p}^1}
+\end{equation}
+{\color{red}那么断言1和断言2合起来就是说$E_{d,1}^2\oplus E_{d,2}^2$就是我们最初的带滤复形的真正的同调！}\footnote{\[E_{d,1}^2:=H_d(E^1_{d,1})=\frac{ker \partial^1:E^1_{d,1}\to E_{d-1,0}^1=0}{im \partial^1:E^1_{d+1,2}\to E_{d,1}^1}=\frac{E^1_{d,1}}{im \partial^1:E^1_{d+1,2}\to E_{d,1}^1}\cong \frac{Z_{d,1}}{B_{d,1}}\]
+\[E_{d,2}^2:=H_d(E^1_{d,2})=ker \partial^1:E^1_{d,2}\to E_{d-1,1}^1\cong \frac{Z_{d,2}+C_{d,1}}{B_{d,2}+C_{d,1}}\]
+再与之前的等式对比立即得到。}
+
+对于$n=2$的情形，故事结束了。当$n=2$时我们的带滤复形的谱序列就是$E^0,E^1,E^2$。我们将$E^1$看成想要的同调的一阶近似，$E^2$给出了二阶近似，当$n=2$的情况下它不只是一个近似值而且真真确确就是答案。
+
+如果$n>2$是什么情况？定义(2),(5)和(10)都有意义，但此刻$E^2$通常得不到正确的同调，因为$E^2$只考虑了图(4)中相邻层面（adjacent level）之间的关系，但是$\partial$当然可以将东西下降两个或多个层面。因此我们需要考虑更多项$E^3,E^4,\cdots,E^n.$比如为了定义$E^3$，我们可以验证$\partial$诱导了一个自然映射---称之为$\partial^2:E^2_{d+1,p+2}\to E_{d,p}^1,\forall d,p$.这样可以得到类似(9)的图，只需用$(E^2,\partial^2)$代替$(E^1,\partial^1)$，并且箭头下降两个层面。于是$E^3_{d,p}$就是在$E^2_{d,p}$处的$(ker \partial^2)/(im\partial^2)$.一般地，$E^r$的图像有箭头$\partial^r$下降$r$个层面（$E^r_{d+1,p+r}\to E^r_{d,p}$）,$E^{r+1}$定义为$(E^r,\partial^r)$的同调。
+
+对于一般的$n$，$H_d \cong \oplus_p E^n_{d,p}$这一事实从理论上是明显的，它是我们之前想法的推广，但是它太繁琐了我们省略细节。
+\section{这有什么用呢？}
+在分析中，用一个数列逼近一个我们感兴趣的值这一方法的价值对每一个数学家都是熟悉的。这样的近似特别有用的情形是只需几项我们就已经得到了大多数信息。
+
+相似的注记用在谱序列身上。一个共同的现象是对于较小的$r$可以得到对于大多数的$E^r_{d,p}$和|或边缘映射$\partial^r$是$0$。这导致了谱序列稳定或者说衰减得快（collapse rapidly），这使得计算同调相对容易。（例子省略）
+\section{看一眼远处}
+当我们去掉简化的假设后，许多复杂问题就会出现。在一个任意的交换环上，等式(3)未必成立，并非所有短正合列都分裂，因此可能会有扩展问题。当我们放弃有限性的假设时，就会出现任意大的$r$下的$E^r$，于是谱序列不收敛，即便它收敛，也有可能不收敛到想要的同调去。因此在许多应用中，生活并不像我之前讨论的那么容易；然而，我们的简化假设仍然当做一种“理想”情形，实际情形是复杂的。
+
+我们还要提到谱序列不仅来源于带滤复形，也来自于双复形（double complexes），正合偶（exact couples）等等。在此我们无法对这些分支进行研究，但希望我们的手册将会帮助你们处理书本中的内容时更加自信。
+\section{为何是“谱”}
+一个经常会提到的问题是“谱”这个词来自哪里？这个词语归功于Leray，但他似乎从未解释说他为何选择这样一个词。John McCleary（私下交流）和其他人推测是因为Leray是一个分析学家，他把谱序列中每一项的数据当作起类似算子的特征值的作用，每次出现一个特征值。
+\paragraph{参考}
+\begin{enumerate}
+  \item David Eisenbud，commutative algebra with a view toward algebraic geometry.
+  \item John McCleary,a history of spectral sequence:origins to 1953.
+  \item a user's guide to spectral sequences.
+  \item Barry Mitchell,spectral sequences for the layman.
+\end{enumerate}
+\end{document}

@@ -36,6 +36,9 @@ $V \subset U, \rho_{VU} : \F(U) \to \F(V)$
 
 层的上同调就定义为整体瓣函子(global section functor)的右导出函子, 所以是一个 universal 的 $\delta$-函子.
 
+
+\item $\check{C}$ech cohomology 相对上面定义的层的上同调是一种新的上同调. 它也是一种导出函子.
+
 \item The different types of homology theory arise from functors mapping from various categories of mathematical objects to the category of chain complexes. In each case the composition of the functor from objects to chain complexes and the functor from chain complexes to homology groups defines the overall homology functor for the theory.
 
 比如, 单纯同调(simplicial homology)定义在单纯复形(simplicial complex)上. 奇异同调(singular homology)定义在所有拓扑空间上. 胞腔同调(cellular homology)定义在 CW复形(CW-complex)上.
@@ -49,9 +52,13 @@ H^{CW}_\bullet(X)\simeq H_\bullet(X)
 上面定理也可以叙述为: The cellular and singular homology of a CW-complex are naturally isomorphic.
 
 The homology $H_\ast(K;R)$ of an abstract simplicial complex $K$ is isomorphic to $H_\ast(\left|K\right|;R)$, the singular homology of its geometric realization. This can be seen by noting that $\left|K\right|$ is naturally a CW-complex. The cellular chain complex of $\left|K\right|$ is isomorphic to the simplicial chain complex of $K$.
+
+\item \cite{tohoku}Weil quite understood that a proof of his conjectures might turn on the definition of a suitable cohomology theory. Mathematicians thought that the Weil cohomology might be a kind of sheaf cohomology, one satisfying a Lefschetz fixed-point formula, among other properties. Not so; not quite. Sheaf cohomology, as it was understood in the early 1950s, was an artifact of algebraic topology, and so needed an underlying topological space. The underlying space could not be standard because it had to encode both topological and arithmetical information. What was needed, although it was not known at the time, would eventually be called the étale site of a scheme. It emerged by means of two major intellectual advances: the generalization of an algebraic variety into a scheme, and the promotion of a generalized space into a topos.
 \end{enumerate}
+
+
 
 \newpage
 \printbibliography
 
-\end{document}
+\end{document} 
