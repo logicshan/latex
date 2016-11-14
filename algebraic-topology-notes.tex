@@ -14,10 +14,13 @@
 \newtheorem*{defn}{定义}
 
 \DeclareMathOperator{\rel}{rel}
-\DeclareMathOperator{\Top}{Top}
 \DeclareMathOperator{\pullback}{\mathsmaller{\prod}}
 \DeclareMathOperator{\pushout}{\mathsmaller{\coprod}}
 \DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\homology}{H_\ast}
+
+\newcommand{\Top}{\mathbf{Top}}
+\newcommand{\Ab}{\mathbf{Ab}}
 
 \begin{document}
 \begin{defn}
@@ -178,7 +181,7 @@ $B$ 为其 \textbf{底空间}(base space), 称这些 $U_b$ 为 \textbf{均匀复
 \noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
 
 \begin{enumerate}
-\item Pullback and Pushout in \textbf{Top}
+\item Pullback and Pushout in $\Top$
 
 Consider the diagram
 \begin{center}
@@ -187,7 +190,7 @@ Consider the diagram
 X \arrow[r, "f"'] & Z
 \end{tikzcd}
 \end{center}
-in \textbf{Top}. Then the pullback of $f$ and $g$ is $X \pullback_Z Y \in \Top$ given by
+in $\Top$. Then the pullback of $f$ and $g$ is $X \pullback_Z Y \in \Top$ given by
 \[
 X \pullback_{Z} Y := \{(x,y) \in X \times Y \mid f(x) = g(y)\} \subset X \times Y
 \]
@@ -200,7 +203,7 @@ Z \arrow[d,"f"'] \arrow[r,"g"] & Y \\
 X
 \end{tikzcd}
 \end{center}
-in \textbf{Top}. Then the pushout $X \pushout_Z Y\in \Top$ of $f$ and $g$ is given by $X\pushout Y/\sim$ where $i_X f(z) \sim i_Y g(z)$ for all $z \in Z$.
+in $\Top$. Then the pushout $X \pushout_Z Y\in \Top$ of $f$ and $g$ is given by $X\pushout Y/\sim$ where $i_X f(z) \sim i_Y g(z)$ for all $z \in Z$.
 
 \item Attaching Maps
 Given $A\subset X$ with $f : A\to Y$, we define "the space obtained from $Y$ by attaching $X$ by means of $f$" (wrriten $X \cup_f Y$) as
@@ -311,6 +314,78 @@ H_n(\{\ast\}) =
 \mathbb{Z}, & n = 0\\
 0, & n \neq 0
 \end{cases}
+\]
+
+\item $\Top \overset{\homology}{\longrightarrow} \Ab^{\mathbb{N}}$
+
+$\mathbb{N}$ = discrete category of natural numbers
+
+$\Ab^{\mathbb{N}} \triangleq \mathbb{N}\!\!-\!\!\text{graded abelian group } = \{\mathbb{N} \to \Ab \text{ functors}\}$
+
+\item relative homology in singular homology
+
+If $X$ is a topological space, and $A$ a subspace, then the inclusion map $A\hookrightarrow X$ makes $C_n(A)$ into a subgroup of $C_n(X)$(because $C_{\ast}(-)$ is a covariant functor). Since the bounded map on $C_{\ast}(X)$ restricts to the boundary map on $C_{\ast}(A)$(make sure that the bounded maps as follows are well defined), we can take the quotient complex $C_{\ast}(X,A)$,
+\[
+\overset{\partial}{\leftarrow} C_n(X)/C_n(A) \overset{\partial}{\leftarrow} C_{n+1}(X)/C_{n+1}(A) \overset{\partial}{\leftarrow}
+\]
+The homology groups of this complex $H_n⁢(X,A) \triangleq H_n(C_{\bullet}(X)/C_{\bullet}(A))$, are called the \textit{relative homology groups} of the pair $(X,A)$.
+
+Given a subspace $A\subset X$, one may form the short exact sequence
+\[
+0\to C_{\bullet}(A)\to C_{\bullet}(X)\to C_{\bullet}(X)/C_{\bullet}(A) \to 0
+\]
+
+From a short exact sequence of singular complexes, we can get a long exact sequence of homology groups:
+\[
+\cdots \to H_n(A) \to H_n(X) \to H_n(X,A) \overset{\delta}{\to} H_{n-1}(A) \to \cdots
+\]
+It follows that $H_n(X, x_0)$, where $x_0$ is a point in $X$, is the $n$-th reduced homology group of $X$.(We can take this property as the definition of reduced homology.) In other words, $H_i(X, x_0) = H_i(X)$ for all $i > 0$. When $i = 0, H_0(X, x_0)$ is the free module of one rank less than $H_0(X)$. The connected component containing $x_0$ becomes trivial in relative homology.
+
+The excision theorem says that removing a sufficiently nice subset $Z\subset A$ leaves the relative homology groups $H_n(X, A)$ unchanged. Using the long exact sequence of pairs and the excision theorem, one can show that $H_n(X, A)$ is the same as the $n$-th \textcolor{red}{reduced} homology groups of the quotient space $X/A$.\cite[p.50]{vick2012homology}
+
+Functoriality
+
+The map $C_{\bullet}$ can be considered to be a functor
+\[
+C_{\bullet} : \Top^2 \to \mathcal{CC}
+\]
+where $\Top^2$ is the category of pairs of topological spaces and $\mathcal{CC}$ is the category chain complexes of abelian groups.
+
+\iffalse
+Examples
+
+One important use of relative homology is the computation of the homology groups of quotient spaces $X/A$. In the case that $A$ is a subspace of $X$ fulfilling the mild regularity condition that there exists a neighborhood of $A$ that has $A$ as a deformation retract, then the group $\tilde{H}_n(X/A)$(reduced homology) is isomorphic to $H_n(X,A)$. We can immediately use this fact to compute the homology of a sphere. We can realize $S^n$ as the quotient of an $n$-disk by its boundary, i.e. $S^n = D^n/S^{n-1}$. Applying the exact sequence of relative homology gives the following:
+\[
+0 \to C_{\bullet}(S^{n-1}) \to C_{\bullet}(D^n) \to C_{\bullet}(D^n)/C_{\bullet}(S^{n-1}) \to 0
+\]
+\[
+\cdots\to H_i(D^n)\to H_i(D^n,S^{n-1})\to H_{i-1}(S^{n-1})\to H_{i-1}(D^n)\to\cdots
+\]
+Because the disk is contractible, we know its reduced homology groups vanish in all dimensions (Homology groups of all contractible topological spaces coincide with those of the point.), so the above sequence collapses to the short exact sequence:
+\[
+0\to H_i(D^n,S^{n-1})\to H_{i-1}(S^{n-1})\to 0
+\]
+Therefore, we get isomorphisms $H_i(D^n,S^{n-1}) \cong H_{i-1}(S^{n-1})$.
+
+So we have
+\[
+\tilde{H}_i(S^n) = \tilde{H}_i(D^n/S^{n-1})\cong H_i(D^n,S^{n-1})\cong H_{i-1}(S^{n-1})
+\]
+\fi
+
+\item excision theorem
+
+$X \supset A (\supset A^{\circ} \supset \overline{B}) \supset B$
+
+Then $H_n(X,A) \cong H_n(X-B,A-B)$.
+
+vick 的书上\cite[p.47]{vick2012homology}, 证明用到了定理1.14\cite[p.20]{vick2012homology}.
+
+\item Mayer-vietoris sequence
+
+$U\subset X, V \subset X, X = U^{\circ} \cup V^{\circ}$, we have exact sequence
+\[
+\cdots\to H_n(U\cap V)\to H_n(U)\oplus H_n(V)\to H_n(X)\to H_{n-1}(U\cap V)\to\cdots
 \]
 \end{enumerate}
 \newpage
