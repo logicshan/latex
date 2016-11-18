@@ -6,6 +6,21 @@
 \usepackage{tikz-cd}
 \usepackage{url}
 
+\DeclareMathOperator{\Soc}{Soc}
+\DeclareMathOperator{\Rad}{Rad}
+
+\usepackage[hyperref=true,backend=biber,sorting=none,backref=true]{biblatex}
+\addbibresource{abstract_algebra_notes.bib}
+\usepackage{hyperref}
+
+\usepackage{filecontents}
+\begin{filecontents*}{abstract_algebra_notes.bib}
+@online{finitely_generated_abelian_group,
+author = "Wikipedia",
+title = "Finitely generated abelian group",
+url = "https://en.wikipedia.org/wiki/Finitely_generated_abelian_group"
+}
+\end{filecontents*}
 
 \begin{document}
 \begin{enumerate}
@@ -82,24 +97,60 @@ Let $M$ be a left module over a left Artinian ring. Then the following are equiv
 \item 环的 Jacobson radical
 
 \[
-Rad(A) = \{ x\mid xS = 0 \text{ for all simple modules } S \}.
+\Rad(A) = \{ x\mid xS = 0 \text{ for all simple modules } S \}.
 \]
 
-$Rad(A)$ 是最大的幂零理想.
+$\Rad(A)$ 是最大的幂零理想.
 
-$Rad(A)$ 是所有极大左(右)理想的交.
+$\Rad(A)$ 是所有极大左(右)理想的交.
 
-$Rad(A)$ 是使得 $A/Rad(A)$ 半单的最小的左理想.
+$\Rad(A)$ 是使得 $A/\Rad(A)$ 半单的最小的左理想.
 
-$M$ 为任意的 $A$-模, 我们定义 $R(M) := Rad(A)M$.
+$M$ 为任意的 $A$-模, 我们定义 $R(M) := \Rad(A)M$.
 
-$M$ 为 $A$-模, 则 $Rad(M)$ 是使得 $M/Rad(M)$ 半单的最小子模, 并且它是 $M$ 的所有极大左子模的交.
+$M$ 为 $A$-模, 则 $\Rad(M)$ 是使得 $M/\Rad(M)$ 半单的最小子模, 并且它是 $M$ 的所有极大左子模的交.
 
 若 $A$ 为 Artinian 环, 则 $A$ 上的有限生成的不可分解投射模和 $A$上的单模一一对应.
 
 有限群的群代数是Artinian环.
 \item Frobenius algebra
 
-$P$ 是不可分解投射模当且仅当 $P/Rad(P)\cong Soc(P)$.
+$P$ 是不可分解投射模当且仅当 $P/\Rad(P)\cong \Soc(P)$.
+
+\item Finitely generated abelian group\parencite{finitely_generated_abelian_group}
+
+In abstract algebra, an abelian group $(G, +)$ is called \textbf{finitely generated} if there exist finitely many elements $x_1,\ldots, x_s$ in $G$ such that every $x$ in $G$ can be written in the form
+\[
+    x = n_1x_1 + n_2x_2 + ... + n_sx_s
+\]
+with integers $n_1,\ldots, n_s$. In this case, we say that the set $\{x_1,\ldots, x_s\}$ is a generating set of $G$ or that $x_1,\ldots, x_s$ generate $G$.
+
+Clearly, every finite abelian group is finitely generated. The finitely generated abelian groups are of a rather simple structure and can be completely classified, as will be explained below.
+
+Classification
+
+The \textbf{fundamental theorem of finitely generated abelian groups} (which is a special case of the structure theorem for finitely generated modules over a principal ideal domain) can be stated two ways (analogously with principal ideal domains):
+
+\textbf{Primary decompostion}
+
+The primary decomposition formulation states that every finitely generated abelian group $G$ is isomorphic to a direct sum of primary cyclic groups and infinite cyclic groups. A primary cyclic group is one whose order is a power of a prime. That is, every finitely generated abelian group is isomorphic to a group of the form
+\[
+\mathbb {Z} ^{n}\oplus \mathbb {Z} _{q_{1}}\oplus \cdots \oplus \mathbb {Z} _{q_{t}},
+\]
+where the rank $n \geq 0$, and the numbers $q_1,\ldots, q_t$ are powers of (not necessarily distinct) prime numbers. In particular, $G$ is finite if and only if $n = 0$. The values of $n, q_1,\ldots, q_t$ are (up to rearranging the indices) uniquely determined by $G$.
+
+\textbf{Invariant factor decomposition}
+
+We can also write any finitely generated abelian group $G$ as a direct sum of the form
+\[
+\mathbb {Z} ^{n}\oplus \mathbb {Z} _{k_{1}}\oplus \cdots \oplus \mathbb {Z} _{k_{u}},
+\]
+where $k_1$ divides $k_2$, which divides $k_3$ and so on up to $k_u$. Again, the rank $n$ and the invariant factors $k_1,\ldots, k_u$ are uniquely determined by $G$ (here with a unique order).
+
+\textbf{Equivalence}
+
+These statements are equivalent because of the Chinese remainder theorem, which here states that $\mathbb {Z} _{m}\simeq \mathbb {Z} _{j}\oplus \mathbb {Z} _{k}$ if and only if $j$ and $k$ are coprime and $m = jk$.
 \end{enumerate}
-\end{document}
+\newpage
+\printbibliography
+\end{document} 

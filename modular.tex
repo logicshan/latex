@@ -4,8 +4,9 @@
 \usepackage{mathrsfs}
 \usepackage{color}
 \usepackage{tikz-cd}
-\usepackage{biblatex}
+\usepackage[hyperref=true,backend=biber,sorting=none,backref=true]{biblatex}
 \addbibresource{modular.bib}
+\usepackage{hyperref}
 
 \DeclareMathOperator{\charac}{char}
 \DeclareMathOperator{\tr}{tr}
@@ -100,7 +101,7 @@ Now the \textcolor{blue}{modular character} of $M$ is defined as follows:
 \]
 \end{defi}
 
-\item Idempotents and Decomposition\cite{idempotents-and-decomposition}
+\item Idempotents and Decomposition\parencite{idempotents-and-decomposition}
 
 Let $R$ be a general ring, not necessarily commutative. An element $x\in R$ is said to be \textbf{idempotent} if $x^2 = x$.
 
