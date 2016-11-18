@@ -1,13 +1,12 @@
-*.gz
-*.aux
-*.log
-*.pdf
-*.bak
-*.blg
-*.tex~
-*.bbl
-*.bib~
-*.gz(busy)
-*.xml
-*.bcf
-*.synctex
+#  Ignore everything
+*
+
+# Except tex files
+
+!.gitignore
+!*.tex
+!*.bib
+
+# ... even if they are in subdirectories
+
+!*/

@@ -1,4 +1,4 @@
-\documentclass{ctexart}
+\documentclass[UTF8]{ctexart}
 
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{mathrsfs}
@@ -54,6 +54,16 @@ H^{CW}_\bullet(X)\simeq H_\bullet(X)
 The homology $H_\ast(K;R)$ of an abstract simplicial complex $K$ is isomorphic to $H_\ast(\left|K\right|;R)$, the singular homology of its geometric realization. This can be seen by noting that $\left|K\right|$ is naturally a CW-complex. The cellular chain complex of $\left|K\right|$ is isomorphic to the simplicial chain complex of $K$.
 
 \item \cite{tohoku}Weil quite understood that a proof of his conjectures might turn on the definition of a suitable cohomology theory. Mathematicians thought that the Weil cohomology might be a kind of sheaf cohomology, one satisfying a Lefschetz fixed-point formula, among other properties. Not so; not quite. Sheaf cohomology, as it was understood in the early 1950s, was an artifact of algebraic topology, and so needed an underlying topological space. The underlying space could not be standard because it had to encode both topological and arithmetical information. What was needed, although it was not known at the time, would eventually be called the étale site of a scheme. It emerged by means of two major intellectual advances: the generalization of an algebraic variety into a scheme, and the promotion of a generalized space into a topos.
+
+\item Resolutions in abelian categories
+
+The definition of resolutions of an object $M$ in an abelian category $A$ is the same as above, but the $E_i$ and $C^i$ are objects in $A$, and all maps involved are morphisms in $A$.
+
+The analogous notion of projective and injective modules are projective and injective objects, and, accordingly, projective and injective resolutions. However, \textcolor{red}{such resolutions need not exist in a general abelian category $A$.} If every object of $A$ has a projective (resp. injective) resolution, then $A$ is said to have enough projectives (resp. enough injectives). Even if they do exist, such resolutions are often difficult to work with. For example, as pointed out above, every $R$-module has an injective resolution, but this resolution is not functorial, i.e., given a homomorphism $M \to M'$, together with injective resolutions
+\[
+0\rightarrow M\rightarrow I_{*},\ \ 0\rightarrow M'\rightarrow I'_{*},
+\]
+there is in general no functorial way of obtaining a map between $I_{*}$ and $I'_{*}$.
 \end{enumerate}
 
 
@@ -61,4 +71,4 @@ The homology $H_\ast(K;R)$ of an abstract simplicial complex $K$ is isomorphic t
 \newpage
 \printbibliography
 
-\end{document} 
+\end{document}
