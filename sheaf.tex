@@ -5,6 +5,7 @@
 \usepackage{color}
 \usepackage{tikz-cd}
 \usepackage{url}
+\usepackage{filecontents}
 
 \setlength{\parindent}{0pt}
 
@@ -12,8 +13,9 @@
 \newcommand{\NBR}[1]{\mathfrak{O}(#1)}
 \newcommand{\nbr}[1]{\mathfrak{U}(#1)}
 
-\usepackage{biblatex}
+\usepackage[hyperref=true,backend=biber,sorting=none,backref=true]{biblatex}
 \addbibresource{sheaf.bib}
+\usepackage{hyperref}
 
 \begin{document}
 $\F \colon \NBR{X}^{op} \to \mathbf{A\!b}$
@@ -55,7 +57,7 @@ The homology $H_\ast(K;R)$ of an abstract simplicial complex $K$ is isomorphic t
 
 \item \cite{tohoku}Weil quite understood that a proof of his conjectures might turn on the definition of a suitable cohomology theory. Mathematicians thought that the Weil cohomology might be a kind of sheaf cohomology, one satisfying a Lefschetz fixed-point formula, among other properties. Not so; not quite. Sheaf cohomology, as it was understood in the early 1950s, was an artifact of algebraic topology, and so needed an underlying topological space. The underlying space could not be standard because it had to encode both topological and arithmetical information. What was needed, although it was not known at the time, would eventually be called the étale site of a scheme. It emerged by means of two major intellectual advances: the generalization of an algebraic variety into a scheme, and the promotion of a generalized space into a topos.
 
-\item Resolutions in abelian categories
+\item Resolutions in abelian categories\parencite{resolutions_in_abelian_categories}
 
 The definition of resolutions of an object $M$ in an abelian category $A$ is the same as above, but the $E_i$ and $C^i$ are objects in $A$, and all maps involved are morphisms in $A$.
 
@@ -64,9 +66,58 @@ The analogous notion of projective and injective modules are projective and inje
 0\rightarrow M\rightarrow I_{*},\ \ 0\rightarrow M'\rightarrow I'_{*},
 \]
 there is in general no functorial way of obtaining a map between $I_{*}$ and $I'_{*}$.
+
+\item Sites and topoi\parencite{sites_and_topoi}
+
+André Weil's Weil conjectures stated that there was a cohomology theory for algebraic varieties over finite fields that would give an analogue of the Riemann hypothesis. The cohomology of a complex manifold can be defined as the sheaf cohomology of the locally constant sheaf $\underline{\mathbf {C} }$ in the Euclidean topology, which suggests defining a Weil cohomology theory in positive characteristic as the sheaf cohomology of a constant sheaf. But the only classical topology on such a variety is the Zariski topology, and the Zariski topology has very few open sets, so few that the cohomology of any Zariski-constant sheaf on an irreducible variety vanishes (except in degree zero). Alexandre Grothendieck solved this problem by introducing Grothendieck topologies, which axiomatize the notion of covering. Grothendieck's insight was that the definition of a sheaf depends only on the open sets of a topological space, not on the individual points. Once he had axiomatized the notion of covering, open sets could be replaced by other objects. A presheaf takes each one of these objects to data, just as before, and a sheaf is a presheaf that satisfies the gluing axiom with respect to our new notion of covering. This allowed Grothendieck to define étale cohomology and l-adic cohomology, which eventually were used to prove the Weil conjectures.
+
+A category with a Grothendieck topology is called a site. A category of sheaves on a site is called a topos or a Grothendieck topos. The notion of a topos was later abstracted by William Lawvere and Miles Tierney to define an elementary topos, which has connections to mathematical logic.
+
+\item De Rham–Weil theorem\parencite{De_Rham_Weil_theorem}
+
+In algebraic topology, the \textbf{De Rham–Weil theorem} allows computation of sheaf cohomology using an acyclic resolution of the sheaf in question.
+
+Let $\mathcal{F}$ be a sheaf on a topological space $X$ and $\mathcal{F}^{\bullet}$ a resolution of $\mathcal{F}$ by acyclic sheaves. Then
+\[
+H^{q}(X,{\mathcal{F}})\cong H^{q}({\mathcal{F}}^{\bullet}(X)),
+\]
+
+where $H^{q}(X,{\mathcal {F}})$ denotes the $q$-th sheaf cohomology group of $X$ with coefficients in $\mathcal{F}$.
+
+The De Rham–Weil theorem follows from the more general fact that derived functors may be computed using acyclic resolutions instead of simply injective resolutions.
 \end{enumerate}
 
+\begin{filecontents*}{sheaf.bib}
+@online{constant_sheaf,
+author = "Wikipedia",
+title = "Constant sheaf",
+url = "https://en.wikipedia.org/wiki/Constant_sheaf"
+}
 
+@online{tohoku,
+author = "Rick Jardine",
+title = "Tōhoku",
+url = "http://inference-review.com/article/tohoku"
+}
+
+@online{resolutions_in_abelian_categories,
+author = "Wikipedia",
+title = "Resolutions in abelian categories",
+url = "https://en.wikipedia.org/wiki/Resolution_(algebra)#Resolutions_in_abelian_categories"
+}
+
+@online{sites_and_topoi,
+author = "Wikipedia",
+title = "Sites and topoi",
+url = "https://en.wikipedia.org/wiki/Sheaf_(mathematics)#Sites_and_topoi"
+}
+
+@online{De_Rham_Weil_theorem,
+author = "Wikipedia",
+title = "De Rham–Weil theorem",
+url = "https://en.wikipedia.org/wiki/De_Rham%E2%80%93Weil_theorem"
+}
+\end{filecontents*}
 
 \newpage
 \printbibliography
