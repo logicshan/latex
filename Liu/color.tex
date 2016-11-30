@@ -1,0 +1,51 @@
+\documentclass{ctexart}
+
+%\usepackage{color}
+    % 将所有色彩转换为 CMYK 模型
+    \usepackage[cmyk]{xcolor}
+
+\usepackage{colortbl}
+\usepackage{arydshln}
+\begin{document}
+    % \usepackage{color}
+    \color{red}红色文字夹杂%
+    \textcolor{blue}{蓝色}文字
+
+    \colorbox{yellow}{黄色盒子} \\
+    \fcolorbox{black}{green}{黑框绿盒子}
+
+    \textcolor[gray]{0.5}{50\% 灰色} \\
+    \color[rgb]{0.6,0.6,0}暗黄色
+
+    \definecolor{Purple}{cmyk}{0.45,0.86,0,0}
+    \textcolor{Purple}{紫色文字}
+
+    \textcolor{purple!70}{淡紫色}
+    {\color{blue!60!black}60\% 蓝与 40\% 黑混合的深蓝色}
+    \colorbox{-red}{青色与红色互补}
+
+    \colorlet{darkred}{red!50!black}
+    \textcolor{darkred}{定义暗红色}
+
+    % \usepackage{colortbl}
+    % \usepackage{xcolor}
+    \begin{tabular}{>{\columncolor{gray}}c >{\columncolor{lightgray}}c}
+      深 & 浅 \\
+      darker & lighter \\
+    \end{tabular}
+
+    \begin{tabular}{|c|@{}>{\columncolor{lightgray}[0pt][\tabcolsep]}c|}
+      表列 & 左紧右松 \\
+    \end{tabular}
+
+    \begin{tabular}{|ccc|}
+    \hline \rowcolor{lightgray} A & B & C \\
+      一 & 二 & 三 \\\hline % 保持白色
+    \end{tabular}
+
+    \begin{tabular}{cccc}
+      No & No & \cellcolor{lightgray}Yes & No \\
+      \cellcolor{lightgray}Yes & No & No & No \\
+    \end{tabular}
+
+\end{document} 

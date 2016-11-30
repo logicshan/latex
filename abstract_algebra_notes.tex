@@ -1,26 +1,20 @@
-\documentclass{ctexart}
+\documentclass[UTF8]{ctexart}
 
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{mathrsfs}
 \usepackage{color}
 \usepackage{tikz-cd}
 \usepackage{url}
+\usepackage{filecontents}
 
 \DeclareMathOperator{\Soc}{Soc}
 \DeclareMathOperator{\Rad}{Rad}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Gal}{Gal}
 
 \usepackage[hyperref=true,backend=biber,sorting=none,backref=true]{biblatex}
 \addbibresource{abstract_algebra_notes.bib}
 \usepackage{hyperref}
-
-\usepackage{filecontents}
-\begin{filecontents*}{abstract_algebra_notes.bib}
-@online{finitely_generated_abelian_group,
-author = "Wikipedia",
-title = "Finitely generated abelian group",
-url = "https://en.wikipedia.org/wiki/Finitely_generated_abelian_group"
-}
-\end{filecontents*}
 
 \begin{document}
 \begin{enumerate}
@@ -73,6 +67,10 @@ p^{l-k}\|C_n^{p^k},
 [H,K] = \langle\{[h,k]\mid h\in H,k\in K\}\rangle
 \]
 为 $H$ 与 $K$ 的\textbf{换位子群}.
+
+以上引用自\parencite{孟道骥2010抽象代数}.
+
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
 
 \item 最小多项式(Minimal polynomial (field theory))
 
@@ -150,7 +148,116 @@ where $k_1$ divides $k_2$, which divides $k_3$ and so on up to $k_u$. Again, the
 \textbf{Equivalence}
 
 These statements are equivalent because of the Chinese remainder theorem, which here states that $\mathbb {Z} _{m}\simeq \mathbb {Z} _{j}\oplus \mathbb {Z} _{k}$ if and only if $j$ and $k$ are coprime and $m = jk$.
+
+\item 域扩张\parencite{wiki域扩张}
+
+\textbf{域扩张}(field extensions)是数学分支抽象代数之域论中的主要研究对象, 基本想法是从一个基域开始以某种方式构造包含它的"更大"的域. 域扩张可以推广为环扩张.
+
+定义
+
+设 $K$ 和 $L$ 是两个域. 如果存在从 $K$ 到 $L$ 的域同态 $\iota$, 则称$(L,\iota)$是$K$的一个\textbf{域扩张}, 记作$L/K$或$K\subseteq L$、$K\subset L$. $K$ 称为域扩张的\textbf{基域}, $L$称为$K$的\textbf{扩域}. 如果某个域$F$既是$K$的扩域, 又是$L$的子域, 则称域扩张 $F/K$ 是域扩张$L/K$的\textbf{子扩张}, 称$F$(域扩张$L/K$的)\textbf{中间域}.
+
+域扩张的记法$L/K$只是形式上的标记, 不表示存在任何商环或商群等代数结构. 有些文献中也会将域扩张记为$L:K$.
+
+另外, \textcolor{red}{因为$\iota$是域同态, 所以$\iota$是单射($\iota$把$K$的乘法单位元映为$L$的乘法单位元). 由于$K$是域, 所以$\iota(K)$是一个$L$的同构于$K$的子域. 很多时候也直接省略$\iota$, 直接将$K$视为$L$的一个子域.} 为了记叙方便, 下文中将依情况使用这种省略方式.
+
+设有域扩张$L/K$, 给定一个由$L$中不属于$\iota(K)$的元素组成的集合$S$, 考虑$L$中所有同时包含$\iota(K)$和$S$的子域, 其中有一个"最小的", 称为"在$K$中添加(集合)$S$生成的扩域", 记作$K(S)$. 它是所有同时包含$\iota(K)$和$S$的域的子域. 如果集合$S$只有一个元素$a$, 则称域扩张$K(S)/K$为\textbf{单扩张}, 对应的扩域一般简记作$K(a)$. $a$ 称为这个域扩张的\textbf{本原元}.
+
+每个域扩张中, 扩域可以看作是以基域为系数域的向量空间. 设有域扩张$L/K$, 将$L$中元素看作向量, $K$ 中元素看作系数, 可以定义$L$中的域加法运算作为向量的加法运算, 同时可以定义$K$中元素作为系数与$L$中元素的数乘运算. 可以验证, 在这样的定义下, $L$是一个$K$-向量空间. 它的维数称为域扩张的\textbf{次数}或\textbf{度数}, 一般记作$[L:K]$. 次数为$1$的扩张, 扩域和基域同构, 称为\textbf{平凡扩张}. 次数有限的域扩张称为\textbf{有限扩张}, 否则称为\textbf{无限扩张}.
+
+例子
+
+复数域 $\mathbb{C}$是实数域$\mathbb{R}$的扩域，而$\mathbb{R}$则是有理数域$\mathbb{Q}$的扩域。这样，显然$\mathbb{C} \big/ \mathbb{R}$也是一个域扩张。实数到复数的域扩张次数： $[\mathbb{C} : \mathbb{R}] = 2$。因为 $\mathbb{C}$可以看作是以$\{1, i\}$为基的实向量空间。故扩张$\mathbb{C} \big/ \mathbb{R}$是有限扩张。$\mathbb{C} = \mathbb{R}(i)$，所以这个扩张是单扩张。
+
+集合 $\mathbb{Q}(\sqrt{2}) = \{ a+ b\sqrt{2} ; \; a, b, \in \mathbb{Q} \}$是在$\mathbb{Q}$ 中添加 $\sqrt{2}$生成的扩域，显然也是一个单扩张。它的次数是$2$，因为 $\{ 1, \sqrt{2}\}$可作为一个基。 $\mathbb{Q}$ 的有限扩张也称为代数数域，在代数数论有重要地位。
+
+有理数的另一个扩张域是关于一个素数$p$的$p$进数域 $\mathbb{Q}_p$。它与 $\mathbb{R}$类似，是有理数域完备化得到的数域。但由于使用的拓扑不同，所以与$\mathbb{R}$有着截然不同的性质。
+
+对任何的素数$p$和正整数$n$，都存在一个元素个数为$p^n$的有限域，记作$GF(p^n)$。它是有限域$GF(p)$（即$\mathbb{Z} \big/ p\mathbb{Z}$）的扩域。
+
+给定域$K$和以$K$中元素为系数的$K$-不可约多项式$P$，$P$为$K$上的多项式环$K[X]$的元素。$P$生成的理想是极大理想，因此$K[X]/P$是域，而且是$K$的扩域。其中不定元$X$是多项式$P$的根\textcolor{red}{($X$所在的等价类代入$P$后,就是$P$所在的等价类,在$K[X]/P$中就是零元)}。
+
+给定域$K$，考虑所有以$K$中元素为系数的有理函数，即可以表示为两个以$K$中元素为系数的多项式$P$、$Q$之比：$\frac{P}{Q}$的函数。它们构成一个域，记作$K(X)$，是多项式环$K[X]$的分式域。它是域$K$的扩域，次数为无限大。
+
+基本性质
+
+设有域扩张$L/K$, 则扩域$L$与$K$有相同的加法和乘法单位元. 加法群$(K,+)$是$(L,+)$的一个子群, 乘法群$(K^{×},\cdot)$是$(L^{\times},\cdot)$的一个子群. 因此, $L$与$K$有相同的特征.
+
+设有域扩张$L/K$及某个中间域$F$, 则域扩张$F/K$和$L/F$的次数乘积等于$L/K$的次数:
+\[
+[L:K] = [L:F]\cdot[F:K].
+\]
+
+代数元与超越元
+
+给定域扩张$L/K$, 如果$L$中一个元素$a$是某个以$K$中元素为系数的(非零)多项式(以下简称为$K$-多项式)的根, 则称$a$是$K$上的一个\textbf{代数元}, 否则称其为\textbf{超越元}. 如果$L$中每个元素都是$K$上的代数元, 就称域扩张$L/K$为\textbf{代数扩张}, 否则称其为\textbf{超越扩张}. 例如 $\sqrt{2}$和 $i$都是$\mathbb{Q}$上的代数元, 而$e$与$\pi$都是$\mathbb{Q}$上的超越元. $\mathbb{Q}$上的代数元和超越元分别叫做代数数与超越数.
+
+每个有限扩张都是代数扩张, 反之则不然. 超越扩张必然是无限扩张. 给定域扩张 $L/K$, 如果$L$中元素要么属于$K$, 要么是$K$上的超越元, 则称$L$是$K$的纯超越扩张. 一个单扩张如果由添加代数元生成则是有限扩张, 如果由添加超越元生成则是纯超越扩张.
+
+\textbf{极小多项式}
+
+给定域扩张 $L/K$, 如果$L$中一个元素 $a$ 是 $K$ 上的代数元, 那么在所有使得$f(a)=0$的首一$K$-多项式$f$中, 存在一个次数最小的, 称为 $a$ 在 $K$ 上的\textbf{极小多项式}, 记为$\pi_{a}$. 设$\pi_a$为$n$次多项式, 则中间域 $K(a)$等于所有以$a$为不定元的$K$-多项式的集合. 更具体地说, 等于所有以$a$为不定元的、次数严格小于$n$的$K$-多项式的集合: $K(a) = K[a] = K_{n-1}[a]$. 这说明$K(a)$中任何元素$b$都可以写成$b = \lambda_1 + \lambda_2a +\cdots+ \lambda_na^{n-1}$的形式. 其中$(\lambda_1,\lambda_2,\ldots,\lambda_n)$是$n$个$K$中元素. 由于$\pi_a$是极小多项式, 所以可推出:$\{1,a,\ldots,a^{n-1}\}$是中间域$K(a)$作为$K$-向量空间的基. 扩张$K(a)/K$的次数是$[K(a):K] = n$.
+
+\textbf{分裂域与代数闭包}
+
+分裂域是将某个多项式的根全部添加到其系数域中生成的域扩张, 将多项式转化为域扩张进行研究. 给定域扩张$L/K$, 称一个$K$-多项式$f$在$L$中\textbf{分裂}, 如果$f$可以写成:
+\[
+f = \kappa(X-\alpha_1)(X-\alpha_2)\cdots(X-\alpha_k),\kappa\in K,\alpha_1,\alpha_2,\cdots,\alpha_k \in L
+\]
+的形式, 即$f$的每个根都是$L$中的元素. 如果$f$在$L$中分裂, 但不在$L$的任何一个包含$K$的真子域中分裂(也就是说$L$是令$f$在其中分裂的"最小"的域扩张), 就称$L$是$f$在$K$上的\textbf{分裂域}.
+
+给定域$K$, 如果所有$K$-多项式在$K$分裂, 则称$K$为\textbf{代数闭域}. 给定\textcolor{red}{代数扩张}$L/K$, 如果$L$是代数闭域, 则称其为$K$的\textbf{代数闭包}, 一般记作 $K^{\mathrm{alg}}$. 给定$K$, 则它所有的代数闭包都是$K$-同构的.
+
+域扩张的自同构群
+
+除了将域扩张看作基域上的向量空间外, 另一个研究域扩张的角度是考察域扩张的自同构群. 给定域扩张$L/K$, $L$ 上的一个自同构$\sigma$被称为$K$-自同构, 当且仅当$\sigma$限制在$K$上的部分是\textbf{平凡}的(即为恒等映射):
+\[
+\forall x\in K, \sigma(x) = x.
+\]
+所有的$K$-自同构组成一个群, 称为域扩张的自同构群, 记作$\Aut(L/K)$. 这些自同构描绘了$K$"以外"的元素可以怎样相互变换而保持域$L$的域结构不变.
+
+正规、可分与伽罗瓦扩张
+
+伽罗瓦扩张是伽罗瓦理论中的基础概念。有限的伽罗瓦扩张满足伽罗瓦理论基本定理，在此扩张的伽罗瓦群的子群与其中间域之间建立了一一对应的关系，从而给出了中间域的清晰描述。
+
+一般定义伽罗瓦扩张是正规且可分的域扩张。 一个域扩张$L/K$称为正规扩张, 如果对任何一个以$K$中元素为系数的不可约多项式$P$, 只要它有一个根在$L$中, 则它的所有根都在$L$中, 也就是说可以分解为$L$上一次因式的乘积. 正规扩张也就做准伽罗瓦扩张, 它与伽罗瓦扩张的差别是伽罗瓦扩张还是可分扩张. 一个\textcolor{red}{代数扩张}$L/K$称为可分扩张, 如果$L$中每个元素在$K$上的极小多项式是可分的, 即(在$K$的一个代数闭包中)没有重根. 从以上正规扩张和可分扩张的定义中可以推出: 一个域扩张$L/K$是伽罗瓦扩张, 当且仅当它是某个以$K$中元素为系数的可分多项式的分裂域.
+
+伽罗瓦扩张的自同构群称为其伽罗瓦群, 记作$\Gal(L/K)$. 它的阶数(群中元素个数)等于伽罗瓦扩张的次数: $[L:K] = \left|\Gal(L/K)\right|$. 伽罗瓦理论基本定理说明, 当伽罗瓦扩张是有限扩张的时候, 给定$\Gal(L/K)$ 的任一个子群 $H$, 唯一存在一个中间域 $K\subset L^{H} \subset L$ 与之对应, 这个域 $L^{H}$ 恰好是$L$中对所有的$H$中的自同构固定的元素的集合:
+\[
+L^{H} = \{x;\forall\sigma\in H, \sigma(x) = x\}
+\]
+这种对应关系被称作\textbf{伽罗瓦对应}. 给定$\Gal(L/K)$的子群$H$, $L^{H}$被称为$H$的\textbf{对应域}. 伽罗瓦对应建立了特定条件下域扩张与群论之间转化的纽带, 通过研究特定群的结构, 可以给出域扩张的仔细刻画.
 \end{enumerate}
+
+\begin{filecontents*}{abstract_algebra_notes.bib}
+@online{finitely_generated_abelian_group,
+author = "Wikipedia",
+title = "Finitely generated abelian group",
+url = "https://en.wikipedia.org/wiki/Finitely_generated_abelian_group"
+}
+
+@online{wiki域扩张,
+author = "Wikipedia",
+title = "域扩张",
+url = "https://zh.wikipedia.org/wiki/%E5%9F%9F%E6%89%A9%E5%BC%A0"
+}
+
+@book{姚慕生1998抽象代数学,
+  title={抽象代数学},
+  author={姚慕生},
+  year={1998},
+  publisher={复旦大学出版社}
+}
+
+@article{孟道骥2010抽象代数,
+  title={抽象代数 I. 代数学基础},
+  author={孟道骥 陈良云 史毅茜  白瑞蒲},
+  publisher={科学出版杜},
+  year={2010}
+}
+
+\end{filecontents*}
+
 \newpage
 \printbibliography
-\end{document} 
+\end{document}

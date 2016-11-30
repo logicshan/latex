@@ -1,0 +1,29 @@
+\documentclass{ctexart}
+
+\usepackage{graphicx}
+
+\begin{document}
+\includegraphics[width=2em]{nen.jpg}
+\includegraphics[height=1cm]{nen.jpg}
+\includegraphics[scale=0.5]{nen.jpg}
+
+\includegraphics[angle=90]{nen.jpg}
+\includegraphics[angle=-45,origin=c]{nen.jpg}
+
+    基线\rule{2cm}{0.4pt}%
+    \includegraphics[angle=90,origin=b,
+      totalheight=1.5cm]{nen.jpg}
+
+    \scalebox{2}{大字}
+    \scalebox{2}[1]{扁字}
+    \scalebox{1}[2]{长字}
+
+    \LARGE 汉字\reflectbox{汉字}
+
+    \resizebox{2cm}{1cm}{扁}
+    \resizebox{!}{1cm}{\fbox{高 1cm}}
+
+    \rotatebox[origin=c]{90}{旋}%
+    \rotatebox[origin=c]{90}{转}%
+    的汉字
+\end{document} 

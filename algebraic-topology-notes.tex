@@ -1,4 +1,4 @@
-\documentclass{ctexart}
+\documentclass[UTF8]{ctexart}
 
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{mathrsfs}
@@ -6,8 +6,11 @@
 \usepackage{tikz-cd}
 \usepackage{relsize}
 
-\usepackage{biblatex}
+\usepackage{filecontents}
+
+\usepackage[hyperref=true,backend=biber,sorting=none,backref=true]{biblatex}
 \addbibresource{algebraic-topology-notes.bib}
+\usepackage{hyperref}
 
 \newtheorem*{prop}{命题}
 \newtheorem*{thm}{定理}
@@ -176,12 +179,28 @@ $B$ 为其 \textbf{底空间}(base space), 称这些 $U_b$ 为 \textbf{均匀复
 \textbf{纤维}(fiber).
 \end{defn}
 
+以上内容引用自\parencite{包志强2013点集拓扑与代数拓扑引论}
+
 %\noindent\hrulefill
 
 \noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
 
 \begin{enumerate}
-\item Pullback and Pushout in $\Top$
+\item The different types of homology theory arise from functors mapping from various categories of mathematical objects to the category of chain complexes. In each case the composition of the functor from objects to chain complexes and the functor from chain complexes to homology groups defines the overall homology functor for the theory.\parencite{types_of_homology}
+
+比如, 单纯同调(simplicial homology)定义在单纯复形(simplicial complex)上. 奇异同调(singular homology)定义在所有拓扑空间上. 胞腔同调(cellular homology)定义在 CW复形(CW-complex)上.
+
+For $X$ a CW-complex, its cellular homology $H^{CW}_\bullet(X)$ agrees with its singular homology $H_\bullet(X)$:
+\[
+H^{CW}_\bullet(X)\simeq H_\bullet(X)
+\]
+可以把一个同调理论(homology theory)看成一族函子.
+
+上面定理也可以叙述为: The cellular and singular homology of a CW-complex are naturally isomorphic.
+
+The homology $H_\ast(K;R)$ of an abstract simplicial complex $K$ is isomorphic to $H_\ast(\left|K\right|;R)$, the singular homology of its geometric realization. This can be seen by noting that $\left|K\right|$ is naturally a CW-complex. The cellular chain complex of $\left|K\right|$ is isomorphic to the simplicial chain complex of $K$.\parencite[p.8]{kirklecture}
+
+\item Pullback and Pushout in $\Top$\parencite{algebraic_topology_notes_of_the_lecture}
 
 Consider the diagram
 \begin{center}
@@ -205,7 +224,8 @@ X
 \end{center}
 in $\Top$. Then the pushout $X \pushout_Z Y\in \Top$ of $f$ and $g$ is given by $X\pushout Y/\sim$ where $i_X f(z) \sim i_Y g(z)$ for all $z \in Z$.
 
-\item Attaching Maps
+\item Attaching Maps\parencite{attaching_maps}
+
 Given $A\subset X$ with $f : A\to Y$, we define "the space obtained from $Y$ by attaching $X$ by means of $f$" (wrriten $X \cup_f Y$) as
 \[
 X\cup_f Y = (X\pushout Y)/\sim
@@ -388,6 +408,71 @@ $U\subset X, V \subset X, X = U^{\circ} \cup V^{\circ}$, we have exact sequence
 \cdots\to H_n(U\cap V)\to H_n(U)\oplus H_n(V)\to H_n(X)\to H_{n-1}(U\cap V)\to\cdots
 \]
 \end{enumerate}
+
+\begin{filecontents*}{algebraic-topology-notes.bib}
+@book{包志强2013点集拓扑与代数拓扑引论,
+  title={点集拓扑与代数拓扑引论},
+  author={包志强},
+  year={2013},
+  publisher={北京大学出版社}
+}
+
+@book{kirklecture,
+  title={Lecture Notes in Algebraic Topology},
+  author={Kirk, J.F.D.P.},
+  isbn={9780821872208},
+  url={https://books.google.co.jp/books?id=TaE4F-bsRYQC},
+  publisher={American Mathematical Soc.}
+}
+
+@online{singular_homology,
+author = "Wikipedia",
+title = "Singular homology",
+url = "https://en.wikipedia.org/wiki/Singular_homology"
+}
+
+@book{vick2012homology,
+  title={Homology Theory: An Introduction to Algebraic Topology},
+  author={Vick, J.W.},
+  isbn={9781461208815},
+  lccn={93005255},
+  series={Graduate Texts in Mathematics},
+  url={https://books.google.co.jp/books?id=U2rgBwAAQBAJ},
+  year={2012},
+  publisher={Springer New York}
+}
+
+@online{relative_homology_wiki,
+author = "Wikipedia",
+title = "Relative homology",
+url = "https://en.wikipedia.org/wiki/Relative_homology"
+}
+
+@online{relative_homology_planet,
+author = "Wikipedia",
+title = "relative homology groups",
+url = "http://planetmath.org/relativehomologygroups"
+}
+
+@online{types_of_homology,
+author = "Wikipedia",
+title = "Types of homology",
+url = "https://en.wikipedia.org/wiki/Homology_(mathematics)#Types_of_homology"
+}
+
+@online{algebraic_topology_notes_of_the_lecture,
+author = "G. Mislin. Thomas Rast. Luca Gugelmann",
+title = "Algebraic Topology Notes of the Lecture",
+url = "https://www.mitschriften.ethz.ch/main.php?page=3&scrid=1&pid=46&oid=69&eid=1"
+}
+
+@online{attaching_maps,
+author = "MAT1301S",
+title = "Attaching Maps",
+url = "http://www.math.toronto.edu/mat1300/CW-complexes.pdf"
+}
+\end{filecontents*}
+
 \newpage
 \printbibliography
 \end{document} 

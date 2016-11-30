@@ -1,0 +1,620 @@
+\documentclass{ctexart}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{tensor}
+\usepackage{mhchem}
+\usepackage{xfrac} %提供\sfrac
+\usepackage{mathdots}
+\usepackage{amssymb}
+\usepackage{bbm,mathrsfs}
+\usepackage{eucal}
+\usepackage{upgreek}
+\usepackage{amsxtra}
+\usepackage{bm}
+\usepackage{extarrows}
+\usepackage{cases}
+
+%\usepackage[mathstyleoff]{breqn}
+
+%\usepackage{unicode-math}
+%\setmainfont{Cambria}
+%\setmathfont{Cambria Math}
+
+\setlength{\parindent}{0pt}
+\newcommand\stiring[2]{\genfrac{[}{]}{0pt}{}{#1}{#2}}
+\newcommand\dstiring[2]{\genfrac{[}{]}{0pt}{0}{#1}{#2}}
+\newcommand\tstiring[2]{\genfrac{[}{]}{0pt}{1}{#1}{#2}}
+\DeclareMathOperator{\card}{card}         % 集合基数
+\DeclareMathOperator*{\esssup}{ess\,sup}  % 本性上确界
+\DeclareMathOperator\dif{d\!}
+
+\newcommand\defeq{\stackrel{\text{d}}{=}}
+\newcommand\varnotin{\mathrel{\overline{\in}}}
+\newcommand*\abs[1]{\lvert#1\rvert}
+
+\begin{document}
+交换律是 $a+b=b+a$, 如 $1+2=2+1=3$.
+
+不能用 a+b=b+a, 1+2=2+1=3. \begin{math}a+b\end{math}.
+
+\begin{equation}
+a+b=b+a \label{eq:commutative}
+\end{equation}
+
+$3^{3^{3^{\cdot^{\cdot^{\cdot^3}}}}}$
+
+$\prescript{n}{m}{H}_i^j < L$
+
+\[
+\sideset{_a^b}{_c^d} \sum_{i=0}^n A_i
+= \sideset{}{'} \prod_k f_i
+\]
+
+$\overset{\ast}{\underset{\dag}{X}}$
+
+$A_m^{\phantom{m}n}$
+
+$M\indices{^a_b^{cd}_e}$ \qquad
+$\tensor[^a_b^c_d]{M}{^a_b^c_d}$
+
+醋中主要是 \ce{H2O}, 含有 \ce{CH3COO-}.
+
+\ce{^{227}_{90}Th} 元素具有强放射性.
+
+\begin{equation}
+\ce{2H2 + O2 ->[\text{燃烧}] 2H2O}
+\end{equation}
+
+$\overline{a+b} =
+\overline a + \overline b$ \\
+$\underline a = (a_0, a_1, a_2, \dots)$
+
+$ \overline{\underline{\underline a}
++ \overline{b}^2} - c^{\underline n} $
+
+$\overleftarrow{a+b}$\\
+$\overrightarrow{a+b}$\\
+$\overleftrightarrow{a+b}$\\
+$\underleftarrow{a-b}$\\
+$\underrightarrow{a-b}$\\
+$\underleftrightarrow{a-b}$
+
+$\vec x = \overrightarrow{AB}$
+
+$\overbrace{a+b+c} = \underbrace{1+2+3}$
+
+\[
+( \overbrace{a_0,a_1,\dots,a_n}^{\text{共 $n+1$ 项}} ) =
+( \underbrace{0,0,\dots,0}_{n} , 1 )
+\]
+\[ \underbracket{\overbracket{1+2}+3}_3 \]
+
+% \llap 和 \rlap : 这两个命令分别把参数中的内容向当前位置的左侧和右侧重叠
+语言文字 word\\
+语言文字\llap{word}\\
+\rlap{word}语言文字
+
+\[
+\rlap{$\overbrace{\phantom{a \to b}}$} a \to \underbrace{b \to c}
+\]
+
+\[ a + \overbrace{b+c+d}^{m} + e + f \]
+
+\[ a + \rlap{$\overbrace{\phantom{b + c + d}}^{m}$} b + \underbrace{c + d + e}_{n} + f \]
+
+\[ \frac 12 + \frac 1a = \frac{2+a}{2a} \]
+
+通分计算 $\frac 12 + \frac 1a$ 得 $\frac{2+a}{2a}$
+
+\[ \frac{1}{\frac 12 (a+b)} = \frac{2}{a+b} \]
+
+\[ \tfrac 12 f(x) =
+\frac{1}{\dfrac 1a + \dfrac 1b + c}
+\]
+
+\[ \cfrac{1}{1+\cfrac{2}{1 + \cfrac{3}{1+x}}} = \cfrac[r]{1}{1+\cfrac{2}{1+\cfrac[l]{3}{1+x}}} \]
+
+% \usepackage{xfrac}
+区别 $\sfrac 1a + b$ 和 $1/(a+b)$
+
+\[
+(a+b)^2 = \binom 20 a^2 + \binom 21 ab + \binom 22 b^2
+\]
+
+\[
+\genfrac{[}{]}{0pt}{}{n}{1} = (n-1)!,
+\qquad n > 0.
+\]
+
+\[ \stiring{n}{1} = (n-1)!, \qquad n > 0. \]
+$\dstiring{n}{1} = (n-1)!, \qquad n > 0.$
+
+$\tstiring{n}{1} = (n-1)!, \qquad n > 0.$
+
+$\sqrt 4 = \sqrt[3]{8} = 2$
+
+\[
+\sqrt[n]{\frac{x^2 + \sqrt 2}{x+y}}
+\]
+
+\[
+(x^p + y^q)^{\frac{1}{1/p+1/q}}
+\]
+
+\[
+\sqrt[\uproot{16}\leftroot{-2}n]{\frac{x^2 + \sqrt 2}{x+y}}
+\]
+
+$\sqrt{\frac 12} < \sqrt{\vphantom{\frac12}2}$
+
+% 数学支架 \mathstrut 表示有一个圆括号高度和深度的支架, 它常用来平衡不同高度和深度的字母
+$\sqrt b \sqrt y$ \qquad
+$\sqrt{\mathstrut b} \sqrt{\mathstrut y}$
+
+\[
+A = \begin{pmatrix}
+  a_{11} & a_{12} & a_{13} \\
+  0 & a_{22} & a_{23} \\
+  0 & 0 & a_{33}
+\end{pmatrix}
+\]
+
+\[
+A = \begin{bmatrix}
+  a_{11} & \dots & a_{1n} \\
+  & \ddots & \vdots \\
+  0 & & a_{nn}
+\end{bmatrix}_{n\times n}
+\]
+
+% \usepackage{mathdots}
+\[
+A = \begin{bmatrix}
+  a_{11} & \dots & a_{1n} \\
+  & \iddots & \vdots \\
+  0 & & a_{nn}
+\end{bmatrix}_{n\times n}
+\]
+
+\[
+\begin{pmatrix}
+\begin{matrix}1&0\\0&1\end{matrix} & \text{\Large 0} \\
+\text{\Large 0} & \begin{matrix}1&0\\0&-1\end{matrix}
+\end{pmatrix}
+\]
+
+% \hdotsfor{列数}
+\[
+\begin{pmatrix}
+  1 & \frac 12 & \dots & \frac 1n \\
+  \hdotsfor{4} \\
+  m & \frac m2 & \dots & \frac mn
+\end{pmatrix}
+\]
+
+复数 $z = (x,y)$ 也可用矩阵 \begin{math}
+  \left( \begin{smallmatrix}
+    x & -y \\ y & x
+  \end{smallmatrix} \right)
+\end{math} 来表示.
+
+\[
+\sum_{\substack{0<i<n \\ 0<j<i}} A_{ij}
+\]
+
+\[
+\sum_{\begin{subarray}{l}i<10 \\ j<100 \\ k<1000\end{subarray}} X(i,j,k)
+\]
+
+% matrix 等矩阵环境默认至多只有 10 列, 直接使用多于 10 列的矩阵会产生错误.
+% 这个最大列数的限制是由计数器 MaxMatrixCols 控制的, 可以通过 \setcounter 等计数器命令临时或全局调整.
+\[ \setcounter{MaxMatrixCols}{15}
+\begin{Bmatrix}
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 1 & 1 & 0 & 1\\
+1 & 1 & 1 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 0 & 0 & 0 & 1 & 0
+\end{Bmatrix}
+\]
+
+% \usepackage{mathtools}
+\[
+\begin{pmatrix*}[r]
+  10 & -10 \\ -20 & 3
+\end{pmatrix*}
+\]
+
+\[ \bordermatrix{
+  & 1 & 2 & 3 \cr
+1 & A & B & C \cr
+2 & D & E & F \cr} \]
+
+
+$\mathnormal{ABCHIJXYZabchijxyz12345}$
+
+$\mathit{ABCHIJXYZabchijxyz12345}$
+
+$\mathrm{ABCHIJXYZabchijxyz12345}$
+
+$\mathbf{ABCHIJXYZabchijxyz12345}$
+
+$\mathsf{ABCHIJXYZabchijxyz12345}$
+
+$\mathtt{ABCHIJXYZabchijxyz12345}$
+
+$\mathcal{ABCHIJXYZ}$
+
+% \usepackage{amssymb}
+$\mathbb{ABCXYZ}$
+
+$\Bbbk$
+
+% bbold
+$\mathbb{ABCXYZabcxyz123890}$
+
+% bbm
+$\mathbbm{ABCXYZabcxyz12}$
+
+% mathrsfs
+$\mathscr{ABCXYZ}$
+
+% eucal
+$\mathcal{ABCXYZ}$
+
+% \usepackage{amssymb 或 eufrak}
+$\mathfrak{ABCXYZabcxyz123890}$
+
+$\aleph\beth\daleth\gimel$
+
+$\pi\uppi\upalpha\alpha$
+
+$\breve{a}\check{a}\hat{a}\grave{a}\acute{a}\tilde{a}\bar{a}\vec{a}\dot{a}\mathring{a}\ddot{a}$
+
+$(abc)\spbreve(abc)\sptilde$
+
+$\hbar\imath\jmath\ell\wp\Re\Im\partial\infty\prime\emptyset\nabla\surd\top\bot\angle\triangle\forall\exists\neg\flat\natural\sharp\clubsuit\diamondsuit\heartsuit\spadesuit
+\backslash\backprime\hslash\varnothing\vartriangle\blacktriangle\triangledown\blacktriangledown\square\blacksquare\lozenge\blacklozenge\circledS\bigstar
+\sphericalangle\measuredangle\nexists\complement\mho\eth\Finv\diagup\Game\diagdown\Bbbk$
+
+$\# \& \% \$ \P \S \dag \ddag \copyright \pounds \checkmark \circledR \maltese \yen$
+
+% \usepackage{bm}
+% \hm 的效果需要实际字体支持
+\textbf{勾股定理 $\bm{a^2+b^2=c^2}$}
+
+勾股定理 $a^2+b^2=c^2$
+
+\[ \bm u + \bm v = (1,0) + (0,1) \]
+\[ \hm\int > \bm\int > \int \]
+
+\begin{gather*}
+a+b \quad a{+}b \quad a\mathord{+}b \\
+\max n \quad {\max} n \quad \mathord{\max} n
+\end{gather*}
+
+\[ \mathrm{e}^{\uppi\mathrm{i}} + 1 = 0 \]
+
+空集 $\varnothing$的基数是$0$, 自然数集 $\mathbb{N}= \{1,2,3,\ldots\}$的基数是 $\bm{\aleph_0}$, 则实数集 $\mathbb{R}$的基数 $\#\mathbb{R} = \bm{\aleph_1} = 2^{\bm{\aleph_0}}$.
+
+$\varliminf\varlimsup\injlim\projlim\varinjlim\varprojlim$
+
+\[  \operatorname*{Prob}_{\{1,\ldots,n\}}
+      (\bar X) =
+    \operatorname{card}(\varnothing)/n = 0. \]
+
+\[ \mathop{\mathord{\sum}'}\limits_{i=1}^n A_n \]
+
+\[ \int_0^1 \int_0^1 f(x,y) \int_0^1 \frac{\dif z}{g(x,y,z)} \dif x\dif y \]
+
+$r = m \bmod n$
+
+$x\equiv y \pmod b$
+
+$x\equiv y \mod c$
+
+$x\equiv y \pod d$
+
+\[ \oint_{C} \kappa_{\mathrm g} \dif s + {\iint_{D} K \dif \sigma} = 2\uppi - \sum_{i=1}^n \alpha_i. \]
+
+\[ \operatorname{Var}(X) = \operatorname{E}(X-\mu)^2 = \sum_{j=1}^\infty (x_j - \mu)^2 \operatorname{Pr}(X = x_j), \qquad \text{其中} \mu = \operatorname{E}\!X. \]
+
+\[
+\lim_{N\to +\infty} \frac{1}{2\uppi} \int_{-N}^{N}\hat{f}(\lambda)\mathrm{e}^{\mathrm{i}\lambda x}\dif \lambda = f(x).
+\]
+
+群 $G$ 的 $(H,K)$-双陪集为 $H\backslash G/K$.
+
+$S\cup T = (S\cap T)\cup (S\setminus T)$
+
+$\not\in$
+
+$\notin$
+
+$f(x) \defeq ax^2+bx+c$
+
+\[
+A \xleftarrow{0<x<1} B
+\xrightarrow[x\leq 0]{x\geq 1} C
+\]
+
+% \usepackage{extarrows}
+\[ \xlongleftarrow[xyz]{a+b+c} \]
+
+$x =y \implies x+a=y+a$\\
+$x=y \impliedby x+a=y+a$\\
+$x=y \iff x\le y \And x\ge y$
+
+运算 $\heartsuit$ 的交换律:
+\[ a \mathbin{\heartsuit} b = b \mathbin{\heartsuit} a \]
+
+$\forall x$, $\forall S$, $x\varnotin S$.
+
+$\abs{x+y} \le \abs{x} + \abs{y}$
+
+\[
+\partial_x \partial_y \left[
+\frac12 \left(x^2+y^2\right)^2 + xy
+\right]
+\]
+
+\[
+\left.
+\int_0^x f(t,\lambda) \,\mathrm{d}t
+\right|_{x=1}, \qquad
+\lambda \in
+\left[\frac12,\infty\right).
+\]
+
+\[
+\Pr \left( X>\frac12
+\middle\vert Y=0 \right)
+= \left.
+\int_0^1 p(t)\,\mathrm{d}t
+\middle/ ( N^2+1 ) \right.
+\]
+
+\[
+\biggl( \sum_{i=1}^n A_i \biggr) \cdot
+\biggl( \sum_{i=1}^n B_i \biggr) > 0
+\]
+
+$ 1 + \Bigl(2 - \bigl(3 \times (4 \div 5) \bigr) \Bigr) $
+
+\[ P = \biggl< \frac12 \biggr>, \qquad
+M = \left< \begin{matrix}
+  a & b \\ c & d \\
+  \end{matrix}\right> \]
+
+$a:b=ac:bc$
+
+\[
+\Pr(x\colon g(x)>5) = 0.25,
+\qquad g\colon x \mapsto x^2
+\]
+
+\[ (1,\dots,n) \qquad 1+\dots+n \qquad a=\dots=z \]
+
+\[ \prod_{i=1}^n a_i = a_1 \dotsm a_n \qquad \int_0^1\dotsi\int_0^1 \]
+
+\begin{gather}
+  a+b=b+a\\
+  ab=ba
+\end{gather}
+
+\begin{gather*}
+  3+5=5+3=8\\
+  3\times 5 = 5\times3
+\end{gather*}
+
+\begin{gather}
+  3^2 + 4^2 = t^2\notag\\
+  5^2 + 12^2 = 13^2\notag\\
+  a^2 + b^2 = c^2
+\end{gather}
+
+\begin{align}
+  x &= t + \cos t + 1\\
+  y &= 2\sin t
+\end{align}
+
+\begin{align*}
+  x &= t & x &= \cos t & x &= t\\
+  y &= 2t & y &= \sin(t+1) & y &= \sin t
+\end{align*}
+
+\begin{align*}
+    & (a+b)(a^2-ab+b^2) \notag \\
+={} & a^3 - a^2b + ab^2 + a^2b
+      - ab^2 + b^2 \notag \\
+={} & a^3 + b^3
+\end{align*}
+
+\begin{align*}
+    & (a+b)(a^2-ab+b^2) \notag \\
+= & a^3 - a^2b + ab^2 + a^2b
+      - ab^2 + b^2 \notag \\
+= & a^3 + b^3
+\end{align*}
+
+\begin{align*}
+&\mathrel{\phantom{=}}
+   (a+b)(a^2-ab+b^2) \notag \\
+&= a^3 - a^2b + ab^2 + a^2b
+   - ab^2 + b^2 \notag \\
+&= a^3 + b^3 \label{eq:cubesum}
+\end{align*}
+
+\begin{flalign}
+x &= t  & x &= 2 \\
+y &= 2t & y &= 4
+\end{flalign}
+
+    \begin{alignat}{2}
+      x &= \sin t &\quad&\text{水平方向} \\
+      y &= \cos t &&\text{垂直方向}
+    \end{alignat}
+    
+        \begin{alignat*}{6}
+     &1 & &+2 & &+3 & &+4 & &+5 & &=15 \\
+     &1 & &   & &+3 & &   & &+5 & &=9 \\
+     &  & &+2 & &   & &+4 & &   & &=6
+    \end{alignat*}
+
+    \begin{align*}
+    x^2 + 2x &= -1
+    \intertext{移项得}
+    x^2 + 2x + 1 &= 0
+    \end{align*}
+    
+        \begin{align*}
+    x^2 + 2x &= -1
+    \shortintertext{移项得}
+    x^2 + 2x + 1 &= 0
+    \end{align*}
+    设 $G$ 是一个带有运算 $*$ 的集合，则 $G$ 是\emph{群}，当且仅当：
+\begin{subequations}\label{eq:group}
+    \begin{alignat}{2}
+    \forall a,b,c &\in G, &\qquad (a*b)*c &= a*(b*c);\label{subeq:assoc}\\
+    \exists e, \forall a &\in G, &  e*a &= a; \\
+    \forall a, \exists b &\in G, &  b*a &= e.
+    \end{alignat}
+\end{subequations}
+式~\eqref{eq:group} 的三个条件中，\eqref{subeq:assoc}~又称为结合律。
+
+\begin{subequations}
+\begin{alignat}{4}
+&a_{11}x & &+a_{12}y & &+ a_{13}z & &= A\\
+&a_{21}x & &+a_{22}y & &+ a_{23}z & &= B\\
+&a_{31}x & &+a_{32}y & &+ a_{33}z & &= C
+\end{alignat}
+\end{subequations}
+
+\begin{alignat}{2}
+a& =b& c& =d\\
+a'& =b'& c'& =d'
+\end{alignat}
+
+\begin{multline}
+  a+b+c+d+e \\
+  +f+g+h+i+j\\
+  +k+l+m+n+o\\
+  +p+q+r+s+t
+\end{multline}
+
+    \setlength{\multlinegap}{3em}
+    \setlength{\multlinetaggap}{3em}
+    \begin{multline*}
+    1+2+3 \\ \shoveleft{+4+5+6} \\
+    +7+8+9 \\
+    \shoveright{+10+11+12} \\ +13+14+15
+    \end{multline*}
+    
+        \begin{equation}  \begin{split}
+    \cos 2x &= \cos^2 x - \sin^2 x \\
+            &= 2\cos^2 x - 1
+    \end{split}  \end{equation}
+
+    \begin{equation}\label{eq:trigonometric}
+    \begin{split}
+    \frac12 (\sin(x+y) + \sin(x-y))
+      &= \frac12(\sin x\cos y + \cos x\sin y) \\
+      &\quad + \frac12(\sin x\cos y - \cos x\sin y) \\
+ \overline{}     &= \sin x\cos y
+    \end{split}
+    \end{equation}
+
+% \usepackage{breqn}
+\iffalse
+\begin{dmath}\label{eq:trigonometric}
+\frac12 (\sin(x+y) + \sin(x-y)) = \frac12(\sin x\cos y + \cos x\sin y)
++ \frac12(\sin x\cos y - \cos x\sin y) = \sin x\cos y
+\end{dmath}
+\fi
+
+    \begin{equation}\label{eq:dirichlet}
+    D(x) = \begin{cases}
+    1, & \text{if } x \in \mathbb{Q}; \\
+    0, & \text{if } x \in
+         \mathbb{R}\setminus\mathbb{Q}.
+    \end{cases}
+    \end{equation}
+
+\[ \left\lvert x - \frac12 \right\rvert
+= \begin{dcases}
+x-\frac12,  & x \geq \frac12;\\
+\frac12-x,  & x < \frac12.
+\end{dcases}  \]
+
+    % \usepackage{cases}
+    \begin{numcases}{f(x)=}
+      1/q, & if $x = p/q \in \mathbb{Q}$; \\
+      0,   & else.
+    \end{numcases}
+    
+    \[  \left. \begin{gathered}
+      S \subseteq T \\
+      S \supseteq T
+    \end{gathered} \right\}
+    \implies S = T  \]
+    
+    % \usepackage{mathtools}
+    \[  \text{比较曲线}
+    \left\{ \begin{lgathered}
+      x = \sin t, y = \cos t \\
+      x = t + \sin t, y = \cos t
+    \end{lgathered} \right.  \]
+
+    \begin{equation}\label{eq:trinary}
+    \begin{aligned} x+y &= -1 \\ x+y+z &= 2 \\ xyz &= -6 \end{aligned}
+    \implies
+    \begin{aligned} x+y &= -1 \\ xy &= -2 \\ z &= 3 \end{aligned}
+    \implies
+    \begin{alignedat}{3}
+                 x &= 1,  &\quad y &= -2, &\quad z &= 3 \\
+    \text{或\ }  x &= -2, &      y &= 1,  &      z &= 3
+    \end{alignedat}
+    \end{equation}
+
+    % \usepackage{mathtools}
+    \newcommand\Set[2]{%
+      \left\{#1\ \middle\vert\ #2 \right\}}
+    \[  \Omega = \Set{x}{\begin{multlined}
+    x^7+x^6+x^5 \\ +x^4+x^3+x^2 \\ +x+1=0
+    \end{multlined}}  \]
+
+    \begin{align*}
+    2^5 &= (1+1)^5 \\
+    &= \begin{multlined}[t]
+    \binom50\cdot 1^5 + \binom51\cdot 1^4 \cdot 1
+      + \binom52\cdot 1^3 \cdot 1^2 \\
+    + \binom53\cdot 1^2 \cdot 1^3 + \binom54\cdot 1 \cdot 1^4
+      + \binom55\cdot 1^5
+    \end{multlined} \\
+    &= \binom50 + \binom51 + \binom52 + \binom53 + \binom54 + \binom55
+    \end{align*}
+\iffalse
+\[
+f(x) \triangleq \begin{dcases}
+  \tfrac32 - x, & \tfrac12 < x \leq 1,\\
+  \tfrac34 - x, & \tfrac14 < x \leq \tfrac12,\\
+  \tfrac38 - x, & \tfrac18 < x \leq \tfrac14,\\
+  \phantom{\tfrac38}\vdots & \phantom{\tfrac18 < x}\vdots
+\end{dcases}
+\]
+\fi
+
+\[
+f(x) \triangleq \begin{cases}
+  \frac32 - x, & \frac12 < x \leq 1,\\
+  \frac34 - x, & \frac14 < x \leq \frac12,\\
+  \frac38 - x, & \frac18 < x \leq \frac14,\\
+  \phantom{\frac32 -}\!\!\!\vdots & \phantom{\frac18 < x}\!\!\!\vdots
+\end{cases}
+\]
+
+\[
+\underline{\smash{\int f(x)\,\mathrm{d}x}} \underline{\int f(x)\,\mathrm{d}x} \underline{\smash[b]{\int f(x)\,\mathrm{d}x}} \underline{\smash[t]{\int f(x)\,\mathrm{d}x}} \overline{\smash{\int f(x)\,\mathrm{d}x}} \overline{\int f(x)\,\mathrm{d}x} \overline{\smash[b]{\int f(x)\,\mathrm{d}x}} \overline{\smash[t]{\int f(x)\,\mathrm{d}x}}
+\]
+
+\[
+\sqrt{x} + \sqrt{y} + \sqrt{z}  \sqrt{x} + \sqrt{\smash[b]{y}} + \sqrt{z}
+\]
+\end{document}

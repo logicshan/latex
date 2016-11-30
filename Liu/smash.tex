@@ -1,0 +1,23 @@
+\documentclass{scrbook}
+\usepackage{amsmath}
+
+\begin{document}
+\begin{alignat}{3}
+        &   \sum_{m \in M}  x_m     && = 1      & \quad &   , \forall m \in M \colon a \neq b ;                     \notag  \\
+        &                                                                   &&              &               &   \phantom{,{}}   c \neq d                                                                \\
+        &                                                       x_m     && = 1      &               &   , \forall m \in M \colon e \neq f ;                     \notag  \\
+        &                                                                   &&              &               &   \phantom{,{}}   g \neq h
+\end{alignat}
+\begin{alignat}{2}
+\smash[b]{\sum_{m \in M}}\, x_m &= 1\quad && , \forall m \in M \colon a \neq b ; \notag \\
+                                &         && \phantom{,{}}   c \neq d \\
+               x_m              &= 1      && , \forall m \in M \colon e \neq f ; \notag  \\
+                                &         && \phantom{,{}}   g \neq h
+\end{alignat}
+\begin{alignat}{2}
+\smash{\sum_{m \in M}}\, x_m &= 1\quad && , \forall m \in M \colon a \neq b ; \notag \\
+                                &         && \phantom{,{}}   c \neq d \\
+               x_m              &= 1      && , \forall m \in M \colon e \neq f ; \notag  \\
+                                &         && \phantom{,{}}   g \neq h
+\end{alignat}
+\end{document}

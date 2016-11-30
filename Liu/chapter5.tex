@@ -1,0 +1,621 @@
+\documentclass{ctexart}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{dcolumn}
+\usepackage{arydshln}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{rotating,makecell}
+\usepackage{diagbox}
+\usepackage{tabularx}
+\usepackage[delarray]{tabu}
+\usepackage{blkarray}
+\usepackage{graphicx}
+\usepackage{hhline}
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\begin{tabular}{lcr}
+left & center & right \\
+本列左对齐 & 本列居中 & 本列右对齐
+\end{tabular}
+
+\begin{tabular}{ll}
+\bfseries 功能 & \bfseries 环境 \\
+表格 & \ttfamily tabular \\
+对齐 & \ttfamily tabbing \\
+\end{tabular}
+
+\[
+\begin{array}{r|r}
+\frac12 & 0 \\
+\hline
+0 & -\frac12 \\
+\end{array}
+\]
+
+\begin{tabular}[b]{c}
+上 \\ 中间 \\ 下
+\end{tabular}
+与底部对齐.
+
+\begin{tabular}{|rr|}
+\hline
+输入 & 输出 \\
+\hline
+$-2$ & 4 \\
+0 & 0 \\
+2 & 4 \\
+\hline
+\end{tabular}
+\qquad
+输入与输出有关系 $y = x^2$
+
+\begin{tabular}{|c|rrr|p{4em}|}
+\hline
+姓名 & 语文 & 数学 & 外语 & 备注 \\
+\hline
+张三 & 87 & 100 & 93 & 优秀 \\
+李四 & 75 & 63  & \emph{52} & 补考另行通知 \\
+王小二 & 80 & 82 & 78 & \\
+\hline
+\end{tabular}
+
+\begin{tabular}{|c|r@{.}l|}
+\hline
+收入 & 12345&6 \\
+\hline
+支出 &   765&43 \\
+\hline
+结余 & 11580&17 \\
+\hline
+\end{tabular}
+
+    \[
+    \begin{array}{|c|*{3}{r@{.}l|}}  % 相当于 |c|r@{.}l|r@{.}l|r@{.}l|
+    \hline
+    \text{收入} & 12345&6  & 5000&0 &   1020&55 \\ \hline
+    \text{支出} &   765&43 & 5120&5 &  98760&0  \\ \hline
+    \text{节余} & 11580&17 & -120&5 & -97739&45 \\ \hline
+    \end{array}
+    \]
+
+    % 导言区 \usepackage{dcolumn}
+    \newcolumntype{d}{D{.}{.}{2}}
+    \begin{tabular}{|c|*{3}{d|}}  % 相当于 |c|d|d|d|
+    \hline
+    姓名 & \multicolumn{1}{c|}{张三} & \multicolumn{1}{c|}{李四}
+         & \multicolumn{1}{c|}{王五} \\ \hline
+    收入 & 12345.6  & 5000   &   1020.55 \\ \hline
+    支出 &   765.43 & 5120.5 &  98760    \\ \hline
+    节余 & 11580.17 & -120.5 & -97739.45 \\ \hline
+    \end{tabular}
+
+    \verb=tabular= 环境可以在
+    $\left(\begin{tabular}{@{}c@{}}
+      文本 \\ 数学
+    \end{tabular}\right)$
+    模式下通用。
+
+    \verb=tabular= 环境可以在
+    $\left(\begin{tabular}{c}
+      文本 \\ 数学
+    \end{tabular}\right)$
+    模式下通用。
+
+    % 第 1 列前是原始间距，第 2 列前只有 1em 间距
+    % 第 3、4 列前则是原始间距加 1em
+    \begin{tabular}{|c|@{\extracolsep{1em}}c|c|c|}
+    \hline
+      1 & 2 & 3 & 4 \\
+      1 & 2 & 3 & 4 \\
+    \hline
+    \end{tabular}
+
+{
+\renewcommand\arraystretch{2}
+\begin{tabular}{|l|r|}
+\hline
+这是一个 & 宽松的表格 \\ \hline
+loose & table \\ \hline
+\end{tabular}
+}
+
+    % 导言区 \usepackage{array}
+    \begin{tabular}[b]{|c|}
+    \firsthline
+    上 \\ 中间 \\ 下 \\
+    \lasthline
+    \end{tabular}
+    与底部对齐。
+
+    \begin{tabular}[b]{|c|}
+    \hline
+    上 \\ 中间 \\ 下 \\
+    \hline
+    \end{tabular}
+    与底部对齐。
+\[
+\left(
+\begin{array}{ccc|c}
+a_{11} & a_{12} & a_{13} & b_1 \\
+a_{21} & a_{22} & a_{23} & b_2 \\
+a_{31} & a_{32} & a_{33} & b_3 \\
+\end{array}
+\right)
+\]
+
+\[
+\left(
+\begin{array}{@{}ccc|c@{}}
+a_{11} & a_{12} & a_{13} & b_1 \\
+a_{21} & a_{22} & a_{23} & b_2 \\
+a_{31} & a_{32} & a_{33} & b_3 \\
+\end{array}
+\right)
+\]
+
+    % \usepackage{arydshln}
+    \[
+    \left(
+    \begin{array}{@{}ccc:c@{}}
+      a_{11} & a_{12} & a_{13} & b_1 \\
+      a_{21} & a_{22} & a_{23} & b_2 \\
+      a_{31} & a_{32} & a_{33} & b_3 \\
+      \cdashline{1-3}
+      0 & 0 & 0 & b_4 \\
+    \end{array}
+    \right)
+    \]
+
+\begin{tabular}{|c|cc|c|}
+\hline
+人数 & 患慢性支气管炎 & 未患慢性支气管炎 & 合计 \\
+\hline
+吸烟 & 43 & 162 & 205 \\
+不吸烟 & 13 & 121 & 134 \\
+\hline
+合计 & 56 & 283 & 339 \\
+\hline
+\end{tabular}
+
+% \usepackage{booktabs}
+\begin{tabular}{S[separate-uncertainty = true]}
+\toprule
+数量 \\
+\midrule
+-2147483648 \\
+3.14159265 \\
+2.99792458e8 \\
+3.55+-0.02 \\
+\bottomrule
+\end{tabular}
+
+\begin{tabular}{|r|r|}
+\hline
+\multicolumn{2}{|c|}{成绩} \\
+\hline
+语文 & 数学 \\
+\hline
+87 & 100 \\
+\hline
+\end{tabular}
+
+\begin{tabular}{|r|r|}
+\hline
+\multicolumn{2}{c}{成绩} \\
+\hline
+语文 & 数学 \\
+\hline
+87 & 100 \\
+\hline
+\end{tabular}
+
+    \begin{tabular}{|r|r|}
+      \hline
+      \multicolumn{1}{|c|}{输入} &
+      \multicolumn{1}{c|}{输出} \\ \hline
+      1 & 1 \\ 5 & 25 \\ 15 & 225 \\ \hline
+    \end{tabular}
+
+    \begin{tabular}{|c|r|r|}
+    \hline
+    & \multicolumn{2}{c|}{成绩} \\ \cline{2-3}
+    姓名 & 语文 & 数学 \\ \hline
+    张三 & 87 & 100 \\ \hline
+    \end{tabular}
+
+\begin{tabular}{|c|}
+\hline
+1 \\ \hline
+1 \vline\ 2 \\ \hline % 加一个空格的间距
+1 \vline\ 2 \vline\ 3 \\ \hline
+\end{tabular}
+
+\begin{tabular}{|c|}
+\hline
+1 \\ \hline
+\begin{tabular}{@{}c|c@{}}1 & 2\end{tabular} \\ \hline
+\begin{tabular}{@{}c|c|c@{}} 1 & 2 & 3\end{tabular} \\ \hline
+\end{tabular}
+
+% 导言区  \usepackage{multirow}
+\begin{tabular}{|c|r|r|}
+\hline
+\multirow{2}*{姓名} & \multicolumn{2}{c|}{成绩} \\ \cline{2-3} & 语文 & 数学 \\ \hline
+张三 & 87 & 100 \\ \hline
+\end{tabular}
+
+    % 导言区 \usepackage{makecell}
+    \begin{tabular}{|r|r|}
+    \hline
+    \makecell{处理前\\数据} &
+    \makecell{处理后\\数据} \\ \hline
+    4934 & 8945 \\
+    \hline
+    \end{tabular}
+
+    % 导言区 \usepackage{makecell}
+    \begin{tabular}{|r|r|}
+    \hline
+    \thead{处理前\\数据} &
+    \thead{处理后\\数据} \\ \hline
+    4934 & 8945 \\
+    \hline
+    \end{tabular}
+
+    % 导言区 \usepackage{rotating,makecell}
+    \settowidth\rotheadsize{\theadfont 数学课}
+    \begin{tabular}{|c|c|}
+    \hline
+    \thead{姓名} & \rothead{数学课\\成绩} \\\hline
+    张三 & 100 \\\hline
+    \end{tabular}
+
+    % 导言区 \usepackage{multirow,makecell}
+    \begin{tabular}{|c|r|}
+    \hline
+    \multirowcell{3}{各科\\成绩} & 78 \\
+    \cline{2-2} & 82 \\ \cline{2-2}
+     & 86 \\ \hline
+    \end{tabular}
+
+    % 导言区 \usepackage{diagbox}
+    \begin{tabular}{|c|*{4}{c}|}
+    \hline
+    \diagbox{天干}{地支} & 子 & 丑 & 寅 & 卯 \\
+    \hline
+    甲 &  1 && 51 & \\
+    乙 &&  2 && 52 \\
+    丙 & 13 && 3 & \\
+    丁 && 14 && 4\\
+    \hline
+    \end{tabular}
+
+    % 导言区 \usepackage{diagbox}
+    \begin{tabular}{|c|*{4}{c}|}
+    \hline
+    \diagbox{天干}{序号}{地支} & 子 & 丑 & 寅 & 卯 \\
+    \hline
+    甲 &  1 && 51 & \\
+    乙 &&  2 && 52 \\
+    丙 & 13 && 3 & \\
+    丁 && 14 && 4\\
+    \hline
+    \end{tabular}
+
+\begin{tabular}{cccc}
+\cline{2-2}
+张家村 & \multicolumn{1}{|c|}{三里} & &  \\
+\cline{2-3}
+李家屯 & \multicolumn{1}{|c|}{六里} & \multicolumn{1}{c|}{三里} & \\
+\cline{2-4}
+王家庄 & \multicolumn{1}{|c|}{五里} & \multicolumn{1}{c|}{八里} & \multicolumn{1}{c|}{七里} \\
+\cline{2-4}
+& 赵镇 & 张家村 & 李家屯 \\
+\end{tabular}
+
+    \begin{tabular*}{\textwidth}{|c@{\extracolsep{\fill}}ccccc|}
+    \hline
+      数字 & 1 & 2 & 3 & 4 & 5 \\
+      字母 & A & B & C & D & E \\
+      天干 & 甲 & 乙 & 丙 & 丁 & 戊 \\
+    \hline
+    \end{tabular*}
+
+    % 导言区 \usepackage{tabularx}
+    \begin{tabularx}{\textwidth}{|c|X|X|X|X|X|}
+    \hline
+      数字 & 1 & 2 & 3 & 4 & 5 \\ \hline
+      字母 & A & B & C & D & E \\ \hline
+      天干 & 甲 & 乙 & 丙 & 丁 & 戊 \\
+    \hline
+    \end{tabularx}
+
+    \begin{tabularx}{\textwidth}{|X|X|X|X|X|X|}
+    \hline
+      数字 & 1 & 2 & 3 & 4 & 5 \\ \hline
+      字母 & A & B & C & D & E \\ \hline
+      天干 & 甲 & 乙 & 丙 & 丁 & 戊 \\
+    \hline
+    \end{tabularx}
+
+    % 导言区 \usepackage{tabularx}
+    \newcolumntype{Y}{>{\centering\arraybackslash}X}
+    \begin{tabularx}{\textwidth}{|c|Y|Y|Y|Y|Y|}
+    \hline
+      数字 & 1 & 2 & 3 & 4 & 5 \\ \hline
+      字母 & A & B & C & D & E \\ \hline
+      天干 & 甲 & 乙 & 丙 & 丁 & 戊 \\
+    \hline
+    \end{tabularx}
+
+    \begin{tabular}{ccccc}
+      \toprule
+      序号 & 性别 & 年龄 & 身高/cm & 体重/kg \\
+      \midrule
+      1 & F & 14 & 156 & 42 \\
+      2 & F & 16 & 158 & 45 \\
+      3 & M & 14 & 162 & 48 \\
+      4 & M & 15 & 163 & 50 \\
+      \bottomrule
+    \end{tabular}
+
+    % 导言区 \usepackage{multirow,booktabs}
+    \begin{tabular}{*{6}{c}}
+    \bottomrule
+    \multirow{2}*{姓名} & \multicolumn{2}{c}{文科} &
+      \multicolumn{2}{c}{理科} & \\
+    \cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-6}
+      \morecmidrules\cmidrule(lr){6-6}
+    & 历史 & 文学 & 物理 & 化学 & 总评 \\
+    \midrule
+    张三 & A & A & B & A & A \\
+    \bottomrule
+    \end{tabular}
+
+    % 导言区 \usepackage{makecell}
+    \begin{tabular}{c|cc}
+    \Xhline{2pt}
+    自变量 & \multicolumn{2}{c}{因变量} \\
+    \Xcline{2-3}{0.4pt}
+    半径 & 周长 & 面积 \\
+    \Xhline{1pt}
+    1.00 & 6.28 & 6.28 \\
+    2.00 & 12.57 & 12.57 \\
+    3.00 & 18.85 & 28.27 \\
+    \Xhline{2pt}
+    \end{tabular}
+
+    % \usepackage{makecell}
+    \newcolumntype{V}{!{\vrule width 2pt}}
+    \begin{tabular}{Vc|ccV}
+    \Xhline{2pt}
+    自变量 & \multicolumn{2}{cV}{因变量} \\
+    \Xcline{2-3}{0.4pt}
+    半径 & 周长 & 面积 \\
+    \Xhline{1pt}
+    1.00 & 6.28 & 6.28 \\
+    2.00 & 12.57 & 12.57 \\
+    3.00 & 18.85 & 28.27 \\
+    \Xhline{2pt}
+    \end{tabular}
+
+    \begin{tabular}{|c||cc|}
+    \hline\hline
+    自变量 & \multicolumn{2}{c|}{因变量} \\
+    \cline{2-3}
+    半径 & 周长 & 面积 \\
+    \hline\hline
+    1.00 & 6.28 & 6.28 \\
+    2.00 & 12.57 & 12.57 \\
+    3.00 & 18.85 & 28.27 \\
+    \hline\hline
+    \end{tabular}
+
+    % \usepackage{hhline}
+    \begin{tabular}{|c||cc|}
+    \hhline{|=:t:==|}
+    半径 & 周长 & 面积 \\
+    \hhline{|=::==|}
+    1.00 & 6.28 & 6.28 \\
+    \hhline{|=:b:==|}
+    \end{tabular}
+
+    % \usepackage{arydshln}
+    \[
+    \left(
+    \begin{array}{@{}ccc:c@{}}
+      a_{11} & a_{12} & a_{13} & b_1 \\
+      a_{21} & a_{22} & a_{23} & b_2 \\
+      a_{31} & a_{32} & a_{33} & b_3 \\
+      \cdashline{1-3}
+      0 & 0 & 0 & b_4 \\
+    \end{array}
+    \right)
+    \]
+
+    % \usepackage{arydshln}
+    \setlength\dashlinedash{1pt}
+    \setlength\dashlinegap{2pt}
+    \begin{tabular}{:cc:cc:}
+    \hdashline
+    上 & 上 & 上 & 上 \\
+    \cdashline{1-2}
+    下 & 下 & 下 & 下 \\
+    \hdashline
+    \end{tabular}
+
+    % \usepackage{arydshln}
+    \begin{tabular}{;{8pt/2pt}cc;{2pt/2pt}cc;{8pt/2pt}}
+    \hdashline[8pt/2pt]
+    上 & 上 & 上 & 上 \\
+    \cdashline{1-2}[2pt/2pt]
+    下 & 下 & 下 & 下 \\
+    \hdashline[8pt/2pt]
+    \end{tabular}
+
+% \usepackage{array} 或调用其他依赖 array 的宏包
+\begin{tabular}{>{\bfseries}c|>{\itshape}c>{$}c<{$}}
+\hline
+姓名 & \textnormal{得分} & \multicolumn{1}{c}{额外加分} \\
+\hline
+张三 & 85 & +7 \\
+李四 & 82 & 0 \\
+王五 & 70 & -2 \\
+\hline
+\end{tabular}
+
+    % \usepackage{array}
+    \begin{tabular}{|>{$}r<{$}|>{\setlength\parindent{2em}}m{15em}|%
+      >{\centering\arraybackslash}m{4em}|}
+    \hline
+    \pi & 希腊字母，多用于表示圆周率，也常用作变量。表示圆周率时多使用
+      直立体。 & 常用 \\
+    \hline
+    \aleph & 希伯来字母的第一个，在数学中通常用于表示特殊集合的基数。
+      & 不常用 \\
+    \hline
+    \end{tabular}
+
+    % \usepackage{array}
+    \begin{tabular}{c!{$\Rightarrow$}c}
+    张三 & 85 \\
+    李四 & 82 \\
+    王五 & 70 \\
+    \end{tabular}
+
+    % \usepackage{tabu}
+    \begin{tabu}{ccc}
+    \hline
+    \rowfont{\bfseries}
+    姓名 & 得分 & 额外加分 \\
+    \hline
+    张三 & 85 & $+7$ \\
+    \rowfont{\itshape}
+    李四 & 82 & 0 \\
+    王五 & 70 & $-2$ \\
+    \hline
+    \end{tabu}
+
+    \[ \left\{ \begin{matrix}
+      1 & 2 \\ 3 & 4
+    \end{matrix} \right. \]
+
+    % \usepackage[delarray]{tabu}
+    \[  \begin{tabu}({cc})
+        1 & 2 \\
+        3 & 4
+    \end{tabu}  \]
+
+    % \usepackage{blkarray}
+    % 如果不用 &| 说明，则竖线 | 将会被看成是中间一列的内容
+    \begin{blockarray}{|l|c&|r|}
+      张三 & Zhang & 80 \\
+           % 不用在 r 后面用 |，也不影响表格线
+      李四 & \BAmulticolumn{1}{r}{Li} & 78 \\
+      王五 & Wang & 100 \\
+    \end{blockarray}
+
+   \begin{blockarray}{|l|c|r|}
+      张三 & Zhang & 80 \\
+      李四 & \BAmulticolumn{1}{r}{Li} & 78 \\
+      王五 & Wang & 100 \\
+    \end{blockarray}
+
+    % \usepackage{blkarray}
+    \[  \begin{blockarray}{(cc]}
+      1 & 2 \\
+      3 & 4
+    \end{blockarray}  \]
+
+    % \usepackage{blkarray}
+    \[  \left[
+    \begin{blockarray}{*4r}
+    \begin{block}{(rr)rr}
+     a & -b & 0 & 0 \\
+    -c &  d & 0 & 0 \\
+    \end{block}
+    \begin{block}{rr(rr)}
+    0 & 0 & -a &  b \\
+    0 & 0 &  c & -d \\
+    \end{block}
+    \end{blockarray}
+    \right]  \]
+
+    \[  \left[
+    \begin{blockarray}{*4r}
+    \begin{block*}{(rr)rr}
+     a & -b & 0 & 0 \\
+    -c &  d & 0 & 0 \\
+    \end{block*}
+    \begin{block}{rr(rr)}
+    0 & 0 & -a &  b \\
+    0 & 0 &  c & -d \\
+    \end{block}
+    \end{blockarray}
+    \right]  \]
+
+    \[
+    \begin{blockarray}{ccc}
+    \begin{block}{cc\}\BAmultirow{4em}}
+    1 & 2 & 自然数 \\
+    3 & 4 & {} \\ % 空白 {} 占位
+    \end{block}
+    \begin{block}{cc\}l}
+    -1.5 & \frac12 & \BAmultirow{4em}{实数} \\
+    3.5 & 40 & \\
+    \end{block}
+    \end{blockarray}
+    \]
+
+\[
+  \begin{blockarray}{cc|cccc|cccc}
+    & 1\dots 18 & 19 & 20 & 21 & 22 & 23 & 24 & 25 & 26 \\
+    \begin{block}{c(c|cccc|cccc@{\hspace*{5pt}})}
+    A'_1 & A_1 & \BAmulticolumn{4}{c|}{\multirow{4}{*}{$I$}}&\BAmulticolumn{4}{c}{\multirow{4}{*}{$I$}}\\
+    A'_2 & A_2 & &&&&&&&\\
+    A'_3 & A_3 & &&&&&&&\\
+    A'_4 & A_4 & &&&&&&&\\
+    \cline{1-10}% don't use \hline
+    B'_1 & B_1 & \BAmulticolumn{4}{c|}{\multirow{4}{*}{$J$}}&\BAmulticolumn{4}{c}{\multirow{4}{*}{$I$}}\\
+    B'_2 & B_2 & &&&&&&&\\
+    B'_3 & B_3 & &&&&&&&\\
+    B'_4 & B_4 & &&&&&&&\\
+    \end{block}
+  \end{blockarray}
+\]
+
+\[M=
+\begin{blockarray}{ccc}
+A & B & C \\
+\begin{block}{[c|cc]}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+\end{block}
+\end{blockarray},\quad
+N=
+\begin{blockarray}{ccc}
+D & E & F \\
+\begin{block}{[c|cc]}
+7 & 8 & 9 \\
+10 & 11 & 12\\
+\end{block}
+\end{blockarray}
+\]
+\[
+\begin{blockarray}{rccrl}
+ & 1 & 2 &  &  \\
+\begin{block}{r[cc]rl}
+1 & \alpha & \beta  & \leftarrow & i \\
+2 & \gamma & \delta &            &   \\
+\end{block}
+  &        & \uparrow &          &   \\
+  &        & j                   &   \\
+\end{blockarray}
+\]
+
+
+\end{document} 
